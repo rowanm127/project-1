@@ -254,9 +254,6 @@
     <Content Include="Default.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="login.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="Resources\save_grey.png" />
     <None Include="Resources\printer_grey.png" />

@@ -36,7 +36,6 @@ C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Stud
 C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.xml
 C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.pdb
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Default.accdb
-C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\login.accdb
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe.config
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.pdb

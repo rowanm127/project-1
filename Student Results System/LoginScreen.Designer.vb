@@ -105,6 +105,7 @@ Partial Class LoginScreen
         Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(404, 262)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.txtUserPassword)
@@ -114,6 +115,7 @@ Partial Class LoginScreen
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
