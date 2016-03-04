@@ -35,3 +35,28 @@ C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Stud
 C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.exe
 C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.xml
 C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.pdb
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Default.accdb
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\login.accdb
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe.config
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.pdb
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.xml
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\itextsharp.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\itextsharp.xml
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.vbprojResolveAssemblyReference.cache
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.AddResult.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.AddStudent.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.AdvSearch.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.MainScreen.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.LoginScreen.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.Resources.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.ReportDesigner.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.ReportTest.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.TestForm.resources
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.vbproj.GenerateResource.Cache
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.exe
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.xml
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.pdb

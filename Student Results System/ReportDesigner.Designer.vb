@@ -30,7 +30,6 @@ Partial Class ReportDesigner
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lblAdaptive = New System.Windows.Forms.Label()
         Me.cmbAdaptive = New System.Windows.Forms.ComboBox()
-        Me.lblVersion = New System.Windows.Forms.Label()
         Me.lblAdaptive2 = New System.Windows.Forms.Label()
         Me.cmbAdaptive2 = New System.Windows.Forms.ComboBox()
         Me.lblAdaptive3 = New System.Windows.Forms.Label()
@@ -44,10 +43,10 @@ Partial Class ReportDesigner
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 21)
+        Me.Label1.Size = New System.Drawing.Size(101, 21)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Report Type"
         '
@@ -68,7 +67,7 @@ Partial Class ReportDesigner
         Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnPrint.Image = Global.Student_Results_System.My.Resources.Resources.printer_grey
-        Me.btnPrint.Location = New System.Drawing.Point(21, 563)
+        Me.btnPrint.Location = New System.Drawing.Point(21, 527)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Padding = New System.Windows.Forms.Padding(3)
         Me.btnPrint.Size = New System.Drawing.Size(92, 91)
@@ -83,7 +82,7 @@ Partial Class ReportDesigner
         Me.PictureBox1.Image = Global.Student_Results_System.My.Resources.Resources.ReportPreviewPlaceholder
         Me.PictureBox1.Location = New System.Drawing.Point(274, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(395, 642)
+        Me.PictureBox1.Size = New System.Drawing.Size(370, 606)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -95,7 +94,7 @@ Partial Class ReportDesigner
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnSave.Image = Global.Student_Results_System.My.Resources.Resources.save_grey
-        Me.btnSave.Location = New System.Drawing.Point(138, 563)
+        Me.btnSave.Location = New System.Drawing.Point(139, 527)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Padding = New System.Windows.Forms.Padding(3)
         Me.btnSave.Size = New System.Drawing.Size(92, 91)
@@ -110,7 +109,7 @@ Partial Class ReportDesigner
         Me.lblAdaptive.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAdaptive.Location = New System.Drawing.Point(13, 107)
         Me.lblAdaptive.Name = "lblAdaptive"
-        Me.lblAdaptive.Size = New System.Drawing.Size(102, 15)
+        Me.lblAdaptive.Size = New System.Drawing.Size(100, 15)
         Me.lblAdaptive.TabIndex = 6
         Me.lblAdaptive.Text = "You can't see me"
         Me.lblAdaptive.Visible = False
@@ -124,15 +123,6 @@ Partial Class ReportDesigner
         Me.cmbAdaptive.Size = New System.Drawing.Size(147, 21)
         Me.cmbAdaptive.TabIndex = 7
         Me.cmbAdaptive.Visible = False
-        '
-        'lblVersion
-        '
-        Me.lblVersion.AutoSize = True
-        Me.lblVersion.Location = New System.Drawing.Point(560, 657)
-        Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(109, 13)
-        Me.lblVersion.TabIndex = 9
-        Me.lblVersion.Text = "Report Designer 0.2"
         '
         'lblAdaptive2
         '
@@ -195,7 +185,7 @@ Partial Class ReportDesigner
         Me.lblYear.AutoSize = True
         Me.lblYear.Location = New System.Drawing.Point(5, 222)
         Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(31, 13)
+        Me.lblYear.Size = New System.Drawing.Size(30, 13)
         Me.lblYear.TabIndex = 16
         Me.lblYear.Text = "Year:"
         Me.lblYear.Visible = False
@@ -204,7 +194,8 @@ Partial Class ReportDesigner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(683, 675)
+        Me.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.ClientSize = New System.Drawing.Size(673, 630)
         Me.Controls.Add(Me.lblYear)
         Me.Controls.Add(Me.cmbYear)
         Me.Controls.Add(Me.txtLastName)
@@ -212,7 +203,6 @@ Partial Class ReportDesigner
         Me.Controls.Add(Me.lblAdaptive3)
         Me.Controls.Add(Me.cmbAdaptive2)
         Me.Controls.Add(Me.lblAdaptive2)
-        Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.cmbAdaptive)
         Me.Controls.Add(Me.lblAdaptive)
         Me.Controls.Add(Me.btnSave)
@@ -221,6 +211,7 @@ Partial Class ReportDesigner
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -228,7 +219,7 @@ Partial Class ReportDesigner
         Me.MinimizeBox = False
         Me.Name = "ReportDesigner"
         Me.ShowIcon = False
-        Me.Text = "Report Designer 0.2"
+        Me.Text = "Report Designer 0.3"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -241,7 +232,6 @@ Partial Class ReportDesigner
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents lblAdaptive As System.Windows.Forms.Label
     Friend WithEvents cmbAdaptive As System.Windows.Forms.ComboBox
-    Friend WithEvents lblVersion As System.Windows.Forms.Label
     Friend WithEvents lblAdaptive2 As System.Windows.Forms.Label
     Friend WithEvents cmbAdaptive2 As System.Windows.Forms.ComboBox
     Friend WithEvents lblAdaptive3 As System.Windows.Forms.Label
