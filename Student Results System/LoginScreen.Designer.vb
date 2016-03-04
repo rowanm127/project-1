@@ -30,21 +30,29 @@ Partial Class LoginScreen
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtUserName
         '
+        Me.txtUserName.BackColor = System.Drawing.SystemColors.Window
+        Me.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtUserName.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtUserName.Location = New System.Drawing.Point(150, 155)
         Me.txtUserName.Name = "txtUserName"
-        Me.txtUserName.Size = New System.Drawing.Size(203, 22)
+        Me.txtUserName.Size = New System.Drawing.Size(203, 15)
         Me.txtUserName.TabIndex = 0
         '
         'txtUserPassword
         '
+        Me.txtUserPassword.BackColor = System.Drawing.SystemColors.Window
+        Me.txtUserPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtUserPassword.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtUserPassword.Location = New System.Drawing.Point(150, 190)
         Me.txtUserPassword.Name = "txtUserPassword"
-        Me.txtUserPassword.Size = New System.Drawing.Size(203, 22)
+        Me.txtUserPassword.Size = New System.Drawing.Size(203, 15)
         Me.txtUserPassword.TabIndex = 1
         Me.txtUserPassword.UseSystemPasswordChar = True
         '
@@ -92,13 +100,29 @@ Partial Class LoginScreen
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.Student_Results_System.My.Resources.Resources.LoginKey
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(236, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(156, 137)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel1.Location = New System.Drawing.Point(147, 149)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(210, 26)
+        Me.Panel1.TabIndex = 7
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Panel2.Location = New System.Drawing.Point(147, 184)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(210, 26)
+        Me.Panel2.TabIndex = 8
         '
         'LoginScreen
         '
@@ -114,6 +138,8 @@ Partial Class LoginScreen
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -133,4 +159,6 @@ Partial Class LoginScreen
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnLogin As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

@@ -52,7 +52,9 @@ Partial Class ReportDesigner
         '
         'cmbReportType
         '
+        Me.cmbReportType.BackColor = System.Drawing.SystemColors.Window
         Me.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbReportType.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbReportType.FormattingEnabled = True
         Me.cmbReportType.Items.AddRange(New Object() {"Assignment/Unit", "Module", "Student"})
         Me.cmbReportType.Location = New System.Drawing.Point(16, 47)
@@ -116,7 +118,9 @@ Partial Class ReportDesigner
         '
         'cmbAdaptive
         '
+        Me.cmbAdaptive.BackColor = System.Drawing.SystemColors.Window
         Me.cmbAdaptive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbAdaptive.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbAdaptive.FormattingEnabled = True
         Me.cmbAdaptive.Location = New System.Drawing.Point(116, 133)
         Me.cmbAdaptive.Name = "cmbAdaptive"
@@ -136,7 +140,9 @@ Partial Class ReportDesigner
         '
         'cmbAdaptive2
         '
+        Me.cmbAdaptive2.BackColor = System.Drawing.SystemColors.Window
         Me.cmbAdaptive2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbAdaptive2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbAdaptive2.FormattingEnabled = True
         Me.cmbAdaptive2.Location = New System.Drawing.Point(116, 178)
         Me.cmbAdaptive2.Name = "cmbAdaptive2"
@@ -172,7 +178,9 @@ Partial Class ReportDesigner
         '
         'cmbYear
         '
+        Me.cmbYear.BackColor = System.Drawing.SystemColors.Window
         Me.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbYear.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbYear.FormattingEnabled = True
         Me.cmbYear.Location = New System.Drawing.Point(116, 219)
         Me.cmbYear.Name = "cmbYear"
