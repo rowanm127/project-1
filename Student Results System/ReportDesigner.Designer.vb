@@ -56,7 +56,7 @@ Partial Class ReportDesigner
         Me.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbReportType.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cmbReportType.FormattingEnabled = True
-        Me.cmbReportType.Items.AddRange(New Object() {"Assignment/Unit", "Module", "Student"})
+        Me.cmbReportType.Items.AddRange(New Object() {"Module", "Unit", "Student"})
         Me.cmbReportType.Location = New System.Drawing.Point(16, 47)
         Me.cmbReportType.Name = "cmbReportType"
         Me.cmbReportType.Size = New System.Drawing.Size(147, 21)

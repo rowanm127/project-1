@@ -1,50 +1,25 @@
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Default.accdb
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\login.accdb
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Student Results System.exe.config
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Student Results System.exe
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Student Results System.pdb
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Student Results System.xml
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\itextsharp.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\itextsharp.xml
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.vbprojResolveAssemblyReference.cache
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.AddResult.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.AddStudent.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.AdvSearch.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.MainScreen.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.LoginScreen.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.Resources.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.ReportDesigner.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.ReportTest.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student_Results_System.TestForm.resources
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.vbproj.GenerateResource.Cache
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.exe
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.xml
-C:\Users\Rowan\Documents\Visual Studio 2015\Projects\Student Results System\Student Results System\obj\x86\Debug\Student Results System.pdb
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Default.accdb
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe.config
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.exe
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.pdb
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Student Results System.xml
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\itextsharp.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\itextsharp.xml
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rowan\Source\Repos\project-1\Student Results System\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student Results System.vbprojResolveAssemblyReference.cache
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.AddResult.resources
 C:\Users\Rowan\Source\Repos\project-1\Student Results System\obj\x86\Debug\Student_Results_System.AddStudent.resources

@@ -52,7 +52,6 @@ Partial Class MainScreen
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnAdvSearch = New System.Windows.Forms.Button()
-        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.cmbSearch = New System.Windows.Forms.ComboBox()
         Me.lblSearchType = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -156,7 +155,6 @@ Partial Class MainScreen
         Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tabResults = New System.Windows.Forms.TabPage()
         Me.tabSearchResults = New System.Windows.Forms.TabPage()
         Me.dgvSearch = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -180,6 +178,14 @@ Partial Class MainScreen
         Me.tsbZoomIn = New System.Windows.Forms.ToolStripButton()
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
+        Me.tabWB5001 = New System.Windows.Forms.TabPage()
+        Me.tabWB5002 = New System.Windows.Forms.TabPage()
+        Me.tabWB5003 = New System.Windows.Forms.TabPage()
+        Me.tabWB5004 = New System.Windows.Forms.TabPage()
+        Me.tabWB5005 = New System.Windows.Forms.TabPage()
+        Me.tabWB5006 = New System.Windows.Forms.TabPage()
+        Me.tabWB5007 = New System.Windows.Forms.TabPage()
+        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
         Me.tabSearch.SuspendLayout()
@@ -446,15 +452,6 @@ Partial Class MainScreen
         Me.btnAdvSearch.Text = "Advanced Search"
         Me.btnAdvSearch.UseVisualStyleBackColor = True
         '
-        'txtWaterSearch
-        '
-        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
-        Me.txtWaterSearch.Name = "txtWaterSearch"
-        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
-        Me.txtWaterSearch.TabIndex = 8
-        '
         'cmbSearch
         '
         Me.cmbSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -579,12 +576,18 @@ Partial Class MainScreen
         Me.mtabHome.Controls.Add(Me.tabWB4003)
         Me.mtabHome.Controls.Add(Me.tabWB4004)
         Me.mtabHome.Controls.Add(Me.tabWB4005)
-        Me.mtabHome.Controls.Add(Me.tabResults)
+        Me.mtabHome.Controls.Add(Me.tabWB5001)
+        Me.mtabHome.Controls.Add(Me.tabWB5002)
+        Me.mtabHome.Controls.Add(Me.tabWB5003)
+        Me.mtabHome.Controls.Add(Me.tabWB5004)
+        Me.mtabHome.Controls.Add(Me.tabWB5005)
+        Me.mtabHome.Controls.Add(Me.tabWB5006)
+        Me.mtabHome.Controls.Add(Me.tabWB5007)
         Me.mtabHome.Controls.Add(Me.tabSearchResults)
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(578, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(575, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -592,7 +595,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(570, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(567, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -653,7 +656,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(570, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(567, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -698,7 +701,7 @@ Partial Class MainScreen
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(570, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(567, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -941,7 +944,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(570, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(567, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1185,7 +1188,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(570, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(567, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1384,7 +1387,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(570, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(567, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1422,22 +1425,13 @@ Partial Class MainScreen
         Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
         Me.DataGridViewTextBoxColumn45.Width = 110
         '
-        'tabResults
-        '
-        Me.tabResults.Location = New System.Drawing.Point(4, 22)
-        Me.tabResults.Name = "tabResults"
-        Me.tabResults.Size = New System.Drawing.Size(570, 522)
-        Me.tabResults.TabIndex = 6
-        Me.tabResults.Text = "Results"
-        Me.tabResults.UseVisualStyleBackColor = True
-        '
         'tabSearchResults
         '
         Me.tabSearchResults.Controls.Add(Me.dgvSearch)
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(570, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(567, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -1639,6 +1633,78 @@ Partial Class MainScreen
         '
         Me.StudentsTableAdapter.ClearBeforeFill = True
         '
+        'tabWB5001
+        '
+        Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5001.Name = "tabWB5001"
+        Me.tabWB5001.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5001.TabIndex = 8
+        Me.tabWB5001.Text = "WB5001"
+        Me.tabWB5001.UseVisualStyleBackColor = True
+        '
+        'tabWB5002
+        '
+        Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5002.Name = "tabWB5002"
+        Me.tabWB5002.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5002.TabIndex = 9
+        Me.tabWB5002.Text = "WB5002"
+        Me.tabWB5002.UseVisualStyleBackColor = True
+        '
+        'tabWB5003
+        '
+        Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5003.Name = "tabWB5003"
+        Me.tabWB5003.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5003.TabIndex = 10
+        Me.tabWB5003.Text = "WB5003"
+        Me.tabWB5003.UseVisualStyleBackColor = True
+        '
+        'tabWB5004
+        '
+        Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5004.Name = "tabWB5004"
+        Me.tabWB5004.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5004.TabIndex = 11
+        Me.tabWB5004.Text = "WB5004"
+        Me.tabWB5004.UseVisualStyleBackColor = True
+        '
+        'tabWB5005
+        '
+        Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5005.Name = "tabWB5005"
+        Me.tabWB5005.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5005.TabIndex = 12
+        Me.tabWB5005.Text = "WB5005"
+        Me.tabWB5005.UseVisualStyleBackColor = True
+        '
+        'tabWB5006
+        '
+        Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5006.Name = "tabWB5006"
+        Me.tabWB5006.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5006.TabIndex = 13
+        Me.tabWB5006.Text = "WB5006"
+        Me.tabWB5006.UseVisualStyleBackColor = True
+        '
+        'tabWB5007
+        '
+        Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
+        Me.tabWB5007.Name = "tabWB5007"
+        Me.tabWB5007.Size = New System.Drawing.Size(567, 522)
+        Me.tabWB5007.TabIndex = 14
+        Me.tabWB5007.Text = "WB5007"
+        Me.tabWB5007.UseVisualStyleBackColor = True
+        '
+        'txtWaterSearch
+        '
+        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
+        Me.txtWaterSearch.Name = "txtWaterSearch"
+        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
+        Me.txtWaterSearch.TabIndex = 8
+        '
         'MainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1785,7 +1851,6 @@ Partial Class MainScreen
     Friend WithEvents tabWB4004 As System.Windows.Forms.TabPage
     Friend WithEvents tabWB4005 As System.Windows.Forms.TabPage
     Friend WithEvents tabStudents As System.Windows.Forms.TabPage
-    Friend WithEvents tabResults As System.Windows.Forms.TabPage
     Friend WithEvents dgvStudents As System.Windows.Forms.DataGridView
     Friend WithEvents StudentsBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents StudentsTableAdapter As Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter
@@ -1877,4 +1942,11 @@ Partial Class MainScreen
     Friend WithEvents Button1 As Button
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents tsbAddStudent As ToolStripButton
+    Friend WithEvents tabWB5001 As TabPage
+    Friend WithEvents tabWB5002 As TabPage
+    Friend WithEvents tabWB5003 As TabPage
+    Friend WithEvents tabWB5004 As TabPage
+    Friend WithEvents tabWB5005 As TabPage
+    Friend WithEvents tabWB5006 As TabPage
+    Friend WithEvents tabWB5007 As TabPage
 End Class

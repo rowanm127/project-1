@@ -8,13 +8,13 @@ Public Class ReportDesigner
     Private Sub cmbReportType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbReportType.SelectedIndexChanged
         Dim reportType As String = cmbReportType.SelectedItem
         'Adds initial options to combo boxes and makes objects visible
-        If reportType = "Assignment/Unit" And reportType <> previousReportType Then
+        If reportType = "Unit" And reportType <> previousReportType Then
             cmbAdaptive.Items.Clear()
             lblAdaptive3.Visible = False
             cmbAdaptive2.Visible = False
             txtFirstName.Visible = False
             lblAdaptive.Visible = True
-            lblAdaptive.Text = "Assignment/Unit:"
+            lblAdaptive.Text = "Unit:"
             lblAdaptive2.Visible = True
             lblAdaptive2.Text = "Module:"
             cmbAdaptive.Visible = True
@@ -66,7 +66,7 @@ Public Class ReportDesigner
     Private Sub cmbAdaptive_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbAdaptive.SelectedIndexChanged
         Dim reportType As String = cmbReportType.SelectedItem
         Dim adaptive1 As String = cmbAdaptive.SelectedItem
-        If reportType = "Assignment/Unit" And adaptive1 = "WB4002" Then
+        If reportType = "Unit" And adaptive1 = "WB4002" Then
             cmbAdaptive2.Items.Clear()
             lblAdaptive3.Visible = True
             lblAdaptive3.Text = "Unit:"
@@ -80,9 +80,14 @@ Public Class ReportDesigner
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim moduleNum As String = cmbAdaptive.Text
+        Dim moduleNumNoWB As String = moduleNum.Replace("WB", "")
+        Dim unitNum As String = cmbAdaptive.Text & ":" & cmbAdaptive2.Text
+        Dim unitNumNoWB As String = unitNum.Replace("WB", "")
+
         Dim saveFile As New SaveFileDialog()
         saveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-
+        saveFile.Filter = "PDF File (*.pdf)|*.pdf"
         saveFile.ShowDialog()
 
         'iTextSharp: Variables are created to edit properties however don't forget you can quickly create paragraphs and cells etc.
@@ -144,61 +149,113 @@ Public Class ReportDesigner
         cell.Colspan = 1
         'Set the cell border widths
         cell.BorderWidthLeft = 1.0F
-        cell.BorderWidthRight = 0F
-        cell.BorderWidthTop = 0F
-        cell.BorderWidthBottom = 1.0F
-        'Alignmenet 0=Left, 1=Centre, 2=Right
-        cell.HorizontalAlignment = 0
-        'Set cell padding
-        cell.Padding = 5
-        'Adds the cell to the table
-        table.AddCell(cell)
+            cell.BorderWidthRight = 0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
 
-        'Setup Connection and Query
-        Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-        Dim con As New OleDbConnection(connString)
-        'Connect to Database
-        con.Open()
-        'Set query
-        Dim query As String
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4002:001') ORDER BY Students.SLastName"
-        Dim command As OleDbCommand = New OleDbCommand(query, con)
-        Using rdr As OleDbDataReader = command.ExecuteReader()
-            While rdr.Read()
-                table.AddCell(rdr(0).ToString())
-                table.AddCell(rdr(1).ToString())
-                table.AddCell(rdr(2).ToString())
-            End While
-        End Using
+        If cmbReportType.SelectedItem = "Unit" Then
+            'Setup Connection and Query
+            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+            Dim con As New OleDbConnection(connString)
+            'Connect to Database
+            con.Open()
+            'Set query
+            Dim query As String
+            query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '" & unitNumNoWB & "') ORDER BY Students.SLastName"
+            Dim command As OleDbCommand = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    table.AddCell(rdr(0).ToString())
+                    table.AddCell(rdr(1).ToString())
+                    table.AddCell(rdr(2).ToString())
+                End While
+            End Using
 
-        query = "SELECT UnitName From Unit Where (Unit = '4002:001')"
-        Dim UnitName As String
-        command = New OleDbCommand(query, con)
-        Using rdr As OleDbDataReader = command.ExecuteReader()
-            While rdr.Read()
-                UnitName = rdr(0).ToString()
-            End While
-        End Using
+            query = "SELECT UnitName From Unit Where (Unit = '" & unitNumNoWB & "')"
 
-        pdfDoc.Open()
-        pdfDoc.Add(New Paragraph(LoginScreen.User))
-        'Set new paragraph variable
-        Dim paragraph As New Paragraph(New Phrase("Unit Results"))
-        'Set alignment to center
-        paragraph.Alignment = 1
-        pdfDoc.Add(paragraph)
-        'Set new paragraph
-        paragraph = New Paragraph(New Phrase(UnitName))
-        paragraph.Alignment = 1
-        pdfDoc.Add(paragraph)
-        paragraph = New Paragraph(New Phrase("WB4002:001"))
-        paragraph.Alignment = 1
-        pdfDoc.Add(paragraph)
-        pdfDoc.Add(New Paragraph(" "))
-        pdfDoc.Add(table)
-        pdfDoc.Close()
+            Dim UnitName As String
+            command = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    UnitName = rdr(0).ToString()
+                End While
+            End Using
 
-        con.Close()
+            pdfDoc.Open()
+            pdfDoc.Add(New Paragraph(LoginScreen.User))
+            'Set new paragraph variable
+            Dim paragraph As New Paragraph(New Phrase("Unit Results"))
+            'Set alignment to center
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            'Set new paragraph
+            paragraph = New Paragraph(New Phrase(UnitName))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            paragraph = New Paragraph(New Phrase(unitNum))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(table)
+            pdfDoc.Close()
+
+            con.Close()
+        End If
+
+        If cmbReportType.SelectedItem = "Module" Then
+            'Setup Connection and Query
+            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+            Dim con As New OleDbConnection(connString)
+            'Connect to Database
+            con.Open()
+            'Set query
+            Dim query As String
+            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.Module = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            Dim command As OleDbCommand = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    table.AddCell(rdr(0).ToString())
+                    table.AddCell(rdr(1).ToString())
+                    table.AddCell(rdr(2).ToString())
+                End While
+            End Using
+
+            query = "SELECT ModuleName From Unit Where (Module = '" & moduleNumNoWB & "')"
+
+            Dim ModuleName As String
+            command = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    ModuleName = rdr(0).ToString()
+                End While
+            End Using
+
+            pdfDoc.Open()
+            pdfDoc.Add(New Paragraph(LoginScreen.User))
+            'Set new paragraph variable
+            Dim paragraph As New Paragraph(New Phrase("Module Results"))
+            'Set alignment to center
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            'Set new paragraph
+            paragraph = New Paragraph(New Phrase(ModuleName))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            paragraph = New Paragraph(New Phrase(moduleNum))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(table)
+            pdfDoc.Close()
+
+            con.Close()
+        End If
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
