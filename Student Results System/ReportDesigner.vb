@@ -18,11 +18,9 @@ Public Class ReportDesigner
             lblAdaptive2.Visible = True
             lblAdaptive2.Text = "Module:"
             cmbAdaptive.Visible = True
-            cmbAdaptive.Items.Add("WB4001")
             cmbAdaptive.Items.Add("WB4002")
             cmbAdaptive.Items.Add("WB4003")
             cmbAdaptive.Items.Add("WB4004")
-            cmbAdaptive.Items.Add("WB4005")
             previousReportType = reportType
         End If
 
@@ -32,8 +30,10 @@ Public Class ReportDesigner
             cmbAdaptive2.Visible = False
             txtFirstName.Visible = False
             lblAdaptive.Visible = True
+            lblAdaptive2.Visible = True
             cmbAdaptive.Visible = True
             lblAdaptive.Text = "Module:"
+            lblAdaptive2.Text = "Module:"
             cmbAdaptive.Items.Add("WB4001")
             cmbAdaptive.Items.Add("WB4002")
             cmbAdaptive.Items.Add("WB4003")
@@ -75,6 +75,29 @@ Public Class ReportDesigner
             cmbAdaptive2.Items.Add("002")
             cmbAdaptive2.Items.Add("003")
             cmbAdaptive2.Items.Add("004")
+            previousAdaptive1 = adaptive1
+        End If
+
+        If reportType = "Unit" And adaptive1 = "WB4003" Then
+            cmbAdaptive2.Items.Clear()
+            lblAdaptive3.Visible = True
+            lblAdaptive3.Text = "Unit:"
+            cmbAdaptive2.Visible = True
+            cmbAdaptive2.Items.Add("001")
+            cmbAdaptive2.Items.Add("002")
+            cmbAdaptive2.Items.Add("003")
+            cmbAdaptive2.Items.Add("004")
+            previousAdaptive1 = adaptive1
+        End If
+
+        If reportType = "Unit" And adaptive1 = "WB4004" Then
+            cmbAdaptive2.Items.Clear()
+            lblAdaptive3.Visible = True
+            lblAdaptive3.Text = "Unit:"
+            cmbAdaptive2.Visible = True
+            cmbAdaptive2.Items.Add("001")
+            cmbAdaptive2.Items.Add("002")
+            cmbAdaptive2.Items.Add("003")
             previousAdaptive1 = adaptive1
         End If
     End Sub
@@ -216,7 +239,7 @@ Public Class ReportDesigner
             con.Open()
             'Set query
             Dim query As String
-            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.Module = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
             Dim command As OleDbCommand = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -226,7 +249,56 @@ Public Class ReportDesigner
                 End While
             End Using
 
-            query = "SELECT ModuleName From Unit Where (Module = '" & moduleNumNoWB & "')"
+            query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
+
+            Dim ModuleName As String
+            command = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    ModuleName = rdr(0).ToString()
+                End While
+            End Using
+
+            pdfDoc.Open()
+            pdfDoc.Add(New Paragraph(LoginScreen.User))
+            'Set new paragraph variable
+            Dim paragraph As New Paragraph(New Phrase("Module Results"))
+            'Set alignment to center
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            'Set new paragraph
+            paragraph = New Paragraph(New Phrase(ModuleName))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            paragraph = New Paragraph(New Phrase(moduleNum))
+            paragraph.Alignment = 1
+            pdfDoc.Add(paragraph)
+            pdfDoc.Add(New Paragraph(" "))
+            pdfDoc.Add(table)
+            pdfDoc.Close()
+
+            con.Close()
+        End If
+
+        If cmbReportType.SelectedItem = "Student" Then
+            'Setup Connection and Query
+            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+            Dim con As New OleDbConnection(connString)
+            'Connect to Database
+            con.Open()
+            'Set query
+            Dim query As String
+            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            Dim command As OleDbCommand = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    table.AddCell(rdr(0).ToString())
+                    table.AddCell(rdr(1).ToString())
+                    table.AddCell(rdr(2).ToString())
+                End While
+            End Using
+
+            query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
 
             Dim ModuleName As String
             command = New OleDbCommand(query, con)
