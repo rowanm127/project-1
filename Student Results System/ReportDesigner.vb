@@ -284,6 +284,7 @@ Public Class ReportDesigner
             'Setup Connection and Query
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Dim con As New OleDbConnection(connString)
+
             'Connect to Database
             con.Open()
             'Set query
