@@ -33,10 +33,6 @@ Partial Class ReportDesigner
         Me.lblAdaptive2 = New System.Windows.Forms.Label()
         Me.cmbAdaptive2 = New System.Windows.Forms.ComboBox()
         Me.lblAdaptive3 = New System.Windows.Forms.Label()
-        Me.txtFirstName = New System.Windows.Forms.TextBox()
-        Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.cmbYear = New System.Windows.Forms.ComboBox()
-        Me.lblYear = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -160,54 +156,12 @@ Partial Class ReportDesigner
         Me.lblAdaptive3.Text = "Can't see me either"
         Me.lblAdaptive3.Visible = False
         '
-        'txtFirstName
-        '
-        Me.txtFirstName.Location = New System.Drawing.Point(116, 253)
-        Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(147, 22)
-        Me.txtFirstName.TabIndex = 13
-        Me.txtFirstName.Visible = False
-        '
-        'txtLastName
-        '
-        Me.txtLastName.Location = New System.Drawing.Point(116, 281)
-        Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(147, 22)
-        Me.txtLastName.TabIndex = 14
-        Me.txtLastName.Visible = False
-        '
-        'cmbYear
-        '
-        Me.cmbYear.BackColor = System.Drawing.SystemColors.Window
-        Me.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbYear.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbYear.FormattingEnabled = True
-        Me.cmbYear.Location = New System.Drawing.Point(116, 219)
-        Me.cmbYear.Name = "cmbYear"
-        Me.cmbYear.Size = New System.Drawing.Size(147, 21)
-        Me.cmbYear.TabIndex = 15
-        Me.cmbYear.Visible = False
-        '
-        'lblYear
-        '
-        Me.lblYear.AutoSize = True
-        Me.lblYear.Location = New System.Drawing.Point(5, 222)
-        Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(30, 13)
-        Me.lblYear.TabIndex = 16
-        Me.lblYear.Text = "Year:"
-        Me.lblYear.Visible = False
-        '
         'ReportDesigner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(673, 630)
-        Me.Controls.Add(Me.lblYear)
-        Me.Controls.Add(Me.cmbYear)
-        Me.Controls.Add(Me.txtLastName)
-        Me.Controls.Add(Me.txtFirstName)
         Me.Controls.Add(Me.lblAdaptive3)
         Me.Controls.Add(Me.cmbAdaptive2)
         Me.Controls.Add(Me.lblAdaptive2)
@@ -227,7 +181,7 @@ Partial Class ReportDesigner
         Me.MinimizeBox = False
         Me.Name = "ReportDesigner"
         Me.ShowIcon = False
-        Me.Text = "Report Designer 0.3"
+        Me.Text = "Report Designer 0.4"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -243,8 +197,4 @@ Partial Class ReportDesigner
     Friend WithEvents lblAdaptive2 As System.Windows.Forms.Label
     Friend WithEvents cmbAdaptive2 As System.Windows.Forms.ComboBox
     Friend WithEvents lblAdaptive3 As System.Windows.Forms.Label
-    Friend WithEvents txtFirstName As System.Windows.Forms.TextBox
-    Friend WithEvents txtLastName As System.Windows.Forms.TextBox
-    Friend WithEvents cmbYear As System.Windows.Forms.ComboBox
-    Friend WithEvents lblYear As System.Windows.Forms.Label
 End Class

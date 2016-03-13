@@ -12,9 +12,8 @@ Public Class ReportDesigner
             cmbAdaptive.Items.Clear()
             lblAdaptive3.Visible = False
             cmbAdaptive2.Visible = False
-            txtFirstName.Visible = False
             lblAdaptive.Visible = True
-            lblAdaptive.Text = "Unit:"
+            lblAdaptive.Text = "Unit Report:"
             lblAdaptive2.Visible = True
             lblAdaptive2.Text = "Module:"
             cmbAdaptive.Visible = True
@@ -28,11 +27,10 @@ Public Class ReportDesigner
             cmbAdaptive.Items.Clear()
             lblAdaptive3.Visible = False
             cmbAdaptive2.Visible = False
-            txtFirstName.Visible = False
             lblAdaptive.Visible = True
             lblAdaptive2.Visible = True
             cmbAdaptive.Visible = True
-            lblAdaptive.Text = "Module:"
+            lblAdaptive.Text = "Module Report:"
             lblAdaptive2.Text = "Module:"
             cmbAdaptive.Items.Add("WB4001")
             cmbAdaptive.Items.Add("WB4002")
@@ -44,21 +42,17 @@ Public Class ReportDesigner
 
         If reportType = "Student" And reportType <> previousReportType Then
             cmbAdaptive.Items.Clear()
-            txtFirstName.Clear()
-            lblAdaptive3.Visible = False
-            cmbAdaptive2.Visible = False
+            cmbAdaptive.Visible = True
+            cmbAdaptive2.Visible = True
             lblAdaptive.Visible = True
-            txtFirstName.Visible = True
-            txtLastName.Visible = True
             lblAdaptive2.Visible = True
             lblAdaptive3.Visible = True
-            cmbYear.Visible = True
-            lblYear.Visible = True
-            lblAdaptive.Text = "Student:"
-            txtFirstName.Location = New Point(116, 133)
-            txtLastName.Location = New Point(116, 178)
-            lblAdaptive2.Text = "First Name:"
-            lblAdaptive3.Text = "Last Name:"
+            lblAdaptive.Text = "Student Report:"
+            lblAdaptive2.Text = "Student:"
+            lblAdaptive3.Text = "Type:"
+            cmbAdaptive2.Items.Add("All Results")
+            cmbAdaptive2.Items.Add("Module Results")
+            cmbAdaptive2.Items.Add("Unit Results")
             'Setup Connection and Query
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Using con As New OleDbConnection(connString)
@@ -71,9 +65,9 @@ Public Class ReportDesigner
                     Dim rdr As OleDbDataReader = command.ExecuteReader()
                     Dim dt As DataTable = New DataTable
                     dt.Load(rdr)
-                    cmbYear.ValueMember = "SId"
-                    cmbYear.DisplayMember = "SidName"
-                    cmbYear.DataSource = dt
+                    cmbAdaptive.ValueMember = "SId"
+                    cmbAdaptive.DisplayMember = "SidName"
+                    cmbAdaptive.DataSource = dt
                 End Using
             End Using
             previousReportType = reportType
@@ -353,8 +347,11 @@ Public Class ReportDesigner
         Dim moduleNumNoWB As String = moduleNum.Replace("WB", "")
         Dim unitNum As String = cmbAdaptive.Text & ":" & cmbAdaptive2.Text
         Dim unitNumNoWB As String = unitNum.Replace("WB", "")
-
-        System.IO.Directory.CreateDirectory("Temp")
+        If My.Computer.FileSystem.DirectoryExists("Temp") Then
+            'Do nothing
+        Else
+            System.IO.Directory.CreateDirectory("Temp")
+        End If
         'iTextSharp: Variables are created to edit properties however don't forget you can quickly create paragraphs and cells etc.
         'E.g. pdfDoc.Add(New Paragraph(" ")) or table.AddCell(" ")
 
