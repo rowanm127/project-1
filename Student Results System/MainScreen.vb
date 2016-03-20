@@ -296,7 +296,7 @@ Public Class MainScreen
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Dim con As New OleDbConnection(connString)
             'Set query depending on option
-            Dim quickSearch As String
+            Dim quickSearch As String = ""
             If cmbSearch.SelectedItem = "First Name" Then
                 quickSearch = "SELECT * FROM(Students) WHERE (SFirstName LIKE '%" & txtWaterSearch.Text & "%') ORDER BY Students.SLastName"
             ElseIf cmbSearch.SelectedItem = "Last Name" Then

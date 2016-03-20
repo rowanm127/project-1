@@ -53,13 +53,14 @@ Public Class ReportDesigner
             cmbAdaptive2.Items.Add("All Results")
             cmbAdaptive2.Items.Add("Module Results")
             cmbAdaptive2.Items.Add("Unit Results")
-            'Setup Connection and Query
+            'Setup Connection and Query to obtain Student Names with IDs
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Using con As New OleDbConnection(connString)
                 'Connect to Database
                 con.Open()
                 'Set query
                 Dim query As String
+                'Combines several columns into one
                 query = "SELECT [SId] & ' ' & [SFirstName] & ' ' & [SLastName] AS SIdName FROM Students ORDER BY Students.SLastName"
                 Using command As OleDbCommand = New OleDbCommand(query, con)
                     Dim rdr As OleDbDataReader = command.ExecuteReader()
@@ -213,7 +214,7 @@ Public Class ReportDesigner
 
             query = "SELECT UnitName From Unit Where (Unit = '" & unitNumNoWB & "')"
 
-            Dim UnitName As String
+            Dim UnitName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -262,7 +263,7 @@ Public Class ReportDesigner
 
             query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
 
-            Dim ModuleName As String
+            Dim ModuleName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -312,7 +313,7 @@ Public Class ReportDesigner
 
             query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
 
-            Dim ModuleName As String
+            Dim ModuleName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -441,7 +442,7 @@ Public Class ReportDesigner
 
             query = "SELECT UnitName From Unit Where (Unit = '" & unitNumNoWB & "')"
 
-            Dim UnitName As String
+            Dim UnitName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -488,9 +489,9 @@ Public Class ReportDesigner
                 End While
             End Using
 
+            'Obtaining Module Name
             query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
-
-            Dim ModuleName As String
+            Dim ModuleName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -498,6 +499,7 @@ Public Class ReportDesigner
                 End While
             End Using
 
+            'Fill PDF with data
             pdfDoc.Open()
             pdfDoc.Add(New Paragraph(LoginScreen.User))
             'Set new paragraph variable
@@ -538,9 +540,9 @@ Public Class ReportDesigner
                 End While
             End Using
 
+            'Obtaining Module Name
             query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
-
-            Dim ModuleName As String
+            Dim ModuleName As String = ""
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -548,6 +550,7 @@ Public Class ReportDesigner
                 End While
             End Using
 
+            'Fill PDF with data
             pdfDoc.Open()
             pdfDoc.Add(New Paragraph(LoginScreen.User))
             'Set new paragraph variable

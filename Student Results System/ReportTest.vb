@@ -92,7 +92,7 @@ Public Class ReportTest
         End Using
 
         query = "SELECT UnitName From Unit Where (Unit = '4002:001')"
-        Dim UnitName As String
+        Dim UnitName As String = ""
         command = New OleDbCommand(query, con)
         Using rdr As OleDbDataReader = command.ExecuteReader()
             While rdr.Read()

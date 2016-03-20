@@ -141,7 +141,6 @@ Partial Class AddResult
         '
         Me.cmbSId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSId.FormattingEnabled = True
-        Me.cmbSId.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
         Me.cmbSId.Location = New System.Drawing.Point(125, 34)
         Me.cmbSId.Name = "cmbSId"
         Me.cmbSId.Size = New System.Drawing.Size(182, 21)
@@ -151,6 +150,7 @@ Partial Class AddResult
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(351, 245)
         Me.Controls.Add(Me.cmbSId)
         Me.Controls.Add(Me.lblSId)
