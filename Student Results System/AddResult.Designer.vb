@@ -48,12 +48,15 @@ Partial Class AddResult
         '
         'btnAddResult
         '
+        Me.btnAddResult.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAddResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddResult.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnAddResult.Location = New System.Drawing.Point(82, 194)
         Me.btnAddResult.Name = "btnAddResult"
         Me.btnAddResult.Size = New System.Drawing.Size(182, 39)
         Me.btnAddResult.TabIndex = 12
         Me.btnAddResult.Text = "Add Result"
-        Me.btnAddResult.UseVisualStyleBackColor = True
+        Me.btnAddResult.UseVisualStyleBackColor = False
         '
         'lblUnit
         '
@@ -164,6 +167,7 @@ Partial Class AddResult
         Me.Controls.Add(Me.lblUnit)
         Me.Controls.Add(Me.lblResultType)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AddResult"
         Me.Text = "AddResult"

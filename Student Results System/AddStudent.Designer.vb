@@ -67,6 +67,7 @@ Partial Class AddStudent
         '
         'Button1
         '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button1.Location = New System.Drawing.Point(94, 116)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(182, 39)
@@ -98,6 +99,7 @@ Partial Class AddStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(348, 175)
         Me.Controls.Add(Me.cmbYear)
         Me.Controls.Add(Me.lblYear)
@@ -107,6 +109,7 @@ Partial Class AddStudent
         Me.Controls.Add(Me.txtLastName)
         Me.Controls.Add(Me.txtName)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AddStudent"
         Me.ShowIcon = False

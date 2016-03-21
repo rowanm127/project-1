@@ -28,6 +28,7 @@ Public Class AddResult
         Dim markTextInt As New Integer
         Dim SIdWithName As String = cmbSId.Text
         Dim SId As String = SIdWithName.Split(" ")(0)
+
         If (txtMark.Text <> "" And cmbResultType.SelectedItem = "Module" And cmbModule.Text <> "" Or txtMark.Text <> "" And cmbResultType.SelectedItem = "Unit" And cmbUnit.Text <> "") Then
             If Integer.TryParse(markText, markTextInt) Then
                 If markText >= 0 And markText <= 100 Then
@@ -36,7 +37,7 @@ Public Class AddResult
                         Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
                         Dim con As New OleDbConnection(connString)
                         con.Open()
-                        'Query
+                        'Query to insert result into table
                         Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO ModuleResults (SId, [Module], ModuleResult) VALUES ('" & SId & "','" & cmbModule.Text & "','" & txtMark.Text & "')", con)
                         addResult.ExecuteNonQuery()
                         con.Close()
@@ -47,16 +48,23 @@ Public Class AddResult
                         If UserYesNo = MsgBoxResult.No Then
                             Me.Close()
                         ElseIf UserYesNo = MsgBoxResult.Yes Then
-                            Dim SidIndex As Integer = cmbSId.SelectedIndex
-                            cmbSId.SelectedIndex = SidIndex + 1
+                            Try
+                                Dim SidIndex As Integer = cmbSId.SelectedIndex
+                                cmbSId.SelectedIndex = SidIndex + 1
+                                txtMark.Clear()
+                                txtMark.Select()
+                            Catch
+                                MsgBox("End of students reached.")
+                            End Try
                         End If
                     End If
+
                     If cmbResultType.SelectedItem = "Unit" Then
                         'Connect to Database
                         Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
                         Dim con As New OleDbConnection(connString)
                         con.Open()
-                        'Query
+                        'Query to insert result into table
                         Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO UnitResults (SId, Unit, UnitResult) VALUES ('" & SId & "','" & cmbUnit.Text & "','" & txtMark.Text & "')", con)
                         addResult.ExecuteNonQuery()
                         con.Close()
@@ -69,8 +77,11 @@ Public Class AddResult
                         ElseIf UserYesNo = MsgBoxResult.Yes Then
                             Dim SidIndex As Integer = cmbSId.SelectedIndex
                             cmbSId.SelectedIndex = SidIndex + 1
+                            txtMark.Clear()
+                            txtMark.Select()
                         End If
                     End If
+
                 Else
                     MsgBox("Mark must be from 0-100")
                 End If
@@ -104,6 +115,7 @@ Public Class AddResult
             cmbUnit.Show()
             lblUnit.Location = New Point(46, 87)
             cmbUnit.Location = New Point(125, 88)
+            previousResultType = "Unit"
         End If
     End Sub
 End Class
