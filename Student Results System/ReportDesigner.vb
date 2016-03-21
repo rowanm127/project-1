@@ -9,6 +9,7 @@ Public Class ReportDesigner
         Dim reportType As String = cmbReportType.SelectedItem
         'Adds initial options to combo boxes and makes objects visible
         If reportType = "Unit" And reportType <> previousReportType Then
+            cmbAdaptive.DataSource = Nothing
             cmbAdaptive.Items.Clear()
             lblAdaptive3.Visible = False
             cmbAdaptive2.Visible = False
@@ -24,6 +25,7 @@ Public Class ReportDesigner
         End If
 
         If reportType = "Module" And reportType <> previousReportType Then
+            cmbAdaptive.DataSource = Nothing
             cmbAdaptive.Items.Clear()
             lblAdaptive3.Visible = False
             cmbAdaptive2.Visible = False
@@ -77,40 +79,42 @@ Public Class ReportDesigner
 
     Private Sub cmbAdaptive_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbAdaptive.SelectedIndexChanged
         Dim reportType As String = cmbReportType.SelectedItem
-        Dim adaptive1 As String = cmbAdaptive.SelectedItem
-        If reportType = "Unit" And adaptive1 = "WB4002" Then
-            cmbAdaptive2.Items.Clear()
-            lblAdaptive3.Visible = True
-            lblAdaptive3.Text = "Unit:"
-            cmbAdaptive2.Visible = True
-            cmbAdaptive2.Items.Add("001")
-            cmbAdaptive2.Items.Add("002")
-            cmbAdaptive2.Items.Add("003")
-            cmbAdaptive2.Items.Add("004")
-            previousAdaptive1 = adaptive1
-        End If
+        If reportType = "Unit" Then
+            Dim adaptive1 As String = cmbAdaptive.SelectedItem
+            If adaptive1 = "WB4002" Then
+                cmbAdaptive2.Items.Clear()
+                lblAdaptive3.Visible = True
+                lblAdaptive3.Text = "Unit:"
+                cmbAdaptive2.Visible = True
+                cmbAdaptive2.Items.Add("001")
+                cmbAdaptive2.Items.Add("002")
+                cmbAdaptive2.Items.Add("003")
+                cmbAdaptive2.Items.Add("004")
+                previousAdaptive1 = adaptive1
+            End If
 
-        If reportType = "Unit" And adaptive1 = "WB4003" Then
-            cmbAdaptive2.Items.Clear()
-            lblAdaptive3.Visible = True
-            lblAdaptive3.Text = "Unit:"
-            cmbAdaptive2.Visible = True
-            cmbAdaptive2.Items.Add("001")
-            cmbAdaptive2.Items.Add("002")
-            cmbAdaptive2.Items.Add("003")
-            cmbAdaptive2.Items.Add("004")
-            previousAdaptive1 = adaptive1
-        End If
+            If adaptive1 = "WB4003" Then
+                cmbAdaptive2.Items.Clear()
+                lblAdaptive3.Visible = True
+                lblAdaptive3.Text = "Unit:"
+                cmbAdaptive2.Visible = True
+                cmbAdaptive2.Items.Add("001")
+                cmbAdaptive2.Items.Add("002")
+                cmbAdaptive2.Items.Add("003")
+                cmbAdaptive2.Items.Add("004")
+                previousAdaptive1 = adaptive1
+            End If
 
-        If reportType = "Unit" And adaptive1 = "WB4004" Then
-            cmbAdaptive2.Items.Clear()
-            lblAdaptive3.Visible = True
-            lblAdaptive3.Text = "Unit:"
-            cmbAdaptive2.Visible = True
-            cmbAdaptive2.Items.Add("001")
-            cmbAdaptive2.Items.Add("002")
-            cmbAdaptive2.Items.Add("003")
-            previousAdaptive1 = adaptive1
+            If adaptive1 = "WB4004" Then
+                cmbAdaptive2.Items.Clear()
+                lblAdaptive3.Visible = True
+                lblAdaptive3.Text = "Unit:"
+                cmbAdaptive2.Visible = True
+                cmbAdaptive2.Items.Add("001")
+                cmbAdaptive2.Items.Add("002")
+                cmbAdaptive2.Items.Add("003")
+                previousAdaptive1 = adaptive1
+            End If
         End If
     End Sub
 

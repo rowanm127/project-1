@@ -181,7 +181,7 @@ Partial Class ReportDesigner
         Me.MinimizeBox = False
         Me.Name = "ReportDesigner"
         Me.ShowIcon = False
-        Me.Text = "Report Designer Beta 5"
+        Me.Text = "Report Designer Beta 5.1"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
