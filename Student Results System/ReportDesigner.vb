@@ -255,7 +255,9 @@ Public Class ReportDesigner
             con.Open()
             'Set query
             Dim query As String
-            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            If moduleNumNoWB = "4001" Or moduleNumNoWB = "5001" Then
+                query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            End If
             Dim command As OleDbCommand = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
@@ -296,7 +298,7 @@ Public Class ReportDesigner
             con.Close()
         End If
 
-        If cmbReportType.SelectedItem = "Student" Then
+            If cmbReportType.SelectedItem = "Student" Then
             'Setup Connection and Query
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Dim con As New OleDbConnection(connString)

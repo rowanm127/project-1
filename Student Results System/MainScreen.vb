@@ -60,7 +60,7 @@ Public Class MainScreen
         'WB4001
         'Set query
         Dim query As String
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4001') ORDER BY Students.SLastName"
+        query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '4001') ORDER BY Students.SLastName"
         Dim command As OleDbCommand = New OleDbCommand(query, con)
         Dim loadDataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
         Dim loadDataSet As DataSet = New DataSet
@@ -291,7 +291,7 @@ Public Class MainScreen
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         If cmbSearch.SelectedItem <> "" And txtWaterSearch.Text <> "" Then
             'Switches the tab to search results tab
-			mtabHome.SelectedIndex = 7
+            mtabHome.SelectedIndex = 13
             'Setup Connection and Query
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Dim con As New OleDbConnection(connString)
@@ -304,7 +304,11 @@ Public Class MainScreen
             ElseIf cmbSearch.SelectedItem = "Year" Then
                 quickSearch = "SELECT * FROM(Students) WHERE (SYear = " & txtWaterSearch.Text & ") ORDER BY Students.SYear"
             ElseIf cmbSearch.SelectedItem = "Module" Then
-                quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult, ModuleResults.[Module] FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & txtWaterSearch.Text & "')"
+                If txtWaterSearch.Text = "4001" Or txtWaterSearch.Text = "5001" Then
+                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass, ModulePassResults.[Module] FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '" & txtWaterSearch.Text & "')"
+                Else
+                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult, ModuleResults.[Module] FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & txtWaterSearch.Text & "')"
+                End If
             End If
             Dim command As OleDbCommand = New OleDbCommand(quickSearch, con)
             Dim searchDataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
