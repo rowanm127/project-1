@@ -181,10 +181,10 @@ Partial Class MainScreen
         Me.tsbZoomIn = New System.Windows.Forms.ToolStripButton()
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
-        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.dgv4001FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv4001LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv4001ModulePass = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
         Me.tabSearch.SuspendLayout()
@@ -1661,15 +1661,6 @@ Partial Class MainScreen
         '
         Me.StudentsTableAdapter.ClearBeforeFill = True
         '
-        'txtWaterSearch
-        '
-        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
-        Me.txtWaterSearch.Name = "txtWaterSearch"
-        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
-        Me.txtWaterSearch.TabIndex = 8
-        '
         'dgv4001FirstName
         '
         Me.dgv4001FirstName.DataPropertyName = "SFirstName"
@@ -1690,6 +1681,15 @@ Partial Class MainScreen
         Me.dgv4001ModulePass.Name = "dgv4001ModulePass"
         Me.dgv4001ModulePass.Width = 110
         '
+        'txtWaterSearch
+        '
+        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
+        Me.txtWaterSearch.Name = "txtWaterSearch"
+        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
+        Me.txtWaterSearch.TabIndex = 8
+        '
         'MainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1704,7 +1704,7 @@ Partial Class MainScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainScreen"
-        Me.Text = "TINE Beta 4"
+        Me.Text = "TINE Beta 4.1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
