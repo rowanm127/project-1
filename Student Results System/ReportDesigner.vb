@@ -256,6 +256,8 @@ Public Class ReportDesigner
             'Set query
             Dim query As String
             If moduleNumNoWB = "4001" Or moduleNumNoWB = "5001" Then
+                query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (([Module] INNER JOIN ModulePassResults ON [Module].[Module] = ModulePassResults.[Module]) INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            Else
                 query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
             End If
             Dim command As OleDbCommand = New OleDbCommand(query, con)

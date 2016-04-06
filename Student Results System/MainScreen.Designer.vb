@@ -183,7 +183,7 @@ Partial Class MainScreen
         Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
         Me.dgv4001FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv4001LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv4001ModulePass = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4001ModulePass = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
@@ -572,7 +572,7 @@ Partial Class MainScreen
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(560, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(557, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -580,7 +580,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(552, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(549, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -641,7 +641,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(549, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -666,7 +666,7 @@ Partial Class MainScreen
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(549, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -909,7 +909,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(549, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1153,7 +1153,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(549, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1352,7 +1352,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(549, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1394,7 +1394,7 @@ Partial Class MainScreen
         '
         Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5001.Name = "tabWB5001"
-        Me.tabWB5001.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5001.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5001.TabIndex = 8
         Me.tabWB5001.Text = "WB5001"
         Me.tabWB5001.UseVisualStyleBackColor = True
@@ -1403,7 +1403,7 @@ Partial Class MainScreen
         '
         Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5002.Name = "tabWB5002"
-        Me.tabWB5002.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5002.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5002.TabIndex = 9
         Me.tabWB5002.Text = "WB5002"
         Me.tabWB5002.UseVisualStyleBackColor = True
@@ -1412,7 +1412,7 @@ Partial Class MainScreen
         '
         Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5003.Name = "tabWB5003"
-        Me.tabWB5003.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5003.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5003.TabIndex = 10
         Me.tabWB5003.Text = "WB5003"
         Me.tabWB5003.UseVisualStyleBackColor = True
@@ -1421,7 +1421,7 @@ Partial Class MainScreen
         '
         Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5004.Name = "tabWB5004"
-        Me.tabWB5004.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5004.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5004.TabIndex = 11
         Me.tabWB5004.Text = "WB5004"
         Me.tabWB5004.UseVisualStyleBackColor = True
@@ -1430,7 +1430,7 @@ Partial Class MainScreen
         '
         Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5005.Name = "tabWB5005"
-        Me.tabWB5005.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5005.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5005.TabIndex = 12
         Me.tabWB5005.Text = "WB5005"
         Me.tabWB5005.UseVisualStyleBackColor = True
@@ -1439,7 +1439,7 @@ Partial Class MainScreen
         '
         Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5006.Name = "tabWB5006"
-        Me.tabWB5006.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5006.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5006.TabIndex = 13
         Me.tabWB5006.Text = "WB5006"
         Me.tabWB5006.UseVisualStyleBackColor = True
@@ -1448,7 +1448,7 @@ Partial Class MainScreen
         '
         Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5007.Name = "tabWB5007"
-        Me.tabWB5007.Size = New System.Drawing.Size(552, 522)
+        Me.tabWB5007.Size = New System.Drawing.Size(549, 522)
         Me.tabWB5007.TabIndex = 14
         Me.tabWB5007.Text = "WB5007"
         Me.tabWB5007.UseVisualStyleBackColor = True
@@ -1459,7 +1459,7 @@ Partial Class MainScreen
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(552, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(549, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -1679,6 +1679,8 @@ Partial Class MainScreen
         Me.dgv4001ModulePass.HeaderText = "Module Pass"
         Me.dgv4001ModulePass.MinimumWidth = 10
         Me.dgv4001ModulePass.Name = "dgv4001ModulePass"
+        Me.dgv4001ModulePass.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv4001ModulePass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.dgv4001ModulePass.Width = 110
         '
         'txtWaterSearch
@@ -1704,7 +1706,7 @@ Partial Class MainScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainScreen"
-        Me.Text = "TINE Beta 4.1"
+        Me.Text = "TINE Beta 5"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -1932,5 +1934,5 @@ Partial Class MainScreen
     Friend WithEvents tabWB5007 As TabPage
     Friend WithEvents dgv4001FirstName As DataGridViewTextBoxColumn
     Friend WithEvents dgv4001LastName As DataGridViewTextBoxColumn
-    Friend WithEvents dgv4001ModulePass As DataGridViewTextBoxColumn
+    Friend WithEvents dgv4001ModulePass As DataGridViewCheckBoxColumn
 End Class

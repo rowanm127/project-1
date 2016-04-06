@@ -38,8 +38,13 @@ Public Class AddResult
                         Dim con As New OleDbConnection(connString)
                         con.Open()
                         'Query to insert result into table
-                        Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO ModuleResults (SId, [Module], ModuleResult) VALUES ('" & SId & "','" & cmbModule.Text & "','" & txtMark.Text & "')", con)
-                        addResult.ExecuteNonQuery()
+                        If cmbModule.Text = "4001" Or cmbModule.Text = "5001" Then
+                            Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO ModulePassResults (SId, [Module], ModulePass) VALUES ('" & SId & "','" & cmbModule.Text & "','" & txtMark.Text & "')", con)
+                            addResult.ExecuteNonQuery()
+                        Else
+                            Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO ModuleResults (SId, [Module], ModuleResult) VALUES ('" & SId & "','" & cmbModule.Text & "','" & txtMark.Text & "')", con)
+                            addResult.ExecuteNonQuery()
+                        End If
                         con.Close()
                         MainScreen.MainScreen_Load(sender, e)
                         ' Asks the user if they wish to add another result
@@ -96,10 +101,6 @@ Public Class AddResult
     Private Sub cmbResultType_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbResultType.SelectedIndexChanged
         Dim resultType As String = cmbResultType.SelectedItem
         If resultType = "Module" Then
-            lblMark.Show()
-            txtMark.Show()
-            lblUnit.Hide()
-            cmbUnit.Hide()
             lblModule.Show()
             cmbModule.Show()
             lblModule.Location = New Point(46, 87)
@@ -116,6 +117,22 @@ Public Class AddResult
             lblUnit.Location = New Point(46, 87)
             cmbUnit.Location = New Point(125, 88)
             previousResultType = "Unit"
+        End If
+    End Sub
+
+    Private Sub cmbModule_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbModule.SelectedIndexChanged
+        If cmbModule.Text = "4001" Or lblModule.Text = "5001" Then
+            txtMark.Hide()
+            lblMark.Show()
+            lblMark.Text = "Passed:"
+            cmbPass.Show()
+        Else
+            lblMark.Show()
+            lblMark.Text = "Mark:"
+            txtMark.Show()
+            lblUnit.Hide()
+            cmbUnit.Hide()
+            cmbPass.Hide()
         End If
     End Sub
 End Class

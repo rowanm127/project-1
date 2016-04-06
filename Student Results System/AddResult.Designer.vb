@@ -33,6 +33,7 @@ Partial Class AddResult
         Me.txtMark = New System.Windows.Forms.TextBox()
         Me.lblSId = New System.Windows.Forms.Label()
         Me.cmbSId = New System.Windows.Forms.ComboBox()
+        Me.cmbPass = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'lblMark
@@ -149,12 +150,24 @@ Partial Class AddResult
         Me.cmbSId.Size = New System.Drawing.Size(182, 21)
         Me.cmbSId.TabIndex = 21
         '
+        'cmbPass
+        '
+        Me.cmbPass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbPass.FormattingEnabled = True
+        Me.cmbPass.Items.AddRange(New Object() {"Yes", "No"})
+        Me.cmbPass.Location = New System.Drawing.Point(125, 115)
+        Me.cmbPass.Name = "cmbPass"
+        Me.cmbPass.Size = New System.Drawing.Size(182, 21)
+        Me.cmbPass.TabIndex = 22
+        Me.cmbPass.Visible = False
+        '
         'AddResult
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(351, 245)
+        Me.Controls.Add(Me.cmbPass)
         Me.Controls.Add(Me.cmbSId)
         Me.Controls.Add(Me.lblSId)
         Me.Controls.Add(Me.txtMark)
@@ -186,4 +199,5 @@ Partial Class AddResult
     Friend WithEvents txtMark As System.Windows.Forms.TextBox
     Friend WithEvents lblSId As System.Windows.Forms.Label
     Friend WithEvents cmbSId As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbPass As ComboBox
 End Class
