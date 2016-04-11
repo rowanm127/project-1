@@ -118,6 +118,7 @@ Partial Class AdvSearch
         '
         'btnAdvSearch
         '
+        Me.btnAdvSearch.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnAdvSearch.Location = New System.Drawing.Point(94, 240)
         Me.btnAdvSearch.Name = "btnAdvSearch"
         Me.btnAdvSearch.Size = New System.Drawing.Size(145, 23)
@@ -156,6 +157,7 @@ Partial Class AdvSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(278, 275)
         Me.Controls.Add(Me.cmbUnit)
         Me.Controls.Add(Me.cmbModule)
@@ -170,6 +172,7 @@ Partial Class AdvSearch
         Me.Controls.Add(Me.lblStuSearch)
         Me.Controls.Add(Me.lblFirstName)
         Me.Controls.Add(Me.txtFirstName)
+        Me.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AdvSearch"
         Me.ShowIcon = False
