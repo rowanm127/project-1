@@ -329,11 +329,6 @@ Public Class MainScreen
         End If
     End Sub
 
-    Private Sub btnReset_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnReset.Click
-        '!Deprecated! Should probably be removed soon since there is no need to reset search results anymore
-        MainScreen_Load(sender, e)
-    End Sub
-
     Private Sub btnAddResult_Click(sender As Object, e As EventArgs) Handles btnAddResult.Click
         'Sets new form to the Add Result form
         Dim openForm As New AddResult

@@ -70,7 +70,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\AppIcon2.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
@@ -241,6 +241,8 @@
     <Content Include="Resources\AppIcon.ico" />
     <Content Include="Resources\AppIcon2.ico" />
     <Content Include="Resources\Key.ico" />
+    <None Include="Resources\x-box.png" />
+    <None Include="Resources\ModulePreview.png" />
     <Content Include="Resources\x-box.ico" />
     <None Include="packages.config" />
     <None Include="Resources\save_grey.png" />

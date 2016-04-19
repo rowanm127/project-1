@@ -25,14 +25,14 @@ Partial Class ReportDesigner
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportDesigner))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbReportType = New System.Windows.Forms.ComboBox()
-        Me.btnPrint = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.lblAdaptive = New System.Windows.Forms.Label()
         Me.cmbAdaptive = New System.Windows.Forms.ComboBox()
         Me.lblAdaptive2 = New System.Windows.Forms.Label()
         Me.cmbAdaptive2 = New System.Windows.Forms.ComboBox()
         Me.lblAdaptive3 = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,49 +57,6 @@ Partial Class ReportDesigner
         Me.cmbReportType.Name = "cmbReportType"
         Me.cmbReportType.Size = New System.Drawing.Size(147, 21)
         Me.cmbReportType.TabIndex = 3
-        '
-        'btnPrint
-        '
-        Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrint.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btnPrint.Image = Global.Student_Results_System.My.Resources.Resources.printer_grey
-        Me.btnPrint.Location = New System.Drawing.Point(21, 527)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Padding = New System.Windows.Forms.Padding(3)
-        Me.btnPrint.Size = New System.Drawing.Size(92, 91)
-        Me.btnPrint.TabIndex = 2
-        Me.btnPrint.Text = "Print"
-        Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPrint.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.Student_Results_System.My.Resources.Resources.ReportPreviewPlaceholder
-        Me.PictureBox1.Location = New System.Drawing.Point(274, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(370, 606)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'btnSave
-        '
-        Me.btnSave.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btnSave.Image = Global.Student_Results_System.My.Resources.Resources.save_grey
-        Me.btnSave.Location = New System.Drawing.Point(139, 527)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Padding = New System.Windows.Forms.Padding(3)
-        Me.btnSave.Size = New System.Drawing.Size(92, 91)
-        Me.btnSave.TabIndex = 4
-        Me.btnSave.Text = "Save"
-        Me.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSave.UseVisualStyleBackColor = False
         '
         'lblAdaptive
         '
@@ -155,6 +112,49 @@ Partial Class ReportDesigner
         Me.lblAdaptive3.TabIndex = 12
         Me.lblAdaptive3.Text = "Can't see me either"
         Me.lblAdaptive3.Visible = False
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.btnSave.Image = Global.Student_Results_System.My.Resources.Resources.save_grey
+        Me.btnSave.Location = New System.Drawing.Point(139, 527)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Padding = New System.Windows.Forms.Padding(3)
+        Me.btnSave.Size = New System.Drawing.Size(92, 91)
+        Me.btnSave.TabIndex = 4
+        Me.btnSave.Text = "Save"
+        Me.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSave.UseVisualStyleBackColor = False
+        '
+        'btnPrint
+        '
+        Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.btnPrint.Image = Global.Student_Results_System.My.Resources.Resources.printer_grey
+        Me.btnPrint.Location = New System.Drawing.Point(21, 527)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Padding = New System.Windows.Forms.Padding(3)
+        Me.btnPrint.Size = New System.Drawing.Size(92, 91)
+        Me.btnPrint.TabIndex = 2
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPrint.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.Student_Results_System.My.Resources.Resources.ModulePreview
+        Me.PictureBox1.Location = New System.Drawing.Point(274, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(387, 606)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'ReportDesigner
         '
