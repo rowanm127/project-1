@@ -1,6 +1,9 @@
 ﻿Imports System.Data.OleDb
 Public Class MainScreen
-	Dim lastClicked As String = ""
+    Dim lastClicked As String = ""
+    'Setup Connection and Query
+    Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+    Dim con As New OleDbConnection(connString)
 
     Private Sub mnuSidebarToggle_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuSidebarToggle.Click
         'Sets the toggle to not be checked
@@ -50,223 +53,64 @@ Public Class MainScreen
     Public Sub MainScreen_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DefaultDataSet2.Students' table. You can move, or remove it, as needed.
         Me.StudentsTableAdapter.Fill(Me.DefaultDataSet2.Students)
-	
-        'Setup Connection and Query
-        Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-        Dim con As New OleDbConnection(connString)
+
+
         'Connect to Database
         con.Open()
 
-        'WB4001
+        tableLoadModule("4001", dgv4001)
+        tableLoadModule("4002", dgv4002)
+        tableLoadModule("4003", dgv4003)
+        tableLoadModule("4004", dgv4004)
+        tableLoadModule("4005", dgv4005)
+
+        tableLoadUnit("4002:001", dgv4002001)
+        tableLoadUnit("4002:002", dgv4002002)
+        tableLoadUnit("4002:003", dgv4002003)
+        tableLoadUnit("4002:004", dgv4002004)
+        tableLoadUnit("4003:001", dgv4003001)
+        tableLoadUnit("4003:002", dgv4003002)
+        tableLoadUnit("4003:003", dgv4003003)
+        tableLoadUnit("4003:004", dgv4003004)
+        tableLoadUnit("4004:001", dgv4004001)
+        tableLoadUnit("4004:002", dgv4004002)
+        tableLoadUnit("4004:003", dgv4004003)
+
+        con.Close()
+    End Sub
+
+    Public Sub tableLoadModule(moduleNum, tableNum)
         'Set query
         Dim query As String
-        query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '4001') ORDER BY Students.SLastName"
+        If moduleNum <> "4001" Then
+            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & moduleNum & "') ORDER BY Students.SLastName"
+        Else
+            query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '" & moduleNum & "') ORDER BY Students.SLastName"
+        End If
         Dim command As OleDbCommand = New OleDbCommand(query, con)
         Dim loadDataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
         Dim loadDataSet As DataSet = New DataSet
         'Fill DataAdapter
         loadDataAdapter.Fill(loadDataSet, "Load_Table")
         'Set new DataSet
-        dgv4001.DataSource = loadDataSet
+        tableNum.DataSource = loadDataSet
         'Set new table to show
-        dgv4001.DataMember = "Load_Table"
+        tableNum.DataMember = "Load_Table"
+    End Sub
 
-        'WB4002
+    Public Sub tableLoadUnit(unitNum, tableNum)
         'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4002') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
+        Dim query As String
+        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '" & unitNum & "') ORDER BY Students.SLastName"
+        Dim command As OleDbCommand = New OleDbCommand(query, con)
+        Dim loadDataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
+        Dim loadDataSet As DataSet = New DataSet
         'Fill DataAdapter
         loadDataAdapter.Fill(loadDataSet, "Load_Table")
         'Set new DataSet
-        dgv4002.DataSource = loadDataSet
+        tableNum.DataSource = loadDataSet
         'Set new table to show
-        dgv4002.DataMember = "Load_Table"
-
-        'WB4002:001
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4002:001') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4002001.DataSource = loadDataSet
-        'Set new table to show
-        dgv4002001.DataMember = "Load_Table"
-
-        'WB4002:002
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4002:002') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4002002.DataSource = loadDataSet
-        'Set new table to show
-        dgv4002002.DataMember = "Load_Table"
-
-        'WB4002:003
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4002:003') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4002003.DataSource = loadDataSet
-        'Set new table to show
-        dgv4002003.DataMember = "Load_Table"
-
-        'WB4002:004
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4002:004') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4002004.DataSource = loadDataSet
-        'Set new table to show
-		dgv4002004.DataMember = "Load_Table"
-
-		'WB4003
-		'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4003') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4003.DataSource = loadDataSet
-        'Set new table to show
-		dgv4003.DataMember = "Load_Table"
-
-		'WB4003:001
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4003:001') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4003001.DataSource = loadDataSet
-        'Set new table to show
-		dgv4003001.DataMember = "Load_Table"
-		
-		'WB4003:002
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4003:002') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4003002.DataSource = loadDataSet
-        'Set new table to show
-		dgv4003002.DataMember = "Load_Table"
-
-		'WB4003:003
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4003:003') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4003003.DataSource = loadDataSet
-        'Set new table to show
-		dgv4003003.DataMember = "Load_Table"
-	
-		'WB4003:004
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4003:004') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4003004.DataSource = loadDataSet
-        'Set new table to show
-        dgv4003004.DataMember = "Load_Table"
-	
-        'WB4004
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4004') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4004.DataSource = loadDataSet
-        'Set new table to show
-		dgv4004.DataMember = "Load_Table"
-		
-		'WB4004:001
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4004:001') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4004001.DataSource = loadDataSet
-        'Set new table to show
-		dgv4004001.DataMember = "Load_Table"
-
-		'WB4004:002
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4004:002') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4004002.DataSource = loadDataSet
-        'Set new table to show
-		dgv4004002.DataMember = "Load_Table"
-		
-		'WB4004:003
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '4004:003') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4004003.DataSource = loadDataSet
-        'Set new table to show
-		dgv4004003.DataMember = "Load_Table"
-		
-		'WB4005
-        'Set query
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4005') ORDER BY Students.SLastName"
-        command = New OleDbCommand(query, con)
-        loadDataAdapter = New OleDbDataAdapter(command)
-        loadDataSet = New DataSet
-        'Fill DataAdapter
-        loadDataAdapter.Fill(loadDataSet, "Load_Table")
-        'Set new DataSet
-        dgv4005.DataSource = loadDataSet
-        'Set new table to show
-		dgv4005.DataMember = "Load_Table"
-		
-		con.Close()
+        tableNum.DataMember = "Load_Table"
     End Sub
 
     Private Sub tsbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbPrint.Click
