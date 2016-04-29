@@ -51,9 +51,8 @@ Public Class MainScreen
     End Sub
 
     Public Sub MainScreen_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DefaultDataSet2.Students' table. You can move, or remove it, as needed.
+        'Loads data into the Students table.
         Me.StudentsTableAdapter.Fill(Me.DefaultDataSet2.Students)
-
 
         'Connect to Database
         con.Open()
@@ -63,6 +62,13 @@ Public Class MainScreen
         tableLoadModule("4003", dgv4003)
         tableLoadModule("4004", dgv4004)
         tableLoadModule("4005", dgv4005)
+        tableLoadModule("5001", dgv5001)
+        tableLoadModule("5002", dgv5002)
+        tableLoadModule("5003", dgv5003)
+        tableLoadModule("5004", dgv5004)
+        tableLoadModule("5005", dgv5005)
+        tableLoadModule("5006", dgv5006)
+        tableLoadModule("5007", dgv5007)
 
         tableLoadUnit("4002:001", dgv4002001)
         tableLoadUnit("4002:002", dgv4002002)
@@ -75,6 +81,12 @@ Public Class MainScreen
         tableLoadUnit("4004:001", dgv4004001)
         tableLoadUnit("4004:002", dgv4004002)
         tableLoadUnit("4004:003", dgv4004003)
+        tableLoadUnit("5002:001", dgv5002001)
+        tableLoadUnit("5002:002", dgv5002002)
+        tableLoadUnit("5002:003", dgv5002003)
+        tableLoadUnit("5002:004", dgv5002004)
+        tableLoadUnit("5003:001", dgv5003001)
+        tableLoadUnit("5003:002", dgv5003002)
 
         con.Close()
     End Sub
@@ -182,9 +194,21 @@ Public Class MainScreen
         lastClicked = "AddResult"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim openForm As New ReportTest
         openForm.Owner = Me
         openForm.ShowDialog(Me)
+    End Sub
+
+    Private Sub EditDGV(sender As Object, e As EventArgs) Handles dgvStudents.RowsRemoved
+        Dim editedTable As DataGridView
+
+        editedTable = CType(sender, DataGridView)
+
+        editedTable.EndEdit()
+        Dim dt As DataTable = DirectCast(editedTable.DataSource, DataTable)
+
+        dataAdapter.Update((DataTable)bindingSource1.DataSource)
+
     End Sub
 End Class

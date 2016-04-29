@@ -155,12 +155,74 @@ Partial Class MainScreen
         Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5001 = New System.Windows.Forms.TabPage()
+        Me.dgv5001 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.tabWB5002 = New System.Windows.Forms.TabPage()
+        Me.mtabWB5002 = New System.Windows.Forms.TabControl()
+        Me.tab5002 = New System.Windows.Forms.TabPage()
+        Me.dgv5002 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5002001 = New System.Windows.Forms.TabPage()
+        Me.dgv5002001 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5002002 = New System.Windows.Forms.TabPage()
+        Me.dgv5002002 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5002003 = New System.Windows.Forms.TabPage()
+        Me.dgv5002003 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5002004 = New System.Windows.Forms.TabPage()
+        Me.dgv5002004 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn60 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn62 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5003 = New System.Windows.Forms.TabPage()
+        Me.mtabWB5003 = New System.Windows.Forms.TabControl()
+        Me.tab5003 = New System.Windows.Forms.TabPage()
+        Me.dgv5003 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn63 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn64 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5003001 = New System.Windows.Forms.TabPage()
+        Me.dgv5003001 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn66 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn67 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn68 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tab5003002 = New System.Windows.Forms.TabPage()
+        Me.dgv5003002 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn69 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn70 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn71 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5004 = New System.Windows.Forms.TabPage()
+        Me.dgv5004 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn72 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn73 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn74 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5005 = New System.Windows.Forms.TabPage()
+        Me.dgv5005 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn75 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn76 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn77 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5006 = New System.Windows.Forms.TabPage()
+        Me.dgv5006 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn78 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn79 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn80 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabWB5007 = New System.Windows.Forms.TabPage()
+        Me.dgv5007 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn81 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn82 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn83 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabSearchResults = New System.Windows.Forms.TabPage()
         Me.dgvSearch = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -234,6 +296,36 @@ Partial Class MainScreen
         CType(Me.dgv4004003, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabWB4005.SuspendLayout()
         CType(Me.dgv4005, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5001.SuspendLayout()
+        CType(Me.dgv5001, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5002.SuspendLayout()
+        Me.mtabWB5002.SuspendLayout()
+        Me.tab5002.SuspendLayout()
+        CType(Me.dgv5002, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5002001.SuspendLayout()
+        CType(Me.dgv5002001, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5002002.SuspendLayout()
+        CType(Me.dgv5002002, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5002003.SuspendLayout()
+        CType(Me.dgv5002003, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5002004.SuspendLayout()
+        CType(Me.dgv5002004, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5003.SuspendLayout()
+        Me.mtabWB5003.SuspendLayout()
+        Me.tab5003.SuspendLayout()
+        CType(Me.dgv5003, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5003001.SuspendLayout()
+        CType(Me.dgv5003001, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab5003002.SuspendLayout()
+        CType(Me.dgv5003002, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5004.SuspendLayout()
+        CType(Me.dgv5004, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5005.SuspendLayout()
+        CType(Me.dgv5005, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5006.SuspendLayout()
+        CType(Me.dgv5006, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabWB5007.SuspendLayout()
+        CType(Me.dgv5007, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabSearchResults.SuspendLayout()
         CType(Me.dgvSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -568,7 +660,7 @@ Partial Class MainScreen
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(551, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(545, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -576,7 +668,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(543, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(537, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -637,7 +729,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(537, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -684,7 +776,7 @@ Partial Class MainScreen
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(537, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -702,7 +794,7 @@ Partial Class MainScreen
         Me.mtabWB4002.Location = New System.Drawing.Point(-4, 0)
         Me.mtabWB4002.Name = "mtabWB4002"
         Me.mtabWB4002.SelectedIndex = 0
-        Me.mtabWB4002.Size = New System.Drawing.Size(587, 526)
+        Me.mtabWB4002.Size = New System.Drawing.Size(548, 526)
         Me.mtabWB4002.TabIndex = 1
         '
         'tab4002
@@ -710,7 +802,7 @@ Partial Class MainScreen
         Me.tab4002.Controls.Add(Me.dgv4002)
         Me.tab4002.Location = New System.Drawing.Point(4, 22)
         Me.tab4002.Name = "tab4002"
-        Me.tab4002.Size = New System.Drawing.Size(579, 500)
+        Me.tab4002.Size = New System.Drawing.Size(540, 500)
         Me.tab4002.TabIndex = 4
         Me.tab4002.Text = "Module"
         Me.tab4002.UseVisualStyleBackColor = True
@@ -726,7 +818,7 @@ Partial Class MainScreen
         Me.dgv4002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgv4002FirstName, Me.dgv4002LastName, Me.dgv4002ModuleResult})
         Me.dgv4002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002.Name = "dgv4002"
-        Me.dgv4002.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4002.Size = New System.Drawing.Size(540, 500)
         Me.dgv4002.TabIndex = 1
         '
         'dgv4002FirstName
@@ -754,7 +846,7 @@ Partial Class MainScreen
         Me.tab4002001.Location = New System.Drawing.Point(4, 22)
         Me.tab4002001.Name = "tab4002001"
         Me.tab4002001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4002001.Size = New System.Drawing.Size(579, 500)
+        Me.tab4002001.Size = New System.Drawing.Size(540, 500)
         Me.tab4002001.TabIndex = 0
         Me.tab4002001.Text = "001"
         Me.tab4002001.UseVisualStyleBackColor = True
@@ -770,7 +862,7 @@ Partial Class MainScreen
         Me.dgv4002001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.dgv4002001.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002001.Name = "dgv4002001"
-        Me.dgv4002001.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4002001.Size = New System.Drawing.Size(540, 500)
         Me.dgv4002001.TabIndex = 2
         '
         'DataGridViewTextBoxColumn4
@@ -798,7 +890,7 @@ Partial Class MainScreen
         Me.tab4002002.Location = New System.Drawing.Point(4, 22)
         Me.tab4002002.Name = "tab4002002"
         Me.tab4002002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4002002.Size = New System.Drawing.Size(579, 500)
+        Me.tab4002002.Size = New System.Drawing.Size(540, 500)
         Me.tab4002002.TabIndex = 1
         Me.tab4002002.Text = "002"
         Me.tab4002002.UseVisualStyleBackColor = True
@@ -814,7 +906,7 @@ Partial Class MainScreen
         Me.dgv4002002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.dgv4002002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002002.Name = "dgv4002002"
-        Me.dgv4002002.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4002002.Size = New System.Drawing.Size(540, 500)
         Me.dgv4002002.TabIndex = 3
         '
         'DataGridViewTextBoxColumn7
@@ -841,7 +933,7 @@ Partial Class MainScreen
         Me.tab4002003.Controls.Add(Me.dgv4002003)
         Me.tab4002003.Location = New System.Drawing.Point(4, 22)
         Me.tab4002003.Name = "tab4002003"
-        Me.tab4002003.Size = New System.Drawing.Size(579, 500)
+        Me.tab4002003.Size = New System.Drawing.Size(540, 500)
         Me.tab4002003.TabIndex = 2
         Me.tab4002003.Text = "003"
         Me.tab4002003.UseVisualStyleBackColor = True
@@ -857,7 +949,7 @@ Partial Class MainScreen
         Me.dgv4002003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.dgv4002003.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002003.Name = "dgv4002003"
-        Me.dgv4002003.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4002003.Size = New System.Drawing.Size(540, 500)
         Me.dgv4002003.TabIndex = 4
         '
         'DataGridViewTextBoxColumn10
@@ -884,7 +976,7 @@ Partial Class MainScreen
         Me.tab4002004.Controls.Add(Me.dgv4002004)
         Me.tab4002004.Location = New System.Drawing.Point(4, 22)
         Me.tab4002004.Name = "tab4002004"
-        Me.tab4002004.Size = New System.Drawing.Size(579, 500)
+        Me.tab4002004.Size = New System.Drawing.Size(540, 500)
         Me.tab4002004.TabIndex = 3
         Me.tab4002004.Text = "004"
         Me.tab4002004.UseVisualStyleBackColor = True
@@ -900,7 +992,7 @@ Partial Class MainScreen
         Me.dgv4002004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15})
         Me.dgv4002004.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002004.Name = "dgv4002004"
-        Me.dgv4002004.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4002004.Size = New System.Drawing.Size(540, 500)
         Me.dgv4002004.TabIndex = 5
         '
         'DataGridViewTextBoxColumn13
@@ -927,7 +1019,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(537, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1171,7 +1263,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(537, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1370,7 +1462,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(537, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1386,7 +1478,7 @@ Partial Class MainScreen
         Me.dgv4005.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45})
         Me.dgv4005.Location = New System.Drawing.Point(0, 0)
         Me.dgv4005.Name = "dgv4005"
-        Me.dgv4005.Size = New System.Drawing.Size(579, 522)
+        Me.dgv4005.Size = New System.Drawing.Size(540, 522)
         Me.dgv4005.TabIndex = 4
         '
         'DataGridViewTextBoxColumn43
@@ -1410,66 +1502,619 @@ Partial Class MainScreen
         '
         'tabWB5001
         '
+        Me.tabWB5001.Controls.Add(Me.dgv5001)
         Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5001.Name = "tabWB5001"
-        Me.tabWB5001.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5001.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5001.TabIndex = 8
         Me.tabWB5001.Text = "WB5001"
         Me.tabWB5001.UseVisualStyleBackColor = True
         '
+        'dgv5001
+        '
+        Me.dgv5001.AllowUserToAddRows = False
+        Me.dgv5001.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5001.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5001.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewCheckBoxColumn1})
+        Me.dgv5001.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5001.Name = "dgv5001"
+        Me.dgv5001.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5001.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn46
+        '
+        Me.DataGridViewTextBoxColumn46.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn46.HeaderText = "First Name"
+        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
+        '
+        'DataGridViewTextBoxColumn47
+        '
+        Me.DataGridViewTextBoxColumn47.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn47.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "ModulePass"
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Module Pass"
+        Me.DataGridViewCheckBoxColumn1.MinimumWidth = 10
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewCheckBoxColumn1.Width = 110
+        '
         'tabWB5002
         '
+        Me.tabWB5002.Controls.Add(Me.mtabWB5002)
         Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5002.Name = "tabWB5002"
-        Me.tabWB5002.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5002.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5002.TabIndex = 9
         Me.tabWB5002.Text = "WB5002"
         Me.tabWB5002.UseVisualStyleBackColor = True
         '
+        'mtabWB5002
+        '
+        Me.mtabWB5002.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mtabWB5002.Controls.Add(Me.tab5002)
+        Me.mtabWB5002.Controls.Add(Me.tab5002001)
+        Me.mtabWB5002.Controls.Add(Me.tab5002002)
+        Me.mtabWB5002.Controls.Add(Me.tab5002003)
+        Me.mtabWB5002.Controls.Add(Me.tab5002004)
+        Me.mtabWB5002.Location = New System.Drawing.Point(-4, 0)
+        Me.mtabWB5002.Name = "mtabWB5002"
+        Me.mtabWB5002.SelectedIndex = 0
+        Me.mtabWB5002.Size = New System.Drawing.Size(548, 524)
+        Me.mtabWB5002.TabIndex = 2
+        '
+        'tab5002
+        '
+        Me.tab5002.Controls.Add(Me.dgv5002)
+        Me.tab5002.Location = New System.Drawing.Point(4, 22)
+        Me.tab5002.Name = "tab5002"
+        Me.tab5002.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002.TabIndex = 4
+        Me.tab5002.Text = "Module"
+        Me.tab5002.UseVisualStyleBackColor = True
+        '
+        'dgv5002
+        '
+        Me.dgv5002.AllowUserToAddRows = False
+        Me.dgv5002.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5002.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5002.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50})
+        Me.dgv5002.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5002.Name = "dgv5002"
+        Me.dgv5002.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn48.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        '
+        'DataGridViewTextBoxColumn50
+        '
+        Me.DataGridViewTextBoxColumn50.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn50.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
+        Me.DataGridViewTextBoxColumn50.Width = 110
+        '
+        'tab5002001
+        '
+        Me.tab5002001.Controls.Add(Me.dgv5002001)
+        Me.tab5002001.Location = New System.Drawing.Point(4, 22)
+        Me.tab5002001.Name = "tab5002001"
+        Me.tab5002001.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab5002001.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002001.TabIndex = 0
+        Me.tab5002001.Text = "001"
+        Me.tab5002001.UseVisualStyleBackColor = True
+        '
+        'dgv5002001
+        '
+        Me.dgv5002001.AllowUserToAddRows = False
+        Me.dgv5002001.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5002001.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5002001.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5002001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53})
+        Me.dgv5002001.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5002001.Name = "dgv5002001"
+        Me.dgv5002001.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002001.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn51
+        '
+        Me.DataGridViewTextBoxColumn51.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn51.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        '
+        'DataGridViewTextBoxColumn52
+        '
+        Me.DataGridViewTextBoxColumn52.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn52.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
+        '
+        'DataGridViewTextBoxColumn53
+        '
+        Me.DataGridViewTextBoxColumn53.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn53.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        Me.DataGridViewTextBoxColumn53.Width = 110
+        '
+        'tab5002002
+        '
+        Me.tab5002002.Controls.Add(Me.dgv5002002)
+        Me.tab5002002.Location = New System.Drawing.Point(4, 22)
+        Me.tab5002002.Name = "tab5002002"
+        Me.tab5002002.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab5002002.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002002.TabIndex = 1
+        Me.tab5002002.Text = "002"
+        Me.tab5002002.UseVisualStyleBackColor = True
+        '
+        'dgv5002002
+        '
+        Me.dgv5002002.AllowUserToAddRows = False
+        Me.dgv5002002.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5002002.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5002002.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5002002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56})
+        Me.dgv5002002.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5002002.Name = "dgv5002002"
+        Me.dgv5002002.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002002.TabIndex = 3
+        '
+        'DataGridViewTextBoxColumn54
+        '
+        Me.DataGridViewTextBoxColumn54.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn54.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
+        '
+        'DataGridViewTextBoxColumn55
+        '
+        Me.DataGridViewTextBoxColumn55.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn55.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
+        '
+        'DataGridViewTextBoxColumn56
+        '
+        Me.DataGridViewTextBoxColumn56.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn56.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
+        Me.DataGridViewTextBoxColumn56.Width = 110
+        '
+        'tab5002003
+        '
+        Me.tab5002003.Controls.Add(Me.dgv5002003)
+        Me.tab5002003.Location = New System.Drawing.Point(4, 22)
+        Me.tab5002003.Name = "tab5002003"
+        Me.tab5002003.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002003.TabIndex = 2
+        Me.tab5002003.Text = "003"
+        Me.tab5002003.UseVisualStyleBackColor = True
+        '
+        'dgv5002003
+        '
+        Me.dgv5002003.AllowUserToAddRows = False
+        Me.dgv5002003.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5002003.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5002003.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5002003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59})
+        Me.dgv5002003.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5002003.Name = "dgv5002003"
+        Me.dgv5002003.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002003.TabIndex = 4
+        '
+        'DataGridViewTextBoxColumn57
+        '
+        Me.DataGridViewTextBoxColumn57.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn57.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
+        '
+        'DataGridViewTextBoxColumn58
+        '
+        Me.DataGridViewTextBoxColumn58.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn58.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
+        '
+        'DataGridViewTextBoxColumn59
+        '
+        Me.DataGridViewTextBoxColumn59.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn59.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
+        Me.DataGridViewTextBoxColumn59.Width = 110
+        '
+        'tab5002004
+        '
+        Me.tab5002004.Controls.Add(Me.dgv5002004)
+        Me.tab5002004.Location = New System.Drawing.Point(4, 22)
+        Me.tab5002004.Name = "tab5002004"
+        Me.tab5002004.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002004.TabIndex = 3
+        Me.tab5002004.Text = "004"
+        Me.tab5002004.UseVisualStyleBackColor = True
+        '
+        'dgv5002004
+        '
+        Me.dgv5002004.AllowUserToAddRows = False
+        Me.dgv5002004.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5002004.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5002004.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5002004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.DataGridViewTextBoxColumn62})
+        Me.dgv5002004.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5002004.Name = "dgv5002004"
+        Me.dgv5002004.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002004.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn60
+        '
+        Me.DataGridViewTextBoxColumn60.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn60.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn60.Name = "DataGridViewTextBoxColumn60"
+        '
+        'DataGridViewTextBoxColumn61
+        '
+        Me.DataGridViewTextBoxColumn61.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn61.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn61.Name = "DataGridViewTextBoxColumn61"
+        '
+        'DataGridViewTextBoxColumn62
+        '
+        Me.DataGridViewTextBoxColumn62.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn62.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn62.Name = "DataGridViewTextBoxColumn62"
+        Me.DataGridViewTextBoxColumn62.Width = 110
+        '
         'tabWB5003
         '
+        Me.tabWB5003.Controls.Add(Me.mtabWB5003)
         Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5003.Name = "tabWB5003"
-        Me.tabWB5003.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5003.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5003.TabIndex = 10
         Me.tabWB5003.Text = "WB5003"
         Me.tabWB5003.UseVisualStyleBackColor = True
         '
+        'mtabWB5003
+        '
+        Me.mtabWB5003.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.mtabWB5003.Controls.Add(Me.tab5003)
+        Me.mtabWB5003.Controls.Add(Me.tab5003001)
+        Me.mtabWB5003.Controls.Add(Me.tab5003002)
+        Me.mtabWB5003.Location = New System.Drawing.Point(-4, 0)
+        Me.mtabWB5003.Name = "mtabWB5003"
+        Me.mtabWB5003.SelectedIndex = 0
+        Me.mtabWB5003.Size = New System.Drawing.Size(548, 523)
+        Me.mtabWB5003.TabIndex = 3
+        '
+        'tab5003
+        '
+        Me.tab5003.Controls.Add(Me.dgv5003)
+        Me.tab5003.Location = New System.Drawing.Point(4, 22)
+        Me.tab5003.Name = "tab5003"
+        Me.tab5003.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003.TabIndex = 4
+        Me.tab5003.Text = "Module"
+        Me.tab5003.UseVisualStyleBackColor = True
+        '
+        'dgv5003
+        '
+        Me.dgv5003.AllowUserToAddRows = False
+        Me.dgv5003.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5003.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5003.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn63, Me.DataGridViewTextBoxColumn64, Me.DataGridViewTextBoxColumn65})
+        Me.dgv5003.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5003.Name = "dgv5003"
+        Me.dgv5003.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn63
+        '
+        Me.DataGridViewTextBoxColumn63.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn63.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn63.Name = "DataGridViewTextBoxColumn63"
+        '
+        'DataGridViewTextBoxColumn64
+        '
+        Me.DataGridViewTextBoxColumn64.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn64.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn64.Name = "DataGridViewTextBoxColumn64"
+        '
+        'DataGridViewTextBoxColumn65
+        '
+        Me.DataGridViewTextBoxColumn65.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn65.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn65.Name = "DataGridViewTextBoxColumn65"
+        Me.DataGridViewTextBoxColumn65.Width = 110
+        '
+        'tab5003001
+        '
+        Me.tab5003001.Controls.Add(Me.dgv5003001)
+        Me.tab5003001.Location = New System.Drawing.Point(4, 22)
+        Me.tab5003001.Name = "tab5003001"
+        Me.tab5003001.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab5003001.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003001.TabIndex = 0
+        Me.tab5003001.Text = "001"
+        Me.tab5003001.UseVisualStyleBackColor = True
+        '
+        'dgv5003001
+        '
+        Me.dgv5003001.AllowUserToAddRows = False
+        Me.dgv5003001.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5003001.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5003001.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5003001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn66, Me.DataGridViewTextBoxColumn67, Me.DataGridViewTextBoxColumn68})
+        Me.dgv5003001.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5003001.Name = "dgv5003001"
+        Me.dgv5003001.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003001.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn66
+        '
+        Me.DataGridViewTextBoxColumn66.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn66.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn66.Name = "DataGridViewTextBoxColumn66"
+        '
+        'DataGridViewTextBoxColumn67
+        '
+        Me.DataGridViewTextBoxColumn67.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn67.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn67.Name = "DataGridViewTextBoxColumn67"
+        '
+        'DataGridViewTextBoxColumn68
+        '
+        Me.DataGridViewTextBoxColumn68.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn68.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn68.Name = "DataGridViewTextBoxColumn68"
+        Me.DataGridViewTextBoxColumn68.Width = 110
+        '
+        'tab5003002
+        '
+        Me.tab5003002.Controls.Add(Me.dgv5003002)
+        Me.tab5003002.Location = New System.Drawing.Point(4, 22)
+        Me.tab5003002.Name = "tab5003002"
+        Me.tab5003002.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab5003002.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003002.TabIndex = 1
+        Me.tab5003002.Text = "002"
+        Me.tab5003002.UseVisualStyleBackColor = True
+        '
+        'dgv5003002
+        '
+        Me.dgv5003002.AllowUserToAddRows = False
+        Me.dgv5003002.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5003002.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5003002.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5003002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn69, Me.DataGridViewTextBoxColumn70, Me.DataGridViewTextBoxColumn71})
+        Me.dgv5003002.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5003002.Name = "dgv5003002"
+        Me.dgv5003002.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003002.TabIndex = 3
+        '
+        'DataGridViewTextBoxColumn69
+        '
+        Me.DataGridViewTextBoxColumn69.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn69.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn69.Name = "DataGridViewTextBoxColumn69"
+        '
+        'DataGridViewTextBoxColumn70
+        '
+        Me.DataGridViewTextBoxColumn70.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn70.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn70.Name = "DataGridViewTextBoxColumn70"
+        '
+        'DataGridViewTextBoxColumn71
+        '
+        Me.DataGridViewTextBoxColumn71.DataPropertyName = "UnitResult"
+        Me.DataGridViewTextBoxColumn71.HeaderText = "Unit Result"
+        Me.DataGridViewTextBoxColumn71.Name = "DataGridViewTextBoxColumn71"
+        Me.DataGridViewTextBoxColumn71.Width = 110
+        '
         'tabWB5004
         '
+        Me.tabWB5004.Controls.Add(Me.dgv5004)
         Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5004.Name = "tabWB5004"
-        Me.tabWB5004.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5004.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5004.TabIndex = 11
         Me.tabWB5004.Text = "WB5004"
         Me.tabWB5004.UseVisualStyleBackColor = True
         '
+        'dgv5004
+        '
+        Me.dgv5004.AllowUserToAddRows = False
+        Me.dgv5004.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5004.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5004.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74})
+        Me.dgv5004.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5004.Name = "dgv5004"
+        Me.dgv5004.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5004.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn72
+        '
+        Me.DataGridViewTextBoxColumn72.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn72.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn72.Name = "DataGridViewTextBoxColumn72"
+        '
+        'DataGridViewTextBoxColumn73
+        '
+        Me.DataGridViewTextBoxColumn73.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn73.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn73.Name = "DataGridViewTextBoxColumn73"
+        '
+        'DataGridViewTextBoxColumn74
+        '
+        Me.DataGridViewTextBoxColumn74.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn74.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn74.Name = "DataGridViewTextBoxColumn74"
+        Me.DataGridViewTextBoxColumn74.Width = 110
+        '
         'tabWB5005
         '
+        Me.tabWB5005.Controls.Add(Me.dgv5005)
         Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5005.Name = "tabWB5005"
-        Me.tabWB5005.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5005.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5005.TabIndex = 12
         Me.tabWB5005.Text = "WB5005"
         Me.tabWB5005.UseVisualStyleBackColor = True
         '
+        'dgv5005
+        '
+        Me.dgv5005.AllowUserToAddRows = False
+        Me.dgv5005.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5005.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5005.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5005.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77})
+        Me.dgv5005.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5005.Name = "dgv5005"
+        Me.dgv5005.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5005.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn75
+        '
+        Me.DataGridViewTextBoxColumn75.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn75.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn75.Name = "DataGridViewTextBoxColumn75"
+        '
+        'DataGridViewTextBoxColumn76
+        '
+        Me.DataGridViewTextBoxColumn76.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn76.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn76.Name = "DataGridViewTextBoxColumn76"
+        '
+        'DataGridViewTextBoxColumn77
+        '
+        Me.DataGridViewTextBoxColumn77.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn77.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn77.Name = "DataGridViewTextBoxColumn77"
+        Me.DataGridViewTextBoxColumn77.Width = 110
+        '
         'tabWB5006
         '
+        Me.tabWB5006.Controls.Add(Me.dgv5006)
         Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5006.Name = "tabWB5006"
-        Me.tabWB5006.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5006.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5006.TabIndex = 13
         Me.tabWB5006.Text = "WB5006"
         Me.tabWB5006.UseVisualStyleBackColor = True
         '
+        'dgv5006
+        '
+        Me.dgv5006.AllowUserToAddRows = False
+        Me.dgv5006.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5006.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5006.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5006.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80})
+        Me.dgv5006.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5006.Name = "dgv5006"
+        Me.dgv5006.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5006.TabIndex = 6
+        '
+        'DataGridViewTextBoxColumn78
+        '
+        Me.DataGridViewTextBoxColumn78.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn78.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn78.Name = "DataGridViewTextBoxColumn78"
+        '
+        'DataGridViewTextBoxColumn79
+        '
+        Me.DataGridViewTextBoxColumn79.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn79.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn79.Name = "DataGridViewTextBoxColumn79"
+        '
+        'DataGridViewTextBoxColumn80
+        '
+        Me.DataGridViewTextBoxColumn80.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn80.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn80.Name = "DataGridViewTextBoxColumn80"
+        Me.DataGridViewTextBoxColumn80.Width = 110
+        '
         'tabWB5007
         '
+        Me.tabWB5007.Controls.Add(Me.dgv5007)
         Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5007.Name = "tabWB5007"
-        Me.tabWB5007.Size = New System.Drawing.Size(543, 522)
+        Me.tabWB5007.Size = New System.Drawing.Size(537, 522)
         Me.tabWB5007.TabIndex = 14
         Me.tabWB5007.Text = "WB5007"
         Me.tabWB5007.UseVisualStyleBackColor = True
+        '
+        'dgv5007
+        '
+        Me.dgv5007.AllowUserToAddRows = False
+        Me.dgv5007.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv5007.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgv5007.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv5007.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn81, Me.DataGridViewTextBoxColumn82, Me.DataGridViewTextBoxColumn83})
+        Me.dgv5007.Location = New System.Drawing.Point(0, 0)
+        Me.dgv5007.Name = "dgv5007"
+        Me.dgv5007.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5007.TabIndex = 6
+        '
+        'DataGridViewTextBoxColumn81
+        '
+        Me.DataGridViewTextBoxColumn81.DataPropertyName = "SFirstName"
+        Me.DataGridViewTextBoxColumn81.HeaderText = "FirstName"
+        Me.DataGridViewTextBoxColumn81.Name = "DataGridViewTextBoxColumn81"
+        '
+        'DataGridViewTextBoxColumn82
+        '
+        Me.DataGridViewTextBoxColumn82.DataPropertyName = "SLastName"
+        Me.DataGridViewTextBoxColumn82.HeaderText = "Last Name"
+        Me.DataGridViewTextBoxColumn82.Name = "DataGridViewTextBoxColumn82"
+        '
+        'DataGridViewTextBoxColumn83
+        '
+        Me.DataGridViewTextBoxColumn83.DataPropertyName = "ModuleResult"
+        Me.DataGridViewTextBoxColumn83.HeaderText = "Module Result"
+        Me.DataGridViewTextBoxColumn83.Name = "DataGridViewTextBoxColumn83"
+        Me.DataGridViewTextBoxColumn83.Width = 110
         '
         'tabSearchResults
         '
@@ -1477,7 +2122,7 @@ Partial Class MainScreen
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(543, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(537, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -1693,7 +2338,7 @@ Partial Class MainScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainScreen"
-        Me.Text = "TINE Beta 5"
+        Me.Text = "TINE Beta 6"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -1748,6 +2393,36 @@ Partial Class MainScreen
         CType(Me.dgv4004003, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabWB4005.ResumeLayout(False)
         CType(Me.dgv4005, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5001.ResumeLayout(False)
+        CType(Me.dgv5001, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5002.ResumeLayout(False)
+        Me.mtabWB5002.ResumeLayout(False)
+        Me.tab5002.ResumeLayout(False)
+        CType(Me.dgv5002, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5002001.ResumeLayout(False)
+        CType(Me.dgv5002001, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5002002.ResumeLayout(False)
+        CType(Me.dgv5002002, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5002003.ResumeLayout(False)
+        CType(Me.dgv5002003, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5002004.ResumeLayout(False)
+        CType(Me.dgv5002004, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5003.ResumeLayout(False)
+        Me.mtabWB5003.ResumeLayout(False)
+        Me.tab5003.ResumeLayout(False)
+        CType(Me.dgv5003, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5003001.ResumeLayout(False)
+        CType(Me.dgv5003001, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab5003002.ResumeLayout(False)
+        CType(Me.dgv5003002, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5004.ResumeLayout(False)
+        CType(Me.dgv5004, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5005.ResumeLayout(False)
+        CType(Me.dgv5005, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5006.ResumeLayout(False)
+        CType(Me.dgv5006, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabWB5007.ResumeLayout(False)
+        CType(Me.dgv5007, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabSearchResults.ResumeLayout(False)
         CType(Me.dgvSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
@@ -1921,4 +2596,66 @@ Partial Class MainScreen
     Friend WithEvents dgv4001FirstName As DataGridViewTextBoxColumn
     Friend WithEvents dgv4001LastName As DataGridViewTextBoxColumn
     Friend WithEvents dgv4001ModulePass As DataGridViewCheckBoxColumn
+    Friend WithEvents dgv5001 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn46 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn47 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents mtabWB5002 As TabControl
+    Friend WithEvents tab5002 As TabPage
+    Friend WithEvents dgv5002 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn48 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn49 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn50 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5002001 As TabPage
+    Friend WithEvents dgv5002001 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn51 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn52 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn53 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5002002 As TabPage
+    Friend WithEvents dgv5002002 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn54 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn55 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn56 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5002003 As TabPage
+    Friend WithEvents dgv5002003 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn57 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn58 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn59 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5002004 As TabPage
+    Friend WithEvents dgv5002004 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn60 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn61 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn62 As DataGridViewTextBoxColumn
+    Friend WithEvents mtabWB5003 As TabControl
+    Friend WithEvents tab5003 As TabPage
+    Friend WithEvents dgv5003 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn63 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn64 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn65 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5003001 As TabPage
+    Friend WithEvents dgv5003001 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn66 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn67 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn68 As DataGridViewTextBoxColumn
+    Friend WithEvents tab5003002 As TabPage
+    Friend WithEvents dgv5003002 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn69 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn70 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn71 As DataGridViewTextBoxColumn
+    Friend WithEvents dgv5004 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn72 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn73 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn74 As DataGridViewTextBoxColumn
+    Friend WithEvents dgv5005 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn75 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn76 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn77 As DataGridViewTextBoxColumn
+    Friend WithEvents dgv5006 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn78 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn79 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn80 As DataGridViewTextBoxColumn
+    Friend WithEvents dgv5007 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn81 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn82 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn83 As DataGridViewTextBoxColumn
 End Class

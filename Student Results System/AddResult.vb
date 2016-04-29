@@ -35,14 +35,14 @@ Public Class AddResult
             If Integer.TryParse(markText, markTextInt) Then
                 'Checks the integer is between or euqal to 0 - 100 
                 If markText >= 0 And markText <= 100 Then
+                    'Connect to Database
+                    Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+                    Dim con As New OleDbConnection(connString)
+                    con.Open()
                     If cmbResultType.SelectedItem = "Module" Then
-                        'Connect to Database
-                        Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-                        Dim con As New OleDbConnection(connString)
-                        con.Open()
                         'Checks if the Module is 4001 or 5001 as these require boolean values and use a different table
                         If cmbModule.Text = "4001" Or cmbModule.Text = "5001" Then
-                            'Query to insert result into table
+                            'Query to insert result into Pass table
                             Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO ModulePassResults (SId, [Module], ModulePass) VALUES ('" & SId & "','" & cmbModule.Text & "','" & txtMark.Text & "')", con)
                             addResult.ExecuteNonQuery()
                         Else
@@ -53,56 +53,19 @@ Public Class AddResult
                         con.Close()
                         'Reloads data tables on MainScreen
                         MainScreen.MainScreen_Load(sender, e)
-                        ' Asks the user if they wish to add another result
-                        Dim MsgStyle = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1
-                        Dim UserYesNo = MsgBox("Do you wish to add another result/Go to next student?", MsgStyle, "")
-                        If UserYesNo = MsgBoxResult.No Then
-                            'Closes form if user says no
-                            Me.Close()
-                        ElseIf UserYesNo = MsgBoxResult.Yes Then
-                            'Trys to select the next student in the list
-                            Try
-                                Dim SidIndex As Integer = cmbSId.SelectedIndex
-                                cmbSId.SelectedIndex = SidIndex + 1
-                                'Clears and then selects the textbox for entering another result
-                                txtMark.Clear()
-                                txtMark.Select()
-                            Catch
-                                'If end of students is reached this is outputted
-                                MsgBox("End of students reached.")
-                            End Try
-                        End If
+                        'Asks if user would like to add another result
+                        AddAnother()
                     End If
 
                     If cmbResultType.SelectedItem = "Unit" Then
-                        'Connect to Database
-                        Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-                        Dim con As New OleDbConnection(connString)
-                        con.Open()
                         'Query to insert result into table
                         Dim addResult As OleDbCommand = New OleDbCommand("INSERT INTO UnitResults (SId, Unit, UnitResult) VALUES ('" & SId & "','" & cmbUnit.Text & "','" & txtMark.Text & "')", con)
                         addResult.ExecuteNonQuery()
                         con.Close()
                         'Reloads data tables on MainScreen
                         MainScreen.MainScreen_Load(sender, e)
-                        ' Asks the user if they wish to add another result
-                        Dim MsgStyle = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1
-                        Dim UserYesNo = MsgBox("Do you wish to add another result/Go to next student?", MsgStyle, "")
-                        If UserYesNo = MsgBoxResult.No Then
-                            Me.Close()
-                        ElseIf UserYesNo = MsgBoxResult.Yes Then
-                            'Trys to select the next student in the list
-                            Try
-                                Dim SidIndex As Integer = cmbSId.SelectedIndex
-                                cmbSId.SelectedIndex = SidIndex + 1
-                                'Clears and then selects the textbox for entering another result
-                                txtMark.Clear()
-                                txtMark.Select()
-                            Catch
-                                'If end of students is reached this is outputted
-                                MsgBox("End of students reached.")
-                            End Try
-                        End If
+                        'Asks if user would like to add another result
+                        AddAnother()
                     End If
 
                 Else
@@ -162,6 +125,27 @@ Public Class AddResult
             lblUnit.Hide()
             cmbUnit.Hide()
             cmbPass.Hide()
+        End If
+    End Sub
+
+    Private Sub AddAnother()
+        ' Asks the user if they wish to add another result
+        Dim MsgStyle = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton1
+        Dim UserYesNo = MsgBox("Do you wish to add another result/Go to next student?", MsgStyle, "")
+        If UserYesNo = MsgBoxResult.No Then
+            Me.Close()
+        ElseIf UserYesNo = MsgBoxResult.Yes Then
+            'Trys to select the next student in the list
+            Try
+                Dim SidIndex As Integer = cmbSId.SelectedIndex
+                cmbSId.SelectedIndex = SidIndex + 1
+                'Clears and then selects the textbox for entering another result
+                txtMark.Clear()
+                txtMark.Select()
+            Catch
+                'If end of students is reached this is outputted
+                MsgBox("End of students reached.")
+            End Try
         End If
     End Sub
 End Class
