@@ -94,7 +94,7 @@ Public Class MainScreen
     Public Sub tableLoadModule(moduleNum, tableNum)
         'Set query
         Dim query As String
-        If moduleNum <> "4001" Then
+        If moduleNum <> "4001" Or moduleNum <> "5001" Then
             query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & moduleNum & "') ORDER BY Students.SLastName"
         Else
             query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '" & moduleNum & "') ORDER BY Students.SLastName"
@@ -200,15 +200,27 @@ Public Class MainScreen
         openForm.ShowDialog(Me)
     End Sub
 
-    Private Sub EditDGV(sender As Object, e As EventArgs) Handles dgvStudents.RowsRemoved
+    Private Sub EditDGV(sender As Object, e As EventArgs) Handles dgvStudents.CellEndEdit, dgv4001.CellEndEdit, dgv4002.CellEndEdit
         Dim editedTable As DataGridView
+        'Set query
+        Dim query As String
+        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4002') ORDER BY Students.SLastName"
+        Dim command As OleDbCommand = New OleDbCommand(query, con)
+        Dim dataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
+        Dim dataSet As DataSet = New DataSet
+        'Fill DataAdapter
+        dataAdapter.Fill(dataSet, "Load_Table")
+        'Set new DataSet
+        dgv4002.DataSource = dataSet
+        'Set new table to show
+        dgv4002.DataMember = "Load_Table"
 
         editedTable = CType(sender, DataGridView)
 
         editedTable.EndEdit()
-        Dim dt As DataTable = DirectCast(editedTable.DataSource, DataTable)
+        Dim dt As DataTable = DirectCast(dataSet.Tables("ModuleResults"), DataTable)
 
-        dataAdapter.Update((DataTable)bindingSource1.DataSource)
+        dataAdapter.Update(dt)
 
     End Sub
 End Class

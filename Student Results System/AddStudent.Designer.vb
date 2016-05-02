@@ -51,9 +51,9 @@ Partial Class AddStudent
         Me.lblName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.Location = New System.Drawing.Point(42, 22)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(46, 17)
+        Me.lblName.Size = New System.Drawing.Size(74, 17)
         Me.lblName.TabIndex = 2
-        Me.lblName.Text = "Name:"
+        Me.lblName.Text = "First Name:"
         '
         'lblLastName
         '
