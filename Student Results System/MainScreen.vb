@@ -161,10 +161,12 @@ Public Class MainScreen
                 quickSearch = "SELECT * FROM(Students) WHERE (SYear = " & txtWaterSearch.Text & ") ORDER BY Students.SYear"
             ElseIf cmbSearch.SelectedItem = "Module" Then
                 If txtWaterSearch.Text = "4001" Or txtWaterSearch.Text = "5001" Then
-                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass, ModulePassResults.[Module] FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '" & txtWaterSearch.Text & "')"
+                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass, ModulePassResults.[Module] FROM (ModulePassResults INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE (ModulePassResults.[Module] = '" & txtWaterSearch.Text & "') ORDER BY Students.SLastName"
                 Else
-                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult, ModuleResults.[Module] FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & txtWaterSearch.Text & "')"
+                    quickSearch = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult, ModuleResults.[Module] FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '" & txtWaterSearch.Text & "') ORDER BY Students.SLastName"
                 End If
+            ElseIf cmbSearch.SelectedItem = "Unit" Then
+                quickSearch = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult, UnitResults.[Unit] FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.[Unit] LIKE '%" & txtWaterSearch.Text & "%') ORDER BY Students.SLastName"
             End If
             Dim command As OleDbCommand = New OleDbCommand(quickSearch, con)
             Dim searchDataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
