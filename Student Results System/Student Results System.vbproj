@@ -162,18 +162,6 @@
     <Compile Include="ReportDesigner.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportTest.Designer.vb">
-      <DependentUpon>ReportTest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ReportTest.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.vb">
-      <DependentUpon>TestForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TestForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="TextboxWatermark.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -202,12 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportDesigner.resx">
       <DependentUpon>ReportDesigner.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportTest.resx">
-      <DependentUpon>ReportTest.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

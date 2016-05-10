@@ -196,12 +196,6 @@ Public Class MainScreen
         lastClicked = "AddResult"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Dim openForm As New ReportTest
-        openForm.Owner = Me
-        openForm.ShowDialog(Me)
-    End Sub
-
     Private Sub EditDGV(sender As Object, e As EventArgs) Handles dgvStudents.CellEndEdit, dgv4001.CellEndEdit, dgv4002.CellEndEdit
         Dim editedTable As DataGridView
         'Set query
