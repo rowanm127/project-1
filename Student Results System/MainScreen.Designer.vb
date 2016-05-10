@@ -226,26 +226,20 @@ Partial Class MainScreen
         Me.tabSearchResults = New System.Windows.Forms.TabPage()
         Me.dgvSearch = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
         Me.tsbNewFile = New System.Windows.Forms.ToolStripButton()
         Me.tsbFileOpen = New System.Windows.Forms.ToolStripButton()
         Me.tsbSave = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbPrint = New System.Windows.Forms.ToolStripButton()
-        Me.tsbPrintPreview = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbCut = New System.Windows.Forms.ToolStripButton()
         Me.tsbCopy = New System.Windows.Forms.ToolStripButton()
         Me.tsbPaste = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbAddStudent = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbUndo = New System.Windows.Forms.ToolStripButton()
-        Me.tsbRedo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbZoomOut = New System.Windows.Forms.ToolStripButton()
-        Me.tsbZoomIn = New System.Windows.Forms.ToolStripButton()
-        Me.lblWelcome = New System.Windows.Forms.Label()
-        Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
+        Me.tsbReportDesigner = New System.Windows.Forms.ToolStripButton()
+        Me.tsbAddResult = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
         Me.tabSearch.SuspendLayout()
@@ -660,7 +654,7 @@ Partial Class MainScreen
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(545, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(542, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -668,7 +662,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(537, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(534, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -729,7 +723,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(534, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -776,7 +770,7 @@ Partial Class MainScreen
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(534, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -1019,7 +1013,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(534, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1263,7 +1257,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(534, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1462,7 +1456,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(534, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1505,7 +1499,7 @@ Partial Class MainScreen
         Me.tabWB5001.Controls.Add(Me.dgv5001)
         Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5001.Name = "tabWB5001"
-        Me.tabWB5001.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5001.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5001.TabIndex = 8
         Me.tabWB5001.Text = "WB5001"
         Me.tabWB5001.UseVisualStyleBackColor = True
@@ -1551,7 +1545,7 @@ Partial Class MainScreen
         Me.tabWB5002.Controls.Add(Me.mtabWB5002)
         Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5002.Name = "tabWB5002"
-        Me.tabWB5002.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5002.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5002.TabIndex = 9
         Me.tabWB5002.Text = "WB5002"
         Me.tabWB5002.UseVisualStyleBackColor = True
@@ -1794,7 +1788,7 @@ Partial Class MainScreen
         Me.tabWB5003.Controls.Add(Me.mtabWB5003)
         Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5003.Name = "tabWB5003"
-        Me.tabWB5003.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5003.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5003.TabIndex = 10
         Me.tabWB5003.Text = "WB5003"
         Me.tabWB5003.UseVisualStyleBackColor = True
@@ -1949,7 +1943,7 @@ Partial Class MainScreen
         Me.tabWB5004.Controls.Add(Me.dgv5004)
         Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5004.Name = "tabWB5004"
-        Me.tabWB5004.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5004.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5004.TabIndex = 11
         Me.tabWB5004.Text = "WB5004"
         Me.tabWB5004.UseVisualStyleBackColor = True
@@ -1992,7 +1986,7 @@ Partial Class MainScreen
         Me.tabWB5005.Controls.Add(Me.dgv5005)
         Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5005.Name = "tabWB5005"
-        Me.tabWB5005.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5005.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5005.TabIndex = 12
         Me.tabWB5005.Text = "WB5005"
         Me.tabWB5005.UseVisualStyleBackColor = True
@@ -2035,7 +2029,7 @@ Partial Class MainScreen
         Me.tabWB5006.Controls.Add(Me.dgv5006)
         Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5006.Name = "tabWB5006"
-        Me.tabWB5006.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5006.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5006.TabIndex = 13
         Me.tabWB5006.Text = "WB5006"
         Me.tabWB5006.UseVisualStyleBackColor = True
@@ -2078,7 +2072,7 @@ Partial Class MainScreen
         Me.tabWB5007.Controls.Add(Me.dgv5007)
         Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5007.Name = "tabWB5007"
-        Me.tabWB5007.Size = New System.Drawing.Size(537, 522)
+        Me.tabWB5007.Size = New System.Drawing.Size(534, 522)
         Me.tabWB5007.TabIndex = 14
         Me.tabWB5007.Text = "WB5007"
         Me.tabWB5007.UseVisualStyleBackColor = True
@@ -2122,7 +2116,7 @@ Partial Class MainScreen
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(537, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(534, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -2145,13 +2139,45 @@ Partial Class MainScreen
         Me.ToolStrip1.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNewFile, Me.tsbFileOpen, Me.tsbSave, Me.ToolStripSeparator2, Me.tsbPrint, Me.tsbPrintPreview, Me.ToolStripSeparator3, Me.tsbCut, Me.tsbCopy, Me.tsbPaste, Me.ToolStripSeparator6, Me.tsbAddStudent, Me.ToolStripSeparator4, Me.tsbUndo, Me.tsbRedo, Me.ToolStripSeparator5, Me.tsbZoomOut, Me.tsbZoomIn})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNewFile, Me.tsbFileOpen, Me.tsbSave, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.tsbCut, Me.tsbCopy, Me.tsbPaste, Me.ToolStripSeparator6, Me.tsbAddStudent, Me.tsbReportDesigner, Me.tsbAddResult})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.ToolStrip1.Size = New System.Drawing.Size(758, 27)
         Me.ToolStrip1.TabIndex = 4
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
+        '
+        'lblWelcome
+        '
+        Me.lblWelcome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWelcome.Location = New System.Drawing.Point(372, 24)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(63, 15)
+        Me.lblWelcome.TabIndex = 5
+        Me.lblWelcome.Text = "Welcome "
+        '
+        'StudentsTableAdapter
+        '
+        Me.StudentsTableAdapter.ClearBeforeFill = True
         '
         'tsbNewFile
         '
@@ -2183,36 +2209,6 @@ Partial Class MainScreen
         Me.tsbSave.Text = "ToolStripButton1"
         Me.tsbSave.ToolTipText = "Save"
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
-        'tsbPrint
-        '
-        Me.tsbPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbPrint.Image = Global.Student_Results_System.My.Resources.Resources.printer
-        Me.tsbPrint.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbPrint.Name = "tsbPrint"
-        Me.tsbPrint.Size = New System.Drawing.Size(24, 24)
-        Me.tsbPrint.Text = "ToolStripButton1"
-        Me.tsbPrint.ToolTipText = "Print"
-        '
-        'tsbPrintPreview
-        '
-        Me.tsbPrintPreview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbPrintPreview.Image = Global.Student_Results_System.My.Resources.Resources.printpreview
-        Me.tsbPrintPreview.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbPrintPreview.Name = "tsbPrintPreview"
-        Me.tsbPrintPreview.Size = New System.Drawing.Size(24, 24)
-        Me.tsbPrintPreview.Text = "Print Preview"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
-        '
         'tsbCut
         '
         Me.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -2243,11 +2239,6 @@ Partial Class MainScreen
         Me.tsbPaste.Text = "ToolStripButton4"
         Me.tsbPaste.ToolTipText = "Paste"
         '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
-        '
         'tsbAddStudent
         '
         Me.tsbAddStudent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -2258,71 +2249,23 @@ Partial Class MainScreen
         Me.tsbAddStudent.Text = "Add Student"
         Me.tsbAddStudent.ToolTipText = "Add Student"
         '
-        'ToolStripSeparator4
+        'tsbReportDesigner
         '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 27)
+        Me.tsbReportDesigner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbReportDesigner.Image = Global.Student_Results_System.My.Resources.Resources.printpreview
+        Me.tsbReportDesigner.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbReportDesigner.Name = "tsbReportDesigner"
+        Me.tsbReportDesigner.Size = New System.Drawing.Size(24, 24)
+        Me.tsbReportDesigner.Text = "Report Designer"
         '
-        'tsbUndo
+        'tsbAddResult
         '
-        Me.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbUndo.Image = Global.Student_Results_System.My.Resources.Resources.undo
-        Me.tsbUndo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbUndo.Name = "tsbUndo"
-        Me.tsbUndo.Size = New System.Drawing.Size(24, 24)
-        Me.tsbUndo.Text = "ToolStripButton5"
-        Me.tsbUndo.ToolTipText = "Undo"
-        '
-        'tsbRedo
-        '
-        Me.tsbRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbRedo.Image = Global.Student_Results_System.My.Resources.Resources.redo
-        Me.tsbRedo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbRedo.Name = "tsbRedo"
-        Me.tsbRedo.Size = New System.Drawing.Size(24, 24)
-        Me.tsbRedo.Text = "ToolStripButton6"
-        Me.tsbRedo.ToolTipText = "Redo"
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 27)
-        '
-        'tsbZoomOut
-        '
-        Me.tsbZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbZoomOut.Image = Global.Student_Results_System.My.Resources.Resources.magnify_minus
-        Me.tsbZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbZoomOut.Name = "tsbZoomOut"
-        Me.tsbZoomOut.Size = New System.Drawing.Size(24, 24)
-        Me.tsbZoomOut.Text = "ToolStripButton7"
-        Me.tsbZoomOut.ToolTipText = "Zoom Out"
-        '
-        'tsbZoomIn
-        '
-        Me.tsbZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbZoomIn.Image = Global.Student_Results_System.My.Resources.Resources.magnify_plus
-        Me.tsbZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbZoomIn.Name = "tsbZoomIn"
-        Me.tsbZoomIn.Size = New System.Drawing.Size(24, 24)
-        Me.tsbZoomIn.Text = "ToolStripButton8"
-        Me.tsbZoomIn.ToolTipText = "Zoom In"
-        '
-        'lblWelcome
-        '
-        Me.lblWelcome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWelcome.Location = New System.Drawing.Point(372, 24)
-        Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(63, 15)
-        Me.lblWelcome.TabIndex = 5
-        Me.lblWelcome.Text = "Welcome "
-        '
-        'StudentsTableAdapter
-        '
-        Me.StudentsTableAdapter.ClearBeforeFill = True
+        Me.tsbAddResult.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbAddResult.Image = Global.Student_Results_System.My.Resources.Resources.plus_box
+        Me.tsbAddResult.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbAddResult.Name = "tsbAddResult"
+        Me.tsbAddResult.Size = New System.Drawing.Size(24, 24)
+        Me.tsbAddResult.Text = "Add Result"
         '
         'MainScreen
         '
@@ -2459,21 +2402,14 @@ Partial Class MainScreen
     Friend WithEvents tsbNewFile As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbFileOpen As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbSave As System.Windows.Forms.ToolStripButton
-    Friend WithEvents tsbPrint As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents mnuHideToolbar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuExit As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsbPrintPreview As ToolStripButton
+    Friend WithEvents tsbReportDesigner As ToolStripButton
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents tsbCut As ToolStripButton
     Friend WithEvents tsbCopy As ToolStripButton
     Friend WithEvents tsbPaste As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents tsbUndo As ToolStripButton
-    Friend WithEvents tsbRedo As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Friend WithEvents tsbZoomOut As ToolStripButton
-    Friend WithEvents tsbZoomIn As ToolStripButton
     Friend WithEvents mnuAddStudent As ToolStripMenuItem
     Friend WithEvents mnuMassEdit As ToolStripMenuItem
     Friend WithEvents Label2 As Label
@@ -2658,4 +2594,5 @@ Partial Class MainScreen
     Friend WithEvents DataGridViewTextBoxColumn81 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn82 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn83 As DataGridViewTextBoxColumn
+    Friend WithEvents tsbAddResult As ToolStripButton
 End Class

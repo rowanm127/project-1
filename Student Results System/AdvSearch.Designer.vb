@@ -35,6 +35,8 @@ Partial Class AdvSearch
         Me.cmbYear = New System.Windows.Forms.ComboBox()
         Me.cmbModule = New System.Windows.Forms.ComboBox()
         Me.cmbUnit = New System.Windows.Forms.ComboBox()
+        Me.cmbType = New System.Windows.Forms.ComboBox()
+        Me.lblType = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -101,35 +103,40 @@ Partial Class AdvSearch
         'lblModule
         '
         Me.lblModule.AutoSize = True
-        Me.lblModule.Location = New System.Drawing.Point(31, 170)
+        Me.lblModule.Location = New System.Drawing.Point(31, 201)
         Me.lblModule.Name = "lblModule"
         Me.lblModule.Size = New System.Drawing.Size(45, 13)
         Me.lblModule.TabIndex = 8
         Me.lblModule.Text = "Module:"
+        Me.lblModule.Visible = False
         '
         'lblUnit
         '
         Me.lblUnit.AutoSize = True
-        Me.lblUnit.Location = New System.Drawing.Point(31, 200)
+        Me.lblUnit.Location = New System.Drawing.Point(31, 231)
         Me.lblUnit.Name = "lblUnit"
         Me.lblUnit.Size = New System.Drawing.Size(29, 13)
         Me.lblUnit.TabIndex = 10
         Me.lblUnit.Text = "Unit:"
+        Me.lblUnit.Visible = False
         '
         'btnAdvSearch
         '
+        Me.btnAdvSearch.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAdvSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdvSearch.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnAdvSearch.Location = New System.Drawing.Point(94, 240)
         Me.btnAdvSearch.Name = "btnAdvSearch"
         Me.btnAdvSearch.Size = New System.Drawing.Size(145, 23)
         Me.btnAdvSearch.TabIndex = 12
         Me.btnAdvSearch.Text = "Search"
-        Me.btnAdvSearch.UseVisualStyleBackColor = True
+        Me.btnAdvSearch.UseVisualStyleBackColor = False
         '
         'cmbYear
         '
         Me.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbYear.FormattingEnabled = True
+        Me.cmbYear.Items.AddRange(New Object() {" ", "1", "2"})
         Me.cmbYear.Location = New System.Drawing.Point(94, 114)
         Me.cmbYear.Name = "cmbYear"
         Me.cmbYear.Size = New System.Drawing.Size(145, 21)
@@ -139,19 +146,42 @@ Partial Class AdvSearch
         '
         Me.cmbModule.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbModule.FormattingEnabled = True
-        Me.cmbModule.Location = New System.Drawing.Point(94, 167)
+        Me.cmbModule.Items.AddRange(New Object() {"4001", "4002", "4003", "4004", "4005", "5001", "5002", "5003", "5004", "5005", "5006", "5007"})
+        Me.cmbModule.Location = New System.Drawing.Point(94, 198)
         Me.cmbModule.Name = "cmbModule"
         Me.cmbModule.Size = New System.Drawing.Size(145, 21)
         Me.cmbModule.TabIndex = 14
+        Me.cmbModule.Visible = False
         '
         'cmbUnit
         '
         Me.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUnit.FormattingEnabled = True
-        Me.cmbUnit.Location = New System.Drawing.Point(94, 197)
+        Me.cmbUnit.Items.AddRange(New Object() {"4002:001", "4002:002", "4002:003", "4002:004", "4003:001", "4003:002", "4003:003", "4003:004", "4004:001", "4004:002", "4004:003", "5002:001", "5002:002", "5002:003", "5002:004", "5003:001", "5003:002"})
+        Me.cmbUnit.Location = New System.Drawing.Point(94, 228)
         Me.cmbUnit.Name = "cmbUnit"
         Me.cmbUnit.Size = New System.Drawing.Size(145, 21)
         Me.cmbUnit.TabIndex = 15
+        Me.cmbUnit.Visible = False
+        '
+        'cmbType
+        '
+        Me.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbType.FormattingEnabled = True
+        Me.cmbType.Items.AddRange(New Object() {"Module", "Unit"})
+        Me.cmbType.Location = New System.Drawing.Point(94, 167)
+        Me.cmbType.Name = "cmbType"
+        Me.cmbType.Size = New System.Drawing.Size(145, 21)
+        Me.cmbType.TabIndex = 16
+        '
+        'lblType
+        '
+        Me.lblType.AutoSize = True
+        Me.lblType.Location = New System.Drawing.Point(31, 170)
+        Me.lblType.Name = "lblType"
+        Me.lblType.Size = New System.Drawing.Size(34, 13)
+        Me.lblType.TabIndex = 17
+        Me.lblType.Text = "Type:"
         '
         'AdvSearch
         '
@@ -159,6 +189,8 @@ Partial Class AdvSearch
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ClientSize = New System.Drawing.Size(278, 275)
+        Me.Controls.Add(Me.lblType)
+        Me.Controls.Add(Me.cmbType)
         Me.Controls.Add(Me.cmbUnit)
         Me.Controls.Add(Me.cmbModule)
         Me.Controls.Add(Me.cmbYear)
@@ -195,4 +227,6 @@ Partial Class AdvSearch
     Friend WithEvents cmbYear As System.Windows.Forms.ComboBox
     Friend WithEvents cmbModule As System.Windows.Forms.ComboBox
     Friend WithEvents cmbUnit As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbType As ComboBox
+    Friend WithEvents lblType As Label
 End Class

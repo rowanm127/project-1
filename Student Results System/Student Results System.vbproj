@@ -239,15 +239,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\AppIcon.ico" />
-    <Content Include="Resources\AppIcon2.ico" />
     <Content Include="Resources\Key.ico" />
-    <None Include="Resources\x-box.png" />
     <None Include="Resources\ModulePreview.png" />
-    <Content Include="Resources\x-box.ico" />
+    <None Include="Resources\plus-box.png" />
     <None Include="packages.config" />
     <None Include="Resources\save_grey.png" />
     <None Include="Resources\printer_grey.png" />
-    <None Include="Resources\excel-box1.png" />
     <None Include="Resources\ReportPreviewPlaceholder.png" />
     <None Include="Resources\undo.png" />
     <None Include="Resources\table-edit.png" />
@@ -266,10 +263,8 @@
     <None Include="Resources\arrow-right.png" />
     <None Include="Resources\arrow-left.png" />
     <None Include="Resources\add-student.png" />
-    <None Include="Resources\PlaceholderReport.png" />
     <None Include="Resources\LoginKey.png" />
     <None Include="Resources\excel-box-white.png" />
-    <None Include="Resources\excel-box.png" />
     <None Include="Resources\AppIcon.png" />
     <None Include="Resources\alert.png" />
   </ItemGroup>

@@ -125,7 +125,7 @@ Public Class MainScreen
         tableNum.DataMember = "Load_Table"
     End Sub
 
-    Private Sub tsbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbPrint.Click
+    Private Sub tsbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim openForm As New ReportDesigner
         openForm.Owner = Me
         openForm.ShowDialog(Me)
