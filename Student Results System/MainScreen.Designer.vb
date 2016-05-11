@@ -26,32 +26,19 @@ Partial Class MainScreen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainScreen))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuNew = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuOpen = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSave = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSaveAs = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPrint = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuUndo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRedo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuReportDesigner = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuCut = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuCopy = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHideToolbar = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSidebarToggle = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDatabase = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAddStudent = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMassEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mtabQuick = New System.Windows.Forms.TabControl()
         Me.tabSearch = New System.Windows.Forms.TabPage()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnAdvSearch = New System.Windows.Forms.Button()
-        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.cmbSearch = New System.Windows.Forms.ComboBox()
         Me.lblSearchType = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -226,20 +213,19 @@ Partial Class MainScreen
         Me.tabSearchResults = New System.Windows.Forms.TabPage()
         Me.dgvSearch = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.lblWelcome = New System.Windows.Forms.Label()
-        Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
-        Me.tsbNewFile = New System.Windows.Forms.ToolStripButton()
-        Me.tsbFileOpen = New System.Windows.Forms.ToolStripButton()
-        Me.tsbSave = New System.Windows.Forms.ToolStripButton()
-        Me.tsbCut = New System.Windows.Forms.ToolStripButton()
         Me.tsbCopy = New System.Windows.Forms.ToolStripButton()
         Me.tsbPaste = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbAddStudent = New System.Windows.Forms.ToolStripButton()
         Me.tsbReportDesigner = New System.Windows.Forms.ToolStripButton()
         Me.tsbAddResult = New System.Windows.Forms.ToolStripButton()
+        Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
+        Me.mnuPaste = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReportDesigner = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsbCut = New System.Windows.Forms.ToolStripButton()
+        Me.mnuAddResult = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
         Me.tabSearch.SuspendLayout()
@@ -338,102 +324,38 @@ Partial Class MainScreen
         'mnuFile
         '
         Me.mnuFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.ToolStripSeparator1, Me.mnuOpen, Me.mnuSave, Me.mnuSaveAs, Me.mnuPrint, Me.mnuExit})
+        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuReportDesigner, Me.mnuExit})
         Me.mnuFile.ForeColor = System.Drawing.Color.White
         Me.mnuFile.Name = "mnuFile"
         Me.mnuFile.Size = New System.Drawing.Size(37, 20)
         Me.mnuFile.Text = "File"
         '
-        'mnuNew
-        '
-        Me.mnuNew.Name = "mnuNew"
-        Me.mnuNew.Size = New System.Drawing.Size(134, 22)
-        Me.mnuNew.Text = "&New..."
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(131, 6)
-        '
-        'mnuOpen
-        '
-        Me.mnuOpen.Name = "mnuOpen"
-        Me.mnuOpen.Size = New System.Drawing.Size(134, 22)
-        Me.mnuOpen.Text = "&Open..."
-        '
-        'mnuSave
-        '
-        Me.mnuSave.Name = "mnuSave"
-        Me.mnuSave.Size = New System.Drawing.Size(134, 22)
-        Me.mnuSave.Text = "&Save"
-        '
-        'mnuSaveAs
-        '
-        Me.mnuSaveAs.Name = "mnuSaveAs"
-        Me.mnuSaveAs.Size = New System.Drawing.Size(134, 22)
-        Me.mnuSaveAs.Text = "Save &As"
-        '
-        'mnuPrint
-        '
-        Me.mnuPrint.Name = "mnuPrint"
-        Me.mnuPrint.Size = New System.Drawing.Size(134, 22)
-        Me.mnuPrint.Text = "Print"
-        '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
         Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.mnuExit.Size = New System.Drawing.Size(134, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(158, 22)
         Me.mnuExit.Text = "E&xit"
         '
         'mnuEdit
         '
-        Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuUndo, Me.mnuRedo, Me.ToolStripMenuItem1, Me.CutToolStripMenuItem, Me.CopyToolStripMenuItem, Me.ToolStripMenuItem2, Me.mnuReportDesigner})
+        Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCut, Me.mnuCopy, Me.mnuPaste})
         Me.mnuEdit.ForeColor = System.Drawing.Color.White
         Me.mnuEdit.Name = "mnuEdit"
         Me.mnuEdit.Size = New System.Drawing.Size(39, 20)
         Me.mnuEdit.Text = "Edit"
         '
-        'mnuUndo
+        'mnuCut
         '
-        Me.mnuUndo.Name = "mnuUndo"
-        Me.mnuUndo.Size = New System.Drawing.Size(158, 22)
-        Me.mnuUndo.Text = "Undo"
+        Me.mnuCut.Name = "mnuCut"
+        Me.mnuCut.Size = New System.Drawing.Size(102, 22)
+        Me.mnuCut.Text = "Cut"
         '
-        'mnuRedo
+        'mnuCopy
         '
-        Me.mnuRedo.Name = "mnuRedo"
-        Me.mnuRedo.Size = New System.Drawing.Size(158, 22)
-        Me.mnuRedo.Text = "Redo"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(155, 6)
-        '
-        'CutToolStripMenuItem
-        '
-        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.CutToolStripMenuItem.Text = "Cut"
-        '
-        'CopyToolStripMenuItem
-        '
-        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.CopyToolStripMenuItem.Text = "Copy"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(155, 6)
-        '
-        'mnuReportDesigner
-        '
-        Me.mnuReportDesigner.Name = "mnuReportDesigner"
-        Me.mnuReportDesigner.Size = New System.Drawing.Size(158, 22)
-        Me.mnuReportDesigner.Text = "Report Designer"
+        Me.mnuCopy.Name = "mnuCopy"
+        Me.mnuCopy.Size = New System.Drawing.Size(102, 22)
+        Me.mnuCopy.Text = "Copy"
         '
         'mnuView
         '
@@ -458,7 +380,7 @@ Partial Class MainScreen
         '
         'mnuDatabase
         '
-        Me.mnuDatabase.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAddStudent, Me.mnuMassEdit})
+        Me.mnuDatabase.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAddStudent, Me.mnuAddResult})
         Me.mnuDatabase.ForeColor = System.Drawing.Color.White
         Me.mnuDatabase.Name = "mnuDatabase"
         Me.mnuDatabase.Size = New System.Drawing.Size(67, 20)
@@ -469,12 +391,6 @@ Partial Class MainScreen
         Me.mnuAddStudent.Name = "mnuAddStudent"
         Me.mnuAddStudent.Size = New System.Drawing.Size(149, 22)
         Me.mnuAddStudent.Text = "Add Student..."
-        '
-        'mnuMassEdit
-        '
-        Me.mnuMassEdit.Name = "mnuMassEdit"
-        Me.mnuMassEdit.Size = New System.Drawing.Size(149, 22)
-        Me.mnuMassEdit.Text = "Mass Edit..."
         '
         'mtabQuick
         '
@@ -523,15 +439,6 @@ Partial Class MainScreen
         Me.btnAdvSearch.TabIndex = 9
         Me.btnAdvSearch.Text = "Advanced Search"
         Me.btnAdvSearch.UseVisualStyleBackColor = True
-        '
-        'txtWaterSearch
-        '
-        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
-        Me.txtWaterSearch.Name = "txtWaterSearch"
-        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
-        Me.txtWaterSearch.TabIndex = 8
         '
         'cmbSearch
         '
@@ -654,7 +561,7 @@ Partial Class MainScreen
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(542, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(584, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -662,7 +569,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(534, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(576, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -680,7 +587,7 @@ Partial Class MainScreen
         Me.dgvStudents.DataSource = Me.StudentsBindingSource
         Me.dgvStudents.Location = New System.Drawing.Point(0, 0)
         Me.dgvStudents.Name = "dgvStudents"
-        Me.dgvStudents.Size = New System.Drawing.Size(579, 522)
+        Me.dgvStudents.Size = New System.Drawing.Size(576, 522)
         Me.dgvStudents.TabIndex = 0
         '
         'SIdDataGridViewTextBoxColumn
@@ -723,7 +630,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(576, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -739,7 +646,7 @@ Partial Class MainScreen
         Me.dgv4001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgv4001FirstName, Me.dgv4001LastName, Me.dgv4001ModulePass})
         Me.dgv4001.Location = New System.Drawing.Point(0, 0)
         Me.dgv4001.Name = "dgv4001"
-        Me.dgv4001.Size = New System.Drawing.Size(579, 522)
+        Me.dgv4001.Size = New System.Drawing.Size(576, 522)
         Me.dgv4001.TabIndex = 0
         '
         'dgv4001FirstName
@@ -770,7 +677,7 @@ Partial Class MainScreen
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(576, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -788,7 +695,7 @@ Partial Class MainScreen
         Me.mtabWB4002.Location = New System.Drawing.Point(-4, 0)
         Me.mtabWB4002.Name = "mtabWB4002"
         Me.mtabWB4002.SelectedIndex = 0
-        Me.mtabWB4002.Size = New System.Drawing.Size(548, 526)
+        Me.mtabWB4002.Size = New System.Drawing.Size(584, 526)
         Me.mtabWB4002.TabIndex = 1
         '
         'tab4002
@@ -796,7 +703,7 @@ Partial Class MainScreen
         Me.tab4002.Controls.Add(Me.dgv4002)
         Me.tab4002.Location = New System.Drawing.Point(4, 22)
         Me.tab4002.Name = "tab4002"
-        Me.tab4002.Size = New System.Drawing.Size(540, 500)
+        Me.tab4002.Size = New System.Drawing.Size(576, 500)
         Me.tab4002.TabIndex = 4
         Me.tab4002.Text = "Module"
         Me.tab4002.UseVisualStyleBackColor = True
@@ -812,7 +719,7 @@ Partial Class MainScreen
         Me.dgv4002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgv4002FirstName, Me.dgv4002LastName, Me.dgv4002ModuleResult})
         Me.dgv4002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002.Name = "dgv4002"
-        Me.dgv4002.Size = New System.Drawing.Size(540, 500)
+        Me.dgv4002.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002.TabIndex = 1
         '
         'dgv4002FirstName
@@ -840,7 +747,7 @@ Partial Class MainScreen
         Me.tab4002001.Location = New System.Drawing.Point(4, 22)
         Me.tab4002001.Name = "tab4002001"
         Me.tab4002001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4002001.Size = New System.Drawing.Size(540, 500)
+        Me.tab4002001.Size = New System.Drawing.Size(576, 500)
         Me.tab4002001.TabIndex = 0
         Me.tab4002001.Text = "001"
         Me.tab4002001.UseVisualStyleBackColor = True
@@ -856,7 +763,7 @@ Partial Class MainScreen
         Me.dgv4002001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.dgv4002001.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002001.Name = "dgv4002001"
-        Me.dgv4002001.Size = New System.Drawing.Size(540, 500)
+        Me.dgv4002001.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002001.TabIndex = 2
         '
         'DataGridViewTextBoxColumn4
@@ -884,7 +791,7 @@ Partial Class MainScreen
         Me.tab4002002.Location = New System.Drawing.Point(4, 22)
         Me.tab4002002.Name = "tab4002002"
         Me.tab4002002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4002002.Size = New System.Drawing.Size(540, 500)
+        Me.tab4002002.Size = New System.Drawing.Size(576, 500)
         Me.tab4002002.TabIndex = 1
         Me.tab4002002.Text = "002"
         Me.tab4002002.UseVisualStyleBackColor = True
@@ -900,7 +807,7 @@ Partial Class MainScreen
         Me.dgv4002002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.dgv4002002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002002.Name = "dgv4002002"
-        Me.dgv4002002.Size = New System.Drawing.Size(540, 500)
+        Me.dgv4002002.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002002.TabIndex = 3
         '
         'DataGridViewTextBoxColumn7
@@ -927,7 +834,7 @@ Partial Class MainScreen
         Me.tab4002003.Controls.Add(Me.dgv4002003)
         Me.tab4002003.Location = New System.Drawing.Point(4, 22)
         Me.tab4002003.Name = "tab4002003"
-        Me.tab4002003.Size = New System.Drawing.Size(540, 500)
+        Me.tab4002003.Size = New System.Drawing.Size(576, 500)
         Me.tab4002003.TabIndex = 2
         Me.tab4002003.Text = "003"
         Me.tab4002003.UseVisualStyleBackColor = True
@@ -943,7 +850,7 @@ Partial Class MainScreen
         Me.dgv4002003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.dgv4002003.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002003.Name = "dgv4002003"
-        Me.dgv4002003.Size = New System.Drawing.Size(540, 500)
+        Me.dgv4002003.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002003.TabIndex = 4
         '
         'DataGridViewTextBoxColumn10
@@ -970,7 +877,7 @@ Partial Class MainScreen
         Me.tab4002004.Controls.Add(Me.dgv4002004)
         Me.tab4002004.Location = New System.Drawing.Point(4, 22)
         Me.tab4002004.Name = "tab4002004"
-        Me.tab4002004.Size = New System.Drawing.Size(540, 500)
+        Me.tab4002004.Size = New System.Drawing.Size(576, 500)
         Me.tab4002004.TabIndex = 3
         Me.tab4002004.Text = "004"
         Me.tab4002004.UseVisualStyleBackColor = True
@@ -986,7 +893,7 @@ Partial Class MainScreen
         Me.dgv4002004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15})
         Me.dgv4002004.Location = New System.Drawing.Point(0, 0)
         Me.dgv4002004.Name = "dgv4002004"
-        Me.dgv4002004.Size = New System.Drawing.Size(540, 500)
+        Me.dgv4002004.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002004.TabIndex = 5
         '
         'DataGridViewTextBoxColumn13
@@ -1013,7 +920,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(576, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1031,7 +938,7 @@ Partial Class MainScreen
         Me.mtabWB4003.Location = New System.Drawing.Point(-4, 0)
         Me.mtabWB4003.Name = "mtabWB4003"
         Me.mtabWB4003.SelectedIndex = 0
-        Me.mtabWB4003.Size = New System.Drawing.Size(587, 526)
+        Me.mtabWB4003.Size = New System.Drawing.Size(584, 526)
         Me.mtabWB4003.TabIndex = 2
         '
         'tab4003
@@ -1040,7 +947,7 @@ Partial Class MainScreen
         Me.tab4003.Location = New System.Drawing.Point(4, 22)
         Me.tab4003.Name = "tab4003"
         Me.tab4003.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4003.Size = New System.Drawing.Size(579, 500)
+        Me.tab4003.Size = New System.Drawing.Size(576, 500)
         Me.tab4003.TabIndex = 4
         Me.tab4003.Text = "Module"
         Me.tab4003.UseVisualStyleBackColor = True
@@ -1056,7 +963,7 @@ Partial Class MainScreen
         Me.dgv4003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18})
         Me.dgv4003.Location = New System.Drawing.Point(0, 0)
         Me.dgv4003.Name = "dgv4003"
-        Me.dgv4003.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4003.Size = New System.Drawing.Size(576, 500)
         Me.dgv4003.TabIndex = 2
         '
         'DataGridViewTextBoxColumn16
@@ -1084,7 +991,7 @@ Partial Class MainScreen
         Me.tab4003001.Location = New System.Drawing.Point(4, 22)
         Me.tab4003001.Name = "tab4003001"
         Me.tab4003001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4003001.Size = New System.Drawing.Size(579, 500)
+        Me.tab4003001.Size = New System.Drawing.Size(576, 500)
         Me.tab4003001.TabIndex = 0
         Me.tab4003001.Text = "001"
         Me.tab4003001.UseVisualStyleBackColor = True
@@ -1100,7 +1007,7 @@ Partial Class MainScreen
         Me.dgv4003001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21})
         Me.dgv4003001.Location = New System.Drawing.Point(0, 0)
         Me.dgv4003001.Name = "dgv4003001"
-        Me.dgv4003001.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4003001.Size = New System.Drawing.Size(576, 500)
         Me.dgv4003001.TabIndex = 3
         '
         'DataGridViewTextBoxColumn19
@@ -1128,7 +1035,7 @@ Partial Class MainScreen
         Me.tab4003002.Location = New System.Drawing.Point(4, 22)
         Me.tab4003002.Name = "tab4003002"
         Me.tab4003002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4003002.Size = New System.Drawing.Size(579, 500)
+        Me.tab4003002.Size = New System.Drawing.Size(576, 500)
         Me.tab4003002.TabIndex = 1
         Me.tab4003002.Text = "002"
         Me.tab4003002.UseVisualStyleBackColor = True
@@ -1144,7 +1051,7 @@ Partial Class MainScreen
         Me.dgv4003002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24})
         Me.dgv4003002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4003002.Name = "dgv4003002"
-        Me.dgv4003002.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4003002.Size = New System.Drawing.Size(576, 500)
         Me.dgv4003002.TabIndex = 3
         '
         'DataGridViewTextBoxColumn22
@@ -1171,7 +1078,7 @@ Partial Class MainScreen
         Me.tab4003003.Controls.Add(Me.dgv4003003)
         Me.tab4003003.Location = New System.Drawing.Point(4, 22)
         Me.tab4003003.Name = "tab4003003"
-        Me.tab4003003.Size = New System.Drawing.Size(579, 500)
+        Me.tab4003003.Size = New System.Drawing.Size(576, 500)
         Me.tab4003003.TabIndex = 2
         Me.tab4003003.Text = "003"
         Me.tab4003003.UseVisualStyleBackColor = True
@@ -1187,7 +1094,7 @@ Partial Class MainScreen
         Me.dgv4003003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27})
         Me.dgv4003003.Location = New System.Drawing.Point(0, 0)
         Me.dgv4003003.Name = "dgv4003003"
-        Me.dgv4003003.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4003003.Size = New System.Drawing.Size(576, 500)
         Me.dgv4003003.TabIndex = 3
         '
         'DataGridViewTextBoxColumn25
@@ -1214,7 +1121,7 @@ Partial Class MainScreen
         Me.tab4003004.Controls.Add(Me.dgv4003004)
         Me.tab4003004.Location = New System.Drawing.Point(4, 22)
         Me.tab4003004.Name = "tab4003004"
-        Me.tab4003004.Size = New System.Drawing.Size(579, 500)
+        Me.tab4003004.Size = New System.Drawing.Size(576, 500)
         Me.tab4003004.TabIndex = 3
         Me.tab4003004.Text = "004"
         Me.tab4003004.UseVisualStyleBackColor = True
@@ -1230,7 +1137,7 @@ Partial Class MainScreen
         Me.dgv4003004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30})
         Me.dgv4003004.Location = New System.Drawing.Point(0, 0)
         Me.dgv4003004.Name = "dgv4003004"
-        Me.dgv4003004.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4003004.Size = New System.Drawing.Size(576, 500)
         Me.dgv4003004.TabIndex = 3
         '
         'DataGridViewTextBoxColumn28
@@ -1257,7 +1164,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(576, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1274,7 +1181,7 @@ Partial Class MainScreen
         Me.mtab4004.Location = New System.Drawing.Point(-4, 0)
         Me.mtab4004.Name = "mtab4004"
         Me.mtab4004.SelectedIndex = 0
-        Me.mtab4004.Size = New System.Drawing.Size(587, 526)
+        Me.mtab4004.Size = New System.Drawing.Size(584, 526)
         Me.mtab4004.TabIndex = 3
         '
         'tab4004
@@ -1282,7 +1189,7 @@ Partial Class MainScreen
         Me.tab4004.Controls.Add(Me.dgv4004)
         Me.tab4004.Location = New System.Drawing.Point(4, 22)
         Me.tab4004.Name = "tab4004"
-        Me.tab4004.Size = New System.Drawing.Size(579, 500)
+        Me.tab4004.Size = New System.Drawing.Size(576, 500)
         Me.tab4004.TabIndex = 3
         Me.tab4004.Text = "Module"
         Me.tab4004.UseVisualStyleBackColor = True
@@ -1298,7 +1205,7 @@ Partial Class MainScreen
         Me.dgv4004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn40, Me.DataGridViewTextBoxColumn41, Me.DataGridViewTextBoxColumn42})
         Me.dgv4004.Location = New System.Drawing.Point(0, 0)
         Me.dgv4004.Name = "dgv4004"
-        Me.dgv4004.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4004.Size = New System.Drawing.Size(576, 500)
         Me.dgv4004.TabIndex = 3
         '
         'DataGridViewTextBoxColumn40
@@ -1326,7 +1233,7 @@ Partial Class MainScreen
         Me.tab4004001.Location = New System.Drawing.Point(4, 22)
         Me.tab4004001.Name = "tab4004001"
         Me.tab4004001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4004001.Size = New System.Drawing.Size(579, 500)
+        Me.tab4004001.Size = New System.Drawing.Size(576, 500)
         Me.tab4004001.TabIndex = 0
         Me.tab4004001.Text = "001"
         Me.tab4004001.UseVisualStyleBackColor = True
@@ -1342,7 +1249,7 @@ Partial Class MainScreen
         Me.dgv4004001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33})
         Me.dgv4004001.Location = New System.Drawing.Point(0, 0)
         Me.dgv4004001.Name = "dgv4004001"
-        Me.dgv4004001.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4004001.Size = New System.Drawing.Size(576, 500)
         Me.dgv4004001.TabIndex = 4
         '
         'DataGridViewTextBoxColumn31
@@ -1370,7 +1277,7 @@ Partial Class MainScreen
         Me.tab4004002.Location = New System.Drawing.Point(4, 22)
         Me.tab4004002.Name = "tab4004002"
         Me.tab4004002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab4004002.Size = New System.Drawing.Size(579, 500)
+        Me.tab4004002.Size = New System.Drawing.Size(576, 500)
         Me.tab4004002.TabIndex = 1
         Me.tab4004002.Text = "002"
         Me.tab4004002.UseVisualStyleBackColor = True
@@ -1386,7 +1293,7 @@ Partial Class MainScreen
         Me.dgv4004002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36})
         Me.dgv4004002.Location = New System.Drawing.Point(0, 0)
         Me.dgv4004002.Name = "dgv4004002"
-        Me.dgv4004002.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4004002.Size = New System.Drawing.Size(576, 500)
         Me.dgv4004002.TabIndex = 5
         '
         'DataGridViewTextBoxColumn34
@@ -1413,7 +1320,7 @@ Partial Class MainScreen
         Me.tab4004003.Controls.Add(Me.dgv4004003)
         Me.tab4004003.Location = New System.Drawing.Point(4, 22)
         Me.tab4004003.Name = "tab4004003"
-        Me.tab4004003.Size = New System.Drawing.Size(579, 500)
+        Me.tab4004003.Size = New System.Drawing.Size(576, 500)
         Me.tab4004003.TabIndex = 2
         Me.tab4004003.Text = "003"
         Me.tab4004003.UseVisualStyleBackColor = True
@@ -1429,7 +1336,7 @@ Partial Class MainScreen
         Me.dgv4004003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39})
         Me.dgv4004003.Location = New System.Drawing.Point(0, 0)
         Me.dgv4004003.Name = "dgv4004003"
-        Me.dgv4004003.Size = New System.Drawing.Size(579, 500)
+        Me.dgv4004003.Size = New System.Drawing.Size(576, 500)
         Me.dgv4004003.TabIndex = 6
         '
         'DataGridViewTextBoxColumn37
@@ -1456,7 +1363,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(576, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1472,7 +1379,7 @@ Partial Class MainScreen
         Me.dgv4005.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45})
         Me.dgv4005.Location = New System.Drawing.Point(0, 0)
         Me.dgv4005.Name = "dgv4005"
-        Me.dgv4005.Size = New System.Drawing.Size(540, 522)
+        Me.dgv4005.Size = New System.Drawing.Size(576, 522)
         Me.dgv4005.TabIndex = 4
         '
         'DataGridViewTextBoxColumn43
@@ -1499,7 +1406,7 @@ Partial Class MainScreen
         Me.tabWB5001.Controls.Add(Me.dgv5001)
         Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5001.Name = "tabWB5001"
-        Me.tabWB5001.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5001.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5001.TabIndex = 8
         Me.tabWB5001.Text = "WB5001"
         Me.tabWB5001.UseVisualStyleBackColor = True
@@ -1515,7 +1422,7 @@ Partial Class MainScreen
         Me.dgv5001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewCheckBoxColumn1})
         Me.dgv5001.Location = New System.Drawing.Point(0, 0)
         Me.dgv5001.Name = "dgv5001"
-        Me.dgv5001.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5001.Size = New System.Drawing.Size(576, 522)
         Me.dgv5001.TabIndex = 1
         '
         'DataGridViewTextBoxColumn46
@@ -1545,7 +1452,7 @@ Partial Class MainScreen
         Me.tabWB5002.Controls.Add(Me.mtabWB5002)
         Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5002.Name = "tabWB5002"
-        Me.tabWB5002.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5002.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5002.TabIndex = 9
         Me.tabWB5002.Text = "WB5002"
         Me.tabWB5002.UseVisualStyleBackColor = True
@@ -1563,7 +1470,7 @@ Partial Class MainScreen
         Me.mtabWB5002.Location = New System.Drawing.Point(-4, 0)
         Me.mtabWB5002.Name = "mtabWB5002"
         Me.mtabWB5002.SelectedIndex = 0
-        Me.mtabWB5002.Size = New System.Drawing.Size(548, 524)
+        Me.mtabWB5002.Size = New System.Drawing.Size(584, 524)
         Me.mtabWB5002.TabIndex = 2
         '
         'tab5002
@@ -1571,7 +1478,7 @@ Partial Class MainScreen
         Me.tab5002.Controls.Add(Me.dgv5002)
         Me.tab5002.Location = New System.Drawing.Point(4, 22)
         Me.tab5002.Name = "tab5002"
-        Me.tab5002.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002.Size = New System.Drawing.Size(576, 498)
         Me.tab5002.TabIndex = 4
         Me.tab5002.Text = "Module"
         Me.tab5002.UseVisualStyleBackColor = True
@@ -1587,7 +1494,7 @@ Partial Class MainScreen
         Me.dgv5002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50})
         Me.dgv5002.Location = New System.Drawing.Point(0, 0)
         Me.dgv5002.Name = "dgv5002"
-        Me.dgv5002.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002.Size = New System.Drawing.Size(576, 498)
         Me.dgv5002.TabIndex = 1
         '
         'DataGridViewTextBoxColumn48
@@ -1615,7 +1522,7 @@ Partial Class MainScreen
         Me.tab5002001.Location = New System.Drawing.Point(4, 22)
         Me.tab5002001.Name = "tab5002001"
         Me.tab5002001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab5002001.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002001.Size = New System.Drawing.Size(576, 498)
         Me.tab5002001.TabIndex = 0
         Me.tab5002001.Text = "001"
         Me.tab5002001.UseVisualStyleBackColor = True
@@ -1631,7 +1538,7 @@ Partial Class MainScreen
         Me.dgv5002001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53})
         Me.dgv5002001.Location = New System.Drawing.Point(0, 0)
         Me.dgv5002001.Name = "dgv5002001"
-        Me.dgv5002001.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002001.Size = New System.Drawing.Size(576, 498)
         Me.dgv5002001.TabIndex = 2
         '
         'DataGridViewTextBoxColumn51
@@ -1659,7 +1566,7 @@ Partial Class MainScreen
         Me.tab5002002.Location = New System.Drawing.Point(4, 22)
         Me.tab5002002.Name = "tab5002002"
         Me.tab5002002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab5002002.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002002.Size = New System.Drawing.Size(576, 498)
         Me.tab5002002.TabIndex = 1
         Me.tab5002002.Text = "002"
         Me.tab5002002.UseVisualStyleBackColor = True
@@ -1675,7 +1582,7 @@ Partial Class MainScreen
         Me.dgv5002002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56})
         Me.dgv5002002.Location = New System.Drawing.Point(0, 0)
         Me.dgv5002002.Name = "dgv5002002"
-        Me.dgv5002002.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002002.Size = New System.Drawing.Size(576, 498)
         Me.dgv5002002.TabIndex = 3
         '
         'DataGridViewTextBoxColumn54
@@ -1702,7 +1609,7 @@ Partial Class MainScreen
         Me.tab5002003.Controls.Add(Me.dgv5002003)
         Me.tab5002003.Location = New System.Drawing.Point(4, 22)
         Me.tab5002003.Name = "tab5002003"
-        Me.tab5002003.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002003.Size = New System.Drawing.Size(576, 498)
         Me.tab5002003.TabIndex = 2
         Me.tab5002003.Text = "003"
         Me.tab5002003.UseVisualStyleBackColor = True
@@ -1718,7 +1625,7 @@ Partial Class MainScreen
         Me.dgv5002003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59})
         Me.dgv5002003.Location = New System.Drawing.Point(0, 0)
         Me.dgv5002003.Name = "dgv5002003"
-        Me.dgv5002003.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002003.Size = New System.Drawing.Size(576, 498)
         Me.dgv5002003.TabIndex = 4
         '
         'DataGridViewTextBoxColumn57
@@ -1745,7 +1652,7 @@ Partial Class MainScreen
         Me.tab5002004.Controls.Add(Me.dgv5002004)
         Me.tab5002004.Location = New System.Drawing.Point(4, 22)
         Me.tab5002004.Name = "tab5002004"
-        Me.tab5002004.Size = New System.Drawing.Size(540, 498)
+        Me.tab5002004.Size = New System.Drawing.Size(576, 498)
         Me.tab5002004.TabIndex = 3
         Me.tab5002004.Text = "004"
         Me.tab5002004.UseVisualStyleBackColor = True
@@ -1761,7 +1668,7 @@ Partial Class MainScreen
         Me.dgv5002004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.DataGridViewTextBoxColumn62})
         Me.dgv5002004.Location = New System.Drawing.Point(0, 0)
         Me.dgv5002004.Name = "dgv5002004"
-        Me.dgv5002004.Size = New System.Drawing.Size(540, 498)
+        Me.dgv5002004.Size = New System.Drawing.Size(576, 498)
         Me.dgv5002004.TabIndex = 5
         '
         'DataGridViewTextBoxColumn60
@@ -1788,7 +1695,7 @@ Partial Class MainScreen
         Me.tabWB5003.Controls.Add(Me.mtabWB5003)
         Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5003.Name = "tabWB5003"
-        Me.tabWB5003.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5003.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5003.TabIndex = 10
         Me.tabWB5003.Text = "WB5003"
         Me.tabWB5003.UseVisualStyleBackColor = True
@@ -1804,7 +1711,7 @@ Partial Class MainScreen
         Me.mtabWB5003.Location = New System.Drawing.Point(-4, 0)
         Me.mtabWB5003.Name = "mtabWB5003"
         Me.mtabWB5003.SelectedIndex = 0
-        Me.mtabWB5003.Size = New System.Drawing.Size(548, 523)
+        Me.mtabWB5003.Size = New System.Drawing.Size(584, 523)
         Me.mtabWB5003.TabIndex = 3
         '
         'tab5003
@@ -1812,7 +1719,7 @@ Partial Class MainScreen
         Me.tab5003.Controls.Add(Me.dgv5003)
         Me.tab5003.Location = New System.Drawing.Point(4, 22)
         Me.tab5003.Name = "tab5003"
-        Me.tab5003.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003.Size = New System.Drawing.Size(576, 497)
         Me.tab5003.TabIndex = 4
         Me.tab5003.Text = "Module"
         Me.tab5003.UseVisualStyleBackColor = True
@@ -1828,7 +1735,7 @@ Partial Class MainScreen
         Me.dgv5003.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn63, Me.DataGridViewTextBoxColumn64, Me.DataGridViewTextBoxColumn65})
         Me.dgv5003.Location = New System.Drawing.Point(0, 0)
         Me.dgv5003.Name = "dgv5003"
-        Me.dgv5003.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003.Size = New System.Drawing.Size(576, 497)
         Me.dgv5003.TabIndex = 1
         '
         'DataGridViewTextBoxColumn63
@@ -1856,7 +1763,7 @@ Partial Class MainScreen
         Me.tab5003001.Location = New System.Drawing.Point(4, 22)
         Me.tab5003001.Name = "tab5003001"
         Me.tab5003001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab5003001.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003001.Size = New System.Drawing.Size(576, 497)
         Me.tab5003001.TabIndex = 0
         Me.tab5003001.Text = "001"
         Me.tab5003001.UseVisualStyleBackColor = True
@@ -1872,7 +1779,7 @@ Partial Class MainScreen
         Me.dgv5003001.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn66, Me.DataGridViewTextBoxColumn67, Me.DataGridViewTextBoxColumn68})
         Me.dgv5003001.Location = New System.Drawing.Point(0, 0)
         Me.dgv5003001.Name = "dgv5003001"
-        Me.dgv5003001.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003001.Size = New System.Drawing.Size(576, 497)
         Me.dgv5003001.TabIndex = 2
         '
         'DataGridViewTextBoxColumn66
@@ -1900,7 +1807,7 @@ Partial Class MainScreen
         Me.tab5003002.Location = New System.Drawing.Point(4, 22)
         Me.tab5003002.Name = "tab5003002"
         Me.tab5003002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab5003002.Size = New System.Drawing.Size(540, 497)
+        Me.tab5003002.Size = New System.Drawing.Size(576, 497)
         Me.tab5003002.TabIndex = 1
         Me.tab5003002.Text = "002"
         Me.tab5003002.UseVisualStyleBackColor = True
@@ -1916,7 +1823,7 @@ Partial Class MainScreen
         Me.dgv5003002.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn69, Me.DataGridViewTextBoxColumn70, Me.DataGridViewTextBoxColumn71})
         Me.dgv5003002.Location = New System.Drawing.Point(0, 0)
         Me.dgv5003002.Name = "dgv5003002"
-        Me.dgv5003002.Size = New System.Drawing.Size(540, 497)
+        Me.dgv5003002.Size = New System.Drawing.Size(576, 497)
         Me.dgv5003002.TabIndex = 3
         '
         'DataGridViewTextBoxColumn69
@@ -1943,7 +1850,7 @@ Partial Class MainScreen
         Me.tabWB5004.Controls.Add(Me.dgv5004)
         Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5004.Name = "tabWB5004"
-        Me.tabWB5004.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5004.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5004.TabIndex = 11
         Me.tabWB5004.Text = "WB5004"
         Me.tabWB5004.UseVisualStyleBackColor = True
@@ -1959,7 +1866,7 @@ Partial Class MainScreen
         Me.dgv5004.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74})
         Me.dgv5004.Location = New System.Drawing.Point(0, 0)
         Me.dgv5004.Name = "dgv5004"
-        Me.dgv5004.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5004.Size = New System.Drawing.Size(576, 522)
         Me.dgv5004.TabIndex = 5
         '
         'DataGridViewTextBoxColumn72
@@ -1986,7 +1893,7 @@ Partial Class MainScreen
         Me.tabWB5005.Controls.Add(Me.dgv5005)
         Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5005.Name = "tabWB5005"
-        Me.tabWB5005.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5005.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5005.TabIndex = 12
         Me.tabWB5005.Text = "WB5005"
         Me.tabWB5005.UseVisualStyleBackColor = True
@@ -2002,7 +1909,7 @@ Partial Class MainScreen
         Me.dgv5005.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77})
         Me.dgv5005.Location = New System.Drawing.Point(0, 0)
         Me.dgv5005.Name = "dgv5005"
-        Me.dgv5005.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5005.Size = New System.Drawing.Size(576, 522)
         Me.dgv5005.TabIndex = 5
         '
         'DataGridViewTextBoxColumn75
@@ -2029,7 +1936,7 @@ Partial Class MainScreen
         Me.tabWB5006.Controls.Add(Me.dgv5006)
         Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5006.Name = "tabWB5006"
-        Me.tabWB5006.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5006.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5006.TabIndex = 13
         Me.tabWB5006.Text = "WB5006"
         Me.tabWB5006.UseVisualStyleBackColor = True
@@ -2045,7 +1952,7 @@ Partial Class MainScreen
         Me.dgv5006.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80})
         Me.dgv5006.Location = New System.Drawing.Point(0, 0)
         Me.dgv5006.Name = "dgv5006"
-        Me.dgv5006.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5006.Size = New System.Drawing.Size(576, 522)
         Me.dgv5006.TabIndex = 6
         '
         'DataGridViewTextBoxColumn78
@@ -2072,7 +1979,7 @@ Partial Class MainScreen
         Me.tabWB5007.Controls.Add(Me.dgv5007)
         Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5007.Name = "tabWB5007"
-        Me.tabWB5007.Size = New System.Drawing.Size(534, 522)
+        Me.tabWB5007.Size = New System.Drawing.Size(576, 522)
         Me.tabWB5007.TabIndex = 14
         Me.tabWB5007.Text = "WB5007"
         Me.tabWB5007.UseVisualStyleBackColor = True
@@ -2088,7 +1995,7 @@ Partial Class MainScreen
         Me.dgv5007.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn81, Me.DataGridViewTextBoxColumn82, Me.DataGridViewTextBoxColumn83})
         Me.dgv5007.Location = New System.Drawing.Point(0, 0)
         Me.dgv5007.Name = "dgv5007"
-        Me.dgv5007.Size = New System.Drawing.Size(540, 522)
+        Me.dgv5007.Size = New System.Drawing.Size(576, 522)
         Me.dgv5007.TabIndex = 6
         '
         'DataGridViewTextBoxColumn81
@@ -2116,7 +2023,7 @@ Partial Class MainScreen
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(534, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(576, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -2131,7 +2038,7 @@ Partial Class MainScreen
         Me.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSearch.Location = New System.Drawing.Point(0, 0)
         Me.dgvSearch.Name = "dgvSearch"
-        Me.dgvSearch.Size = New System.Drawing.Size(579, 522)
+        Me.dgvSearch.Size = New System.Drawing.Size(576, 522)
         Me.dgvSearch.TabIndex = 0
         '
         'ToolStrip1
@@ -2139,85 +2046,13 @@ Partial Class MainScreen
         Me.ToolStrip1.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNewFile, Me.tsbFileOpen, Me.tsbSave, Me.ToolStripSeparator2, Me.ToolStripSeparator3, Me.tsbCut, Me.tsbCopy, Me.tsbPaste, Me.ToolStripSeparator6, Me.tsbAddStudent, Me.tsbReportDesigner, Me.tsbAddResult})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbCopy, Me.tsbPaste, Me.tsbCut, Me.ToolStripSeparator6, Me.tsbAddStudent, Me.tsbReportDesigner, Me.tsbAddResult})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.ToolStrip1.Size = New System.Drawing.Size(758, 27)
         Me.ToolStrip1.TabIndex = 4
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
-        '
-        'lblWelcome
-        '
-        Me.lblWelcome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWelcome.Location = New System.Drawing.Point(372, 24)
-        Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(63, 15)
-        Me.lblWelcome.TabIndex = 5
-        Me.lblWelcome.Text = "Welcome "
-        '
-        'StudentsTableAdapter
-        '
-        Me.StudentsTableAdapter.ClearBeforeFill = True
-        '
-        'tsbNewFile
-        '
-        Me.tsbNewFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbNewFile.Image = Global.Student_Results_System.My.Resources.Resources.file
-        Me.tsbNewFile.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbNewFile.Name = "tsbNewFile"
-        Me.tsbNewFile.Size = New System.Drawing.Size(24, 24)
-        Me.tsbNewFile.Text = "ToolStripButton1"
-        Me.tsbNewFile.ToolTipText = "New File"
-        '
-        'tsbFileOpen
-        '
-        Me.tsbFileOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbFileOpen.Image = Global.Student_Results_System.My.Resources.Resources.folder
-        Me.tsbFileOpen.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbFileOpen.Name = "tsbFileOpen"
-        Me.tsbFileOpen.Size = New System.Drawing.Size(24, 24)
-        Me.tsbFileOpen.Text = "ToolStripButton1"
-        Me.tsbFileOpen.ToolTipText = "Open File"
-        '
-        'tsbSave
-        '
-        Me.tsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbSave.Image = Global.Student_Results_System.My.Resources.Resources.save
-        Me.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbSave.Name = "tsbSave"
-        Me.tsbSave.Size = New System.Drawing.Size(24, 24)
-        Me.tsbSave.Text = "ToolStripButton1"
-        Me.tsbSave.ToolTipText = "Save"
-        '
-        'tsbCut
-        '
-        Me.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbCut.Image = Global.Student_Results_System.My.Resources.Resources.cut
-        Me.tsbCut.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCut.Name = "tsbCut"
-        Me.tsbCut.Size = New System.Drawing.Size(24, 24)
-        Me.tsbCut.Text = "ToolStripButton2"
-        Me.tsbCut.ToolTipText = "Cut"
+        Me.ToolStrip1.Text = "Tool Strip"
         '
         'tsbCopy
         '
@@ -2238,6 +2073,11 @@ Partial Class MainScreen
         Me.tsbPaste.Size = New System.Drawing.Size(24, 24)
         Me.tsbPaste.Text = "ToolStripButton4"
         Me.tsbPaste.ToolTipText = "Paste"
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 27)
         '
         'tsbAddStudent
         '
@@ -2267,6 +2107,58 @@ Partial Class MainScreen
         Me.tsbAddResult.Size = New System.Drawing.Size(24, 24)
         Me.tsbAddResult.Text = "Add Result"
         '
+        'lblWelcome
+        '
+        Me.lblWelcome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWelcome.Location = New System.Drawing.Point(545, 24)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(63, 15)
+        Me.lblWelcome.TabIndex = 5
+        Me.lblWelcome.Text = "Welcome "
+        '
+        'StudentsTableAdapter
+        '
+        Me.StudentsTableAdapter.ClearBeforeFill = True
+        '
+        'mnuPaste
+        '
+        Me.mnuPaste.Name = "mnuPaste"
+        Me.mnuPaste.Size = New System.Drawing.Size(102, 22)
+        Me.mnuPaste.Text = "Paste"
+        '
+        'mnuReportDesigner
+        '
+        Me.mnuReportDesigner.Name = "mnuReportDesigner"
+        Me.mnuReportDesigner.Size = New System.Drawing.Size(158, 22)
+        Me.mnuReportDesigner.Text = "Report Designer"
+        '
+        'tsbCut
+        '
+        Me.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbCut.Image = Global.Student_Results_System.My.Resources.Resources.cut
+        Me.tsbCut.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCut.Name = "tsbCut"
+        Me.tsbCut.Size = New System.Drawing.Size(24, 24)
+        Me.tsbCut.Text = "Cut"
+        '
+        'mnuAddResult
+        '
+        Me.mnuAddResult.Name = "mnuAddResult"
+        Me.mnuAddResult.Size = New System.Drawing.Size(149, 22)
+        Me.mnuAddResult.Text = "Add Result..."
+        '
+        'txtWaterSearch
+        '
+        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
+        Me.txtWaterSearch.Name = "txtWaterSearch"
+        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
+        Me.txtWaterSearch.TabIndex = 8
+        '
         'MainScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2281,7 +2173,7 @@ Partial Class MainScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainScreen"
-        Me.Text = "TINE Beta 6"
+        Me.Text = "TINE"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -2385,33 +2277,17 @@ Partial Class MainScreen
     Friend WithEvents cmbSearch As System.Windows.Forms.ComboBox
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents mnuSidebarToggle As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuNew As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents mnuOpen As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuSave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuSaveAs As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuPrint As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuUndo As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents mnuRedo As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CopyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuCut As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuCopy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnAddStudent As System.Windows.Forms.Button
     Friend WithEvents txtWaterSearch As Student_Results_System.TextboxWatermark
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents tsbNewFile As System.Windows.Forms.ToolStripButton
-    Friend WithEvents tsbFileOpen As System.Windows.Forms.ToolStripButton
-    Friend WithEvents tsbSave As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents mnuHideToolbar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsbReportDesigner As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents tsbCut As ToolStripButton
     Friend WithEvents tsbCopy As ToolStripButton
     Friend WithEvents tsbPaste As ToolStripButton
     Friend WithEvents mnuAddStudent As ToolStripMenuItem
-    Friend WithEvents mnuMassEdit As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents lblWelcome As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -2421,8 +2297,6 @@ Partial Class MainScreen
     Private WithEvents btnAdvSearch As Button
     Friend WithEvents DefaultDataSet1 As DefaultDataSet
     Friend WithEvents DefaultDataSet2 As Student_Results_System.DefaultDataSet
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents mnuReportDesigner As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnReport As System.Windows.Forms.Button
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents mtabHome As System.Windows.Forms.TabControl
@@ -2595,4 +2469,8 @@ Partial Class MainScreen
     Friend WithEvents DataGridViewTextBoxColumn82 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn83 As DataGridViewTextBoxColumn
     Friend WithEvents tsbAddResult As ToolStripButton
+    Friend WithEvents mnuReportDesigner As ToolStripMenuItem
+    Friend WithEvents mnuPaste As ToolStripMenuItem
+    Friend WithEvents tsbCut As ToolStripButton
+    Friend WithEvents mnuAddResult As ToolStripMenuItem
 End Class

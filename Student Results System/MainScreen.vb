@@ -35,12 +35,19 @@ Public Class MainScreen
     End Sub
 
     Private Sub mnuAddStudent_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuAddStudent.Click
-        'See above
-		Dim openForm As New AddStudent
+        Dim openForm As New AddStudent
         openForm.Owner = Me
         openForm.ShowDialog(Me)
         'Sets last clicked button to Add Student (for the most recent action feature)
-		lastClicked = "AddStudent"
+        lastClicked = "AddStudent"
+    End Sub
+
+    Private Sub mnuAddResult_Click(sender As Object, e As EventArgs) Handles mnuAddResult.Click
+        Dim openForm As New AddResult
+        openForm.Owner = Me
+        openForm.ShowDialog(Me)
+        'Sets last clicked button to Add Result (for the most recent action feature)
+        lastClicked = "AddResult"
     End Sub
 
     Private Sub btnAdvSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAdvSearch.Click
@@ -131,7 +138,7 @@ Public Class MainScreen
         openForm.ShowDialog(Me)
     End Sub
 
-    Private Sub mnuReportDesigner_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuReportDesigner.Click
+    Private Sub mnuReportDesigner_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim openForm As New ReportDesigner
         openForm.Owner = Me
         openForm.ShowDialog(Me)
@@ -218,5 +225,18 @@ Public Class MainScreen
 
         dataAdapter.Update(dt)
 
+    End Sub
+
+    Private Sub mnuHideToolbar_Click(sender As Object, e As EventArgs) Handles mnuHideToolbar.Click
+        'Sets the toggle to not be checked
+        'If the toggle is not checked and is clicked then the toolbar is set to hide and the toggle is set to checked
+        If mnuHideToolbar.Checked = False Then
+            ToolStrip1.Hide()
+            mnuHideToolbar.Checked = True
+        Else
+            'If the toggle is checked and is clicked then the toolbar is set to show and the toggle is set to not be checked
+            ToolStrip1.Show()
+            mnuHideToolbar.Checked = False
+        End If
     End Sub
 End Class

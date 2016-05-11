@@ -67,13 +67,14 @@ Partial Class AddStudent
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button1.Location = New System.Drawing.Point(94, 116)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(182, 39)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Add Student"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblYear
         '
@@ -87,6 +88,7 @@ Partial Class AddStudent
         '
         'cmbYear
         '
+        Me.cmbYear.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbYear.FormattingEnabled = True
         Me.cmbYear.Items.AddRange(New Object() {"1", "2"})

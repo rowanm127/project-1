@@ -8,7 +8,7 @@ Public Class AddStudent
             Dim con As New OleDbConnection(connString)
             con.Open()
             'Query
-            Dim addStudent As OleDbCommand = New OleDbCommand("INSERT INTO Students (SFirstName, SLastName, SYear) VALUES ('" & txtName.Text & "','" & txtLastName.Text & "','" & cmbYear.Text & "')", con)
+            Dim addStudent As OleDbCommand = New OleDbCommand("INSERT INTO Students (SFirstName, SLastName, SYear) VALUES (""" & txtName.Text & """,""" & txtLastName.Text & """,'" & cmbYear.Text & "')", con)
             addStudent.ExecuteNonQuery()
             con.Close()
             MainScreen.StudentsTableAdapter.Fill(MainScreen.DefaultDataSet2.Students)
