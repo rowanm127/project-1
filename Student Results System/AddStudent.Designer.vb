@@ -26,7 +26,7 @@ Partial Class AddStudent
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAddStudent = New System.Windows.Forms.Button()
         Me.lblYear = New System.Windows.Forms.Label()
         Me.cmbYear = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
@@ -65,16 +65,16 @@ Partial Class AddStudent
         Me.lblLastName.TabIndex = 3
         Me.lblLastName.Text = "Last Name:"
         '
-        'Button1
+        'btnAddStudent
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(94, 116)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(182, 39)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Add Student"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnAddStudent.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAddStudent.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnAddStudent.Location = New System.Drawing.Point(94, 116)
+        Me.btnAddStudent.Name = "btnAddStudent"
+        Me.btnAddStudent.Size = New System.Drawing.Size(182, 39)
+        Me.btnAddStudent.TabIndex = 4
+        Me.btnAddStudent.Text = "Add Student"
+        Me.btnAddStudent.UseVisualStyleBackColor = False
         '
         'lblYear
         '
@@ -105,7 +105,7 @@ Partial Class AddStudent
         Me.ClientSize = New System.Drawing.Size(348, 175)
         Me.Controls.Add(Me.cmbYear)
         Me.Controls.Add(Me.lblYear)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnAddStudent)
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.txtLastName)
@@ -124,7 +124,7 @@ Partial Class AddStudent
     Friend WithEvents txtLastName As System.Windows.Forms.TextBox
     Friend WithEvents lblName As System.Windows.Forms.Label
     Friend WithEvents lblLastName As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnAddStudent As System.Windows.Forms.Button
     Friend WithEvents lblYear As Label
     Friend WithEvents cmbYear As System.Windows.Forms.ComboBox
 End Class

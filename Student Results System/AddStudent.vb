@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 
 Public Class AddStudent
-    Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
+    Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAddStudent.Click
         If txtName.Text <> "" And txtLastName.Text <> "" And cmbYear.Text <> "" Then
             'Connect to Database
             Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
