@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class MainScreen
     Dim lastClicked As String = ""
-    'Setup Connection and Query
+    'Setup Connection
     Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
     Dim con As New OleDbConnection(connString)
 
@@ -59,7 +59,7 @@ Public Class MainScreen
 
     Public Sub MainScreen_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         'Loads data into the Students table.
-        Me.StudentsTableAdapter.Fill(Me.DefaultDataSet2.Students)
+        StudentsTableAdapter.Fill(DefaultDataSet2.Students)
 
         'Connect to Database
         con.Open()
@@ -204,27 +204,21 @@ Public Class MainScreen
     End Sub
 
     Private Sub EditDGV(sender As Object, e As EventArgs) Handles dgvStudents.CellEndEdit, dgv4001.CellEndEdit, dgv4002.CellEndEdit
-        Dim editedTable As DataGridView
-        'Set query
-        Dim query As String
-        query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.[Module] = '4002') ORDER BY Students.SLastName"
-        Dim command As OleDbCommand = New OleDbCommand(query, con)
-        Dim dataAdapter As OleDbDataAdapter = New OleDbDataAdapter(command)
-        Dim dataSet As DataSet = New DataSet
-        'Fill DataAdapter
-        dataAdapter.Fill(dataSet, "Load_Table")
-        'Set new DataSet
-        dgv4002.DataSource = dataSet
-        'Set new table to show
-        dgv4002.DataMember = "Load_Table"
 
-        editedTable = CType(sender, DataGridView)
 
-        editedTable.EndEdit()
-        Dim dt As DataTable = DirectCast(dataSet.Tables("ModuleResults"), DataTable)
+    End Sub
 
-        dataAdapter.Update(dt)
-
+    Private Sub DeleteRowDGV(sender As Object, e As EventArgs) Handles dgvStudents.UserDeletingRow
+        'Grabs the row deleted
+        Dim currentRowIndex As Integer = dgvStudents.CurrentRow.Index
+        Dim currentRow As DataGridViewRow = dgvStudents.Rows(currentRowIndex)
+        'Stores Student ID from deleted row to be used in SQL query
+        Dim iD As String = Convert.ToString(currentRow.Cells("SIdDataGridViewTextBoxColumn").Value)
+        con.Open()
+        'Query that deletes the student matching the selected ID
+        Dim deleteStudent As OleDbCommand = New OleDbCommand("DELETE FROM Students WHERE SId = " & iD & "", con)
+        deleteStudent.ExecuteNonQuery()
+        con.Close()
     End Sub
 
     Private Sub mnuHideToolbar_Click(sender As Object, e As EventArgs) Handles mnuHideToolbar.Click

@@ -26,19 +26,23 @@ Partial Class MainScreen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainScreen))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReportDesigner = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCut = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCopy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPaste = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuHideToolbar = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSidebarToggle = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDatabase = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAddStudent = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuAddResult = New System.Windows.Forms.ToolStripMenuItem()
         Me.mtabQuick = New System.Windows.Forms.TabControl()
         Me.tabSearch = New System.Windows.Forms.TabPage()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnAdvSearch = New System.Windows.Forms.Button()
+        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
         Me.cmbSearch = New System.Windows.Forms.ComboBox()
         Me.lblSearchType = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -57,16 +61,10 @@ Partial Class MainScreen
         Me.DefaultDataSet2 = New Student_Results_System.DefaultDataSet()
         Me.tabWB4001 = New System.Windows.Forms.TabPage()
         Me.dgv4001 = New System.Windows.Forms.DataGridView()
-        Me.dgv4001FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv4001LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv4001ModulePass = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.tabWB4002 = New System.Windows.Forms.TabPage()
         Me.mtabWB4002 = New System.Windows.Forms.TabControl()
         Me.tab4002 = New System.Windows.Forms.TabPage()
         Me.dgv4002 = New System.Windows.Forms.DataGridView()
-        Me.dgv4002FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv4002LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgv4002ModuleResult = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tab4002001 = New System.Windows.Forms.TabPage()
         Me.dgv4002001 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -215,17 +213,19 @@ Partial Class MainScreen
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsbCopy = New System.Windows.Forms.ToolStripButton()
         Me.tsbPaste = New System.Windows.Forms.ToolStripButton()
+        Me.tsbCut = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsbAddStudent = New System.Windows.Forms.ToolStripButton()
         Me.tsbReportDesigner = New System.Windows.Forms.ToolStripButton()
         Me.tsbAddResult = New System.Windows.Forms.ToolStripButton()
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.StudentsTableAdapter = New Student_Results_System.DefaultDataSetTableAdapters.StudentsTableAdapter()
-        Me.mnuPaste = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuReportDesigner = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsbCut = New System.Windows.Forms.ToolStripButton()
-        Me.mnuAddResult = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtWaterSearch = New Student_Results_System.TextboxWatermark()
+        Me.dgv4002FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4002LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4002ModuleResult = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4001FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4001LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgv4001ModulePass = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.mtabQuick.SuspendLayout()
         Me.tabSearch.SuspendLayout()
@@ -330,6 +330,12 @@ Partial Class MainScreen
         Me.mnuFile.Size = New System.Drawing.Size(37, 20)
         Me.mnuFile.Text = "File"
         '
+        'mnuReportDesigner
+        '
+        Me.mnuReportDesigner.Name = "mnuReportDesigner"
+        Me.mnuReportDesigner.Size = New System.Drawing.Size(158, 22)
+        Me.mnuReportDesigner.Text = "Report Designer"
+        '
         'mnuExit
         '
         Me.mnuExit.Name = "mnuExit"
@@ -356,6 +362,12 @@ Partial Class MainScreen
         Me.mnuCopy.Name = "mnuCopy"
         Me.mnuCopy.Size = New System.Drawing.Size(102, 22)
         Me.mnuCopy.Text = "Copy"
+        '
+        'mnuPaste
+        '
+        Me.mnuPaste.Name = "mnuPaste"
+        Me.mnuPaste.Size = New System.Drawing.Size(102, 22)
+        Me.mnuPaste.Text = "Paste"
         '
         'mnuView
         '
@@ -391,6 +403,12 @@ Partial Class MainScreen
         Me.mnuAddStudent.Name = "mnuAddStudent"
         Me.mnuAddStudent.Size = New System.Drawing.Size(149, 22)
         Me.mnuAddStudent.Text = "Add Student..."
+        '
+        'mnuAddResult
+        '
+        Me.mnuAddResult.Name = "mnuAddResult"
+        Me.mnuAddResult.Size = New System.Drawing.Size(149, 22)
+        Me.mnuAddResult.Text = "Add Result..."
         '
         'mtabQuick
         '
@@ -439,6 +457,15 @@ Partial Class MainScreen
         Me.btnAdvSearch.TabIndex = 9
         Me.btnAdvSearch.Text = "Advanced Search"
         Me.btnAdvSearch.UseVisualStyleBackColor = True
+        '
+        'txtWaterSearch
+        '
+        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
+        Me.txtWaterSearch.Name = "txtWaterSearch"
+        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
+        Me.txtWaterSearch.TabIndex = 8
         '
         'cmbSearch
         '
@@ -561,7 +588,7 @@ Partial Class MainScreen
         Me.mtabHome.Location = New System.Drawing.Point(3, 0)
         Me.mtabHome.Name = "mtabHome"
         Me.mtabHome.SelectedIndex = 0
-        Me.mtabHome.Size = New System.Drawing.Size(584, 548)
+        Me.mtabHome.Size = New System.Drawing.Size(581, 548)
         Me.mtabHome.TabIndex = 1
         '
         'tabStudents
@@ -569,7 +596,7 @@ Partial Class MainScreen
         Me.tabStudents.Controls.Add(Me.dgvStudents)
         Me.tabStudents.Location = New System.Drawing.Point(4, 22)
         Me.tabStudents.Name = "tabStudents"
-        Me.tabStudents.Size = New System.Drawing.Size(576, 522)
+        Me.tabStudents.Size = New System.Drawing.Size(573, 522)
         Me.tabStudents.TabIndex = 5
         Me.tabStudents.Text = "Students"
         Me.tabStudents.UseVisualStyleBackColor = True
@@ -630,7 +657,7 @@ Partial Class MainScreen
         Me.tabWB4001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4001.Name = "tabWB4001"
         Me.tabWB4001.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4001.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB4001.Size = New System.Drawing.Size(573, 522)
         Me.tabWB4001.TabIndex = 1
         Me.tabWB4001.Text = "WB4001"
         Me.tabWB4001.UseVisualStyleBackColor = True
@@ -649,35 +676,13 @@ Partial Class MainScreen
         Me.dgv4001.Size = New System.Drawing.Size(576, 522)
         Me.dgv4001.TabIndex = 0
         '
-        'dgv4001FirstName
-        '
-        Me.dgv4001FirstName.DataPropertyName = "SFirstName"
-        Me.dgv4001FirstName.HeaderText = "First Name"
-        Me.dgv4001FirstName.Name = "dgv4001FirstName"
-        '
-        'dgv4001LastName
-        '
-        Me.dgv4001LastName.DataPropertyName = "SLastName"
-        Me.dgv4001LastName.HeaderText = "Last Name"
-        Me.dgv4001LastName.Name = "dgv4001LastName"
-        '
-        'dgv4001ModulePass
-        '
-        Me.dgv4001ModulePass.DataPropertyName = "ModulePass"
-        Me.dgv4001ModulePass.HeaderText = "Module Pass"
-        Me.dgv4001ModulePass.MinimumWidth = 10
-        Me.dgv4001ModulePass.Name = "dgv4001ModulePass"
-        Me.dgv4001ModulePass.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv4001ModulePass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.dgv4001ModulePass.Width = 110
-        '
         'tabWB4002
         '
         Me.tabWB4002.Controls.Add(Me.mtabWB4002)
         Me.tabWB4002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4002.Name = "tabWB4002"
         Me.tabWB4002.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabWB4002.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB4002.Size = New System.Drawing.Size(573, 522)
         Me.tabWB4002.TabIndex = 0
         Me.tabWB4002.Text = "WB4002"
         Me.tabWB4002.UseVisualStyleBackColor = True
@@ -721,25 +726,6 @@ Partial Class MainScreen
         Me.dgv4002.Name = "dgv4002"
         Me.dgv4002.Size = New System.Drawing.Size(576, 500)
         Me.dgv4002.TabIndex = 1
-        '
-        'dgv4002FirstName
-        '
-        Me.dgv4002FirstName.DataPropertyName = "SFirstName"
-        Me.dgv4002FirstName.HeaderText = "FirstName"
-        Me.dgv4002FirstName.Name = "dgv4002FirstName"
-        '
-        'dgv4002LastName
-        '
-        Me.dgv4002LastName.DataPropertyName = "SLastName"
-        Me.dgv4002LastName.HeaderText = "Last Name"
-        Me.dgv4002LastName.Name = "dgv4002LastName"
-        '
-        'dgv4002ModuleResult
-        '
-        Me.dgv4002ModuleResult.DataPropertyName = "ModuleResult"
-        Me.dgv4002ModuleResult.HeaderText = "Module Result"
-        Me.dgv4002ModuleResult.Name = "dgv4002ModuleResult"
-        Me.dgv4002ModuleResult.Width = 110
         '
         'tab4002001
         '
@@ -920,7 +906,7 @@ Partial Class MainScreen
         Me.tabWB4003.Controls.Add(Me.mtabWB4003)
         Me.tabWB4003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4003.Name = "tabWB4003"
-        Me.tabWB4003.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB4003.Size = New System.Drawing.Size(573, 522)
         Me.tabWB4003.TabIndex = 2
         Me.tabWB4003.Text = "WB4003"
         Me.tabWB4003.UseVisualStyleBackColor = True
@@ -1164,7 +1150,7 @@ Partial Class MainScreen
         Me.tabWB4004.Controls.Add(Me.mtab4004)
         Me.tabWB4004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4004.Name = "tabWB4004"
-        Me.tabWB4004.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB4004.Size = New System.Drawing.Size(573, 522)
         Me.tabWB4004.TabIndex = 3
         Me.tabWB4004.Text = "WB4004"
         Me.tabWB4004.UseVisualStyleBackColor = True
@@ -1363,7 +1349,7 @@ Partial Class MainScreen
         Me.tabWB4005.Controls.Add(Me.dgv4005)
         Me.tabWB4005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB4005.Name = "tabWB4005"
-        Me.tabWB4005.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB4005.Size = New System.Drawing.Size(573, 522)
         Me.tabWB4005.TabIndex = 4
         Me.tabWB4005.Text = "WB4005"
         Me.tabWB4005.UseVisualStyleBackColor = True
@@ -1406,7 +1392,7 @@ Partial Class MainScreen
         Me.tabWB5001.Controls.Add(Me.dgv5001)
         Me.tabWB5001.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5001.Name = "tabWB5001"
-        Me.tabWB5001.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5001.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5001.TabIndex = 8
         Me.tabWB5001.Text = "WB5001"
         Me.tabWB5001.UseVisualStyleBackColor = True
@@ -1452,7 +1438,7 @@ Partial Class MainScreen
         Me.tabWB5002.Controls.Add(Me.mtabWB5002)
         Me.tabWB5002.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5002.Name = "tabWB5002"
-        Me.tabWB5002.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5002.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5002.TabIndex = 9
         Me.tabWB5002.Text = "WB5002"
         Me.tabWB5002.UseVisualStyleBackColor = True
@@ -1695,7 +1681,7 @@ Partial Class MainScreen
         Me.tabWB5003.Controls.Add(Me.mtabWB5003)
         Me.tabWB5003.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5003.Name = "tabWB5003"
-        Me.tabWB5003.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5003.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5003.TabIndex = 10
         Me.tabWB5003.Text = "WB5003"
         Me.tabWB5003.UseVisualStyleBackColor = True
@@ -1850,7 +1836,7 @@ Partial Class MainScreen
         Me.tabWB5004.Controls.Add(Me.dgv5004)
         Me.tabWB5004.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5004.Name = "tabWB5004"
-        Me.tabWB5004.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5004.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5004.TabIndex = 11
         Me.tabWB5004.Text = "WB5004"
         Me.tabWB5004.UseVisualStyleBackColor = True
@@ -1893,7 +1879,7 @@ Partial Class MainScreen
         Me.tabWB5005.Controls.Add(Me.dgv5005)
         Me.tabWB5005.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5005.Name = "tabWB5005"
-        Me.tabWB5005.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5005.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5005.TabIndex = 12
         Me.tabWB5005.Text = "WB5005"
         Me.tabWB5005.UseVisualStyleBackColor = True
@@ -1936,7 +1922,7 @@ Partial Class MainScreen
         Me.tabWB5006.Controls.Add(Me.dgv5006)
         Me.tabWB5006.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5006.Name = "tabWB5006"
-        Me.tabWB5006.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5006.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5006.TabIndex = 13
         Me.tabWB5006.Text = "WB5006"
         Me.tabWB5006.UseVisualStyleBackColor = True
@@ -1979,7 +1965,7 @@ Partial Class MainScreen
         Me.tabWB5007.Controls.Add(Me.dgv5007)
         Me.tabWB5007.Location = New System.Drawing.Point(4, 22)
         Me.tabWB5007.Name = "tabWB5007"
-        Me.tabWB5007.Size = New System.Drawing.Size(576, 522)
+        Me.tabWB5007.Size = New System.Drawing.Size(573, 522)
         Me.tabWB5007.TabIndex = 14
         Me.tabWB5007.Text = "WB5007"
         Me.tabWB5007.UseVisualStyleBackColor = True
@@ -2023,7 +2009,7 @@ Partial Class MainScreen
         Me.tabSearchResults.Location = New System.Drawing.Point(4, 22)
         Me.tabSearchResults.Name = "tabSearchResults"
         Me.tabSearchResults.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabSearchResults.Size = New System.Drawing.Size(576, 522)
+        Me.tabSearchResults.Size = New System.Drawing.Size(573, 522)
         Me.tabSearchResults.TabIndex = 7
         Me.tabSearchResults.Text = "Search Reults"
         Me.tabSearchResults.UseVisualStyleBackColor = True
@@ -2074,6 +2060,15 @@ Partial Class MainScreen
         Me.tsbPaste.Text = "ToolStripButton4"
         Me.tsbPaste.ToolTipText = "Paste"
         '
+        'tsbCut
+        '
+        Me.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbCut.Image = Global.Student_Results_System.My.Resources.Resources.cut
+        Me.tsbCut.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCut.Name = "tsbCut"
+        Me.tsbCut.Size = New System.Drawing.Size(24, 24)
+        Me.tsbCut.Text = "Cut"
+        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
@@ -2123,41 +2118,46 @@ Partial Class MainScreen
         '
         Me.StudentsTableAdapter.ClearBeforeFill = True
         '
-        'mnuPaste
+        'dgv4002FirstName
         '
-        Me.mnuPaste.Name = "mnuPaste"
-        Me.mnuPaste.Size = New System.Drawing.Size(102, 22)
-        Me.mnuPaste.Text = "Paste"
+        Me.dgv4002FirstName.DataPropertyName = "SFirstName"
+        Me.dgv4002FirstName.HeaderText = "FirstName"
+        Me.dgv4002FirstName.Name = "dgv4002FirstName"
         '
-        'mnuReportDesigner
+        'dgv4002LastName
         '
-        Me.mnuReportDesigner.Name = "mnuReportDesigner"
-        Me.mnuReportDesigner.Size = New System.Drawing.Size(158, 22)
-        Me.mnuReportDesigner.Text = "Report Designer"
+        Me.dgv4002LastName.DataPropertyName = "SLastName"
+        Me.dgv4002LastName.HeaderText = "Last Name"
+        Me.dgv4002LastName.Name = "dgv4002LastName"
         '
-        'tsbCut
+        'dgv4002ModuleResult
         '
-        Me.tsbCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsbCut.Image = Global.Student_Results_System.My.Resources.Resources.cut
-        Me.tsbCut.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbCut.Name = "tsbCut"
-        Me.tsbCut.Size = New System.Drawing.Size(24, 24)
-        Me.tsbCut.Text = "Cut"
+        Me.dgv4002ModuleResult.DataPropertyName = "ModuleResult"
+        Me.dgv4002ModuleResult.HeaderText = "Module Result"
+        Me.dgv4002ModuleResult.Name = "dgv4002ModuleResult"
+        Me.dgv4002ModuleResult.Width = 110
         '
-        'mnuAddResult
+        'dgv4001FirstName
         '
-        Me.mnuAddResult.Name = "mnuAddResult"
-        Me.mnuAddResult.Size = New System.Drawing.Size(149, 22)
-        Me.mnuAddResult.Text = "Add Result..."
+        Me.dgv4001FirstName.DataPropertyName = "SFirstName"
+        Me.dgv4001FirstName.HeaderText = "First Name"
+        Me.dgv4001FirstName.Name = "dgv4001FirstName"
         '
-        'txtWaterSearch
+        'dgv4001LastName
         '
-        Me.txtWaterSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtWaterSearch.Location = New System.Drawing.Point(7, 50)
-        Me.txtWaterSearch.Name = "txtWaterSearch"
-        Me.txtWaterSearch.Size = New System.Drawing.Size(128, 22)
-        Me.txtWaterSearch.TabIndex = 8
+        Me.dgv4001LastName.DataPropertyName = "SLastName"
+        Me.dgv4001LastName.HeaderText = "Last Name"
+        Me.dgv4001LastName.Name = "dgv4001LastName"
+        '
+        'dgv4001ModulePass
+        '
+        Me.dgv4001ModulePass.DataPropertyName = "ModulePass"
+        Me.dgv4001ModulePass.HeaderText = "Module Pass"
+        Me.dgv4001ModulePass.MinimumWidth = 10
+        Me.dgv4001ModulePass.Name = "dgv4001ModulePass"
+        Me.dgv4001ModulePass.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv4001ModulePass.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dgv4001ModulePass.Width = 110
         '
         'MainScreen
         '
@@ -2332,9 +2332,6 @@ Partial Class MainScreen
     Friend WithEvents tab4004003 As System.Windows.Forms.TabPage
     Friend WithEvents tab4002 As System.Windows.Forms.TabPage
     Friend WithEvents dgv4002 As System.Windows.Forms.DataGridView
-    Friend WithEvents dgv4002FirstName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgv4002LastName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgv4002ModuleResult As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgv4002001 As System.Windows.Forms.DataGridView
     Friend WithEvents tab4003 As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -2403,9 +2400,6 @@ Partial Class MainScreen
     Friend WithEvents tabWB5005 As TabPage
     Friend WithEvents tabWB5006 As TabPage
     Friend WithEvents tabWB5007 As TabPage
-    Friend WithEvents dgv4001FirstName As DataGridViewTextBoxColumn
-    Friend WithEvents dgv4001LastName As DataGridViewTextBoxColumn
-    Friend WithEvents dgv4001ModulePass As DataGridViewCheckBoxColumn
     Friend WithEvents dgv5001 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn46 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn47 As DataGridViewTextBoxColumn
@@ -2473,4 +2467,10 @@ Partial Class MainScreen
     Friend WithEvents mnuPaste As ToolStripMenuItem
     Friend WithEvents tsbCut As ToolStripButton
     Friend WithEvents mnuAddResult As ToolStripMenuItem
+    Friend WithEvents dgv4001FirstName As DataGridViewTextBoxColumn
+    Friend WithEvents dgv4001LastName As DataGridViewTextBoxColumn
+    Friend WithEvents dgv4001ModulePass As DataGridViewCheckBoxColumn
+    Friend WithEvents dgv4002FirstName As DataGridViewTextBoxColumn
+    Friend WithEvents dgv4002LastName As DataGridViewTextBoxColumn
+    Friend WithEvents dgv4002ModuleResult As DataGridViewTextBoxColumn
 End Class

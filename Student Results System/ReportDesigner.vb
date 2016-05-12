@@ -3,6 +3,9 @@ Imports System.IO
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Public Class ReportDesigner
+    'Setup Connection
+    Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
+    Dim con As New OleDbConnection(connString)
     Dim previousReportType As String = ""
     Dim previousAdaptive1 As String = ""
     Dim printorSave As String = ""
@@ -22,6 +25,8 @@ Public Class ReportDesigner
             cmbAdaptive.Items.Add("WB4002")
             cmbAdaptive.Items.Add("WB4003")
             cmbAdaptive.Items.Add("WB4004")
+            cmbAdaptive.Items.Add("WB5002")
+            cmbAdaptive.Items.Add("WB5003")
             previousReportType = reportType
         End If
 
@@ -40,24 +45,25 @@ Public Class ReportDesigner
             cmbAdaptive.Items.Add("WB4003")
             cmbAdaptive.Items.Add("WB4004")
             cmbAdaptive.Items.Add("WB4005")
+            cmbAdaptive.Items.Add("WB5001")
+            cmbAdaptive.Items.Add("WB5002")
+            cmbAdaptive.Items.Add("WB5003")
+            cmbAdaptive.Items.Add("WB5004")
+            cmbAdaptive.Items.Add("WB5005")
+            cmbAdaptive.Items.Add("WB5006")
+            cmbAdaptive.Items.Add("WB5007")
             previousReportType = reportType
         End If
 
         If reportType = "Student" And reportType <> previousReportType Then
             cmbAdaptive.Items.Clear()
             cmbAdaptive.Visible = True
-            cmbAdaptive2.Visible = True
+            cmbAdaptive2.Visible = False
             lblAdaptive.Visible = True
             lblAdaptive2.Visible = True
-            lblAdaptive3.Visible = True
             lblAdaptive.Text = "Student Report:"
             lblAdaptive2.Text = "Student:"
-            lblAdaptive3.Text = "Type:"
-            cmbAdaptive2.Items.Add("All Results")
-            cmbAdaptive2.Items.Add("Module Results")
-            cmbAdaptive2.Items.Add("Unit Results")
             'Setup Connection and Query to obtain Student Names with IDs
-            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
             Using con As New OleDbConnection(connString)
                 'Connect to Database
                 con.Open()
@@ -116,6 +122,28 @@ Public Class ReportDesigner
                 cmbAdaptive2.Items.Add("003")
                 previousAdaptive1 = adaptive1
             End If
+
+            If adaptive1 = "WB5002" Then
+                cmbAdaptive2.Items.Clear()
+                lblAdaptive3.Visible = True
+                lblAdaptive3.Text = "Unit:"
+                cmbAdaptive2.Visible = True
+                cmbAdaptive2.Items.Add("001")
+                cmbAdaptive2.Items.Add("002")
+                cmbAdaptive2.Items.Add("003")
+                cmbAdaptive2.Items.Add("004")
+                previousAdaptive1 = adaptive1
+            End If
+
+            If adaptive1 = "WB5003" Then
+                cmbAdaptive2.Items.Clear()
+                lblAdaptive3.Visible = True
+                lblAdaptive3.Text = "Unit:"
+                cmbAdaptive2.Visible = True
+                cmbAdaptive2.Items.Add("001")
+                cmbAdaptive2.Items.Add("002")
+                previousAdaptive1 = adaptive1
+            End If
         End If
     End Sub
 
@@ -130,7 +158,7 @@ Public Class ReportDesigner
                 MsgBox("Please choose a Module")
             End If
         Else
-                MsgBox("Please choose a report type.")
+            MsgBox("Please choose a report type.")
         End If
     End Sub
 
@@ -150,11 +178,13 @@ Public Class ReportDesigner
     End Sub
 
     Private Sub CreateReport()
-        Dim moduleNum As String = cmbAdaptive.Text
-        Dim moduleNumNoWB As String = moduleNum.Replace("WB", "")
-        Dim unitNum As String = cmbAdaptive.Text & ":" & cmbAdaptive2.Text
-        Dim unitNumNoWB As String = unitNum.Replace("WB", "")
+        Dim moduleNum As String = ""
+        Dim moduleNumNoWB As String = ""
+        Dim unitNum As String = ""
+        Dim unitNumNoWB As String = ""
         Dim saveLocation As String = ""
+        Dim studentID = cmbAdaptive.Text.Split(" "c)(0)
+
 
         If printorSave = "Save" Then
             Dim saveFile As New SaveFileDialog()
@@ -177,212 +207,262 @@ Public Class ReportDesigner
         Dim pdfDoc As New Document()
         Dim pdfwWrite As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(saveLocation, FileMode.Create))
 
-        Dim table As New PdfPTable(3)
-        'Table width
-        table.TotalWidth = 400.0F
-        'Fix the width
-        table.LockedWidth = True
 
-        'relative col widths in proportions - 1/3 and 2/3
-        Dim widths() As Integer = {5, 5, 2}
-        table.SetWidths(widths)
-        table.HorizontalAlignment = 1
-        'leave a gap before and after the table
-        table.SpacingBefore = 20.0F
-        table.SpacingAfter = 30.0F
+        If cmbReportType.Text = "Module" Or cmbReportType.Text = "Unit" Then
+            moduleNum = cmbAdaptive.Text
+            moduleNumNoWB = moduleNum.Replace("WB", "")
+            unitNum = cmbAdaptive.Text & ":" & cmbAdaptive2.Text
+            unitNumNoWB = unitNum.Replace("WB", "")
 
-        'Sets new cell variable
-        Dim cell As New PdfPCell(New Phrase("First Name"))
-        'Sets how many columns to span
-        cell.Colspan = 1
-        'Set the cell border widths
-        'cell.Border = 0 (This sets the cell to have no border)
-        cell.BorderWidthLeft = 0F
-        cell.BorderWidthRight = 1.0F
-        cell.BorderWidthTop = 0F
-        cell.BorderWidthBottom = 1.0F
-        'Alignmenet 0=Left, 1=Centre, 2=Right
-        cell.HorizontalAlignment = 0
-        'Set cell padding
-        cell.Padding = 5
-        'Adds the cell to the table
-        table.AddCell(cell)
+            Dim table As New PdfPTable(3)
+            'Table width
+            table.TotalWidth = 400.0F
+            'Fix the width
+            table.LockedWidth = True
 
-        'Sets new cell
-        cell = New PdfPCell(New Phrase("Last Name"))
-        'Sets how many columns to span
-        cell.Colspan = 1
-        'Set the cell border widths
-        cell.BorderWidthLeft = 1.0F
-        cell.BorderWidthRight = 1.0F
-        cell.BorderWidthTop = 0F
-        cell.BorderWidthBottom = 1.0F
-        'Alignmenet 0=Left, 1=Centre, 2=Right
-        cell.HorizontalAlignment = 0
-        'Set cell padding
-        cell.Padding = 5
-        'Adds the cell to the table
-        table.AddCell(cell)
+            'relative col widths in proportions - 1/3 and 2/3
+            Dim widths() As Integer = {5, 5, 2}
+            table.SetWidths(widths)
+            table.HorizontalAlignment = 1
+            'leave a gap before and after the table
+            table.SpacingBefore = 20.0F
+            table.SpacingAfter = 30.0F
 
-        'Sets new cell
-        cell = New PdfPCell(New Phrase("Result"))
-        'Sets how many columns to span
-        cell.Colspan = 1
-        'Set the cell border widths
-        cell.BorderWidthLeft = 1.0F
-        cell.BorderWidthRight = 0F
-        cell.BorderWidthTop = 0F
-        cell.BorderWidthBottom = 1.0F
-        'Alignmenet 0=Left, 1=Centre, 2=Right
-        cell.HorizontalAlignment = 0
-        'Set cell padding
-        cell.Padding = 5
-        'Adds the cell to the table
-        table.AddCell(cell)
+            'Sets new cell variable
+            Dim cell As New PdfPCell(New Phrase("First Name"))
+            'Sets how many columns to span
+            cell.Colspan = 1
+            'Set the cell border widths
+            'cell.Border = 0 (This sets the cell to have no border)
+            cell.BorderWidthLeft = 0F
+            cell.BorderWidthRight = 1.0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
 
-        If cmbReportType.SelectedItem = "Unit" Then
-            'Setup Connection and Query
-            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-            Dim con As New OleDbConnection(connString)
-            'Connect to Database
-            con.Open()
-            'Set query
-            Dim query As String
-            query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '" & unitNumNoWB & "') ORDER BY Students.SLastName"
-            Dim command As OleDbCommand = New OleDbCommand(query, con)
-            Using rdr As OleDbDataReader = command.ExecuteReader()
-                While rdr.Read()
-                    table.AddCell(rdr(0).ToString())
-                    table.AddCell(rdr(1).ToString())
-                    table.AddCell(rdr(2).ToString())
-                End While
-            End Using
+            'Sets new cell
+            cell = New PdfPCell(New Phrase("Last Name"))
+            'Sets how many columns to span
+            cell.Colspan = 1
+            'Set the cell border widths
+            cell.BorderWidthLeft = 1.0F
+            cell.BorderWidthRight = 1.0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
 
-            query = "SELECT UnitName From Unit Where (Unit = '" & unitNumNoWB & "')"
+            'Sets new cell
+            cell = New PdfPCell(New Phrase("Result"))
+            'Sets how many columns to span
+            cell.Colspan = 1
+            'Set the cell border widths
+            cell.BorderWidthLeft = 1.0F
+            cell.BorderWidthRight = 0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
 
-            Dim UnitName As String = ""
-            command = New OleDbCommand(query, con)
-            Using rdr As OleDbDataReader = command.ExecuteReader()
-                While rdr.Read()
-                    UnitName = rdr(0).ToString()
-                End While
-            End Using
+            If cmbReportType.SelectedItem = "Unit" Then
+                'Connect to Database
+                con.Open()
+                'Set query
+                Dim query As String
+                query = "SELECT Students.SFirstName, Students.SLastName, UnitResults.UnitResult FROM (UnitResults INNER JOIN Students ON UnitResults.SId = Students.SId) WHERE (UnitResults.Unit = '" & unitNumNoWB & "') ORDER BY Students.SLastName"
+                Dim command As OleDbCommand = New OleDbCommand(query, con)
+                Using rdr As OleDbDataReader = command.ExecuteReader()
+                    While rdr.Read()
+                        table.AddCell(rdr(0).ToString())
+                        table.AddCell(rdr(1).ToString())
+                        table.AddCell(rdr(2).ToString())
+                    End While
+                End Using
 
-            pdfDoc.Open()
-            pdfDoc.Add(New Paragraph(LoginScreen.User))
-            'Set new paragraph variable
-            Dim paragraph As New Paragraph(New Phrase("Unit Results"))
-            'Set alignment to center
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            'Set new paragraph
-            paragraph = New Paragraph(New Phrase(UnitName))
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            paragraph = New Paragraph(New Phrase(unitNum))
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            pdfDoc.Add(New Paragraph(" "))
-            pdfDoc.Add(table)
-            pdfDoc.Close()
+                query = "SELECT UnitName From Unit Where (Unit = '" & unitNumNoWB & "')"
 
-            con.Close()
-        End If
+                Dim UnitName As String = ""
+                command = New OleDbCommand(query, con)
+                Using rdr As OleDbDataReader = command.ExecuteReader()
+                    While rdr.Read()
+                        UnitName = rdr(0).ToString()
+                    End While
+                End Using
 
-        If cmbReportType.SelectedItem = "Module" Then
-            'Setup Connection and Query
-            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-            Dim con As New OleDbConnection(connString)
-            'Connect to Database
-            con.Open()
-            'Set query
-            Dim query As String
-            If moduleNumNoWB = "4001" Or moduleNumNoWB = "5001" Then
-                query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (([Module] INNER JOIN ModulePassResults ON [Module].[Module] = ModulePassResults.[Module]) INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
-            Else
-                query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+                pdfDoc.Open()
+                pdfDoc.Add(New Paragraph(LoginScreen.User))
+                'Set new paragraph variable
+                Dim paragraph As New Paragraph(New Phrase("Unit Results"))
+                'Set alignment to center
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                'Set new paragraph
+                paragraph = New Paragraph(New Phrase(UnitName))
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                paragraph = New Paragraph(New Phrase(unitNum))
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(table)
+                pdfDoc.Close()
+
+                con.Close()
             End If
-            Dim command As OleDbCommand = New OleDbCommand(query, con)
-            Using rdr As OleDbDataReader = command.ExecuteReader()
-                While rdr.Read()
-                    table.AddCell(rdr(0).ToString())
-                    table.AddCell(rdr(1).ToString())
-                    table.AddCell(rdr(2).ToString())
-                End While
-            End Using
 
-            query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
+            If cmbReportType.SelectedItem = "Module" Then
+                'Connect to Database
+                con.Open()
+                'Set query
+                Dim query As String
+                If moduleNumNoWB = "4001" Or moduleNumNoWB = "5001" Then
+                    query = "SELECT Students.SFirstName, Students.SLastName, ModulePassResults.ModulePass FROM (([Module] INNER JOIN ModulePassResults ON [Module].[Module] = ModulePassResults.[Module]) INNER JOIN Students ON ModulePassResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+                Else
+                    query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+                End If
+                Dim command As OleDbCommand = New OleDbCommand(query, con)
+                Using rdr As OleDbDataReader = command.ExecuteReader()
+                    While rdr.Read()
+                        table.AddCell(rdr(0).ToString())
+                        table.AddCell(rdr(1).ToString())
+                        table.AddCell(rdr(2).ToString())
+                    End While
+                End Using
 
-            Dim ModuleName As String = ""
-            command = New OleDbCommand(query, con)
-            Using rdr As OleDbDataReader = command.ExecuteReader()
-                While rdr.Read()
-                    ModuleName = rdr(0).ToString()
-                End While
-            End Using
+                query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
 
-            pdfDoc.Open()
-            pdfDoc.Add(New Paragraph(LoginScreen.User))
-            'Set new paragraph variable
-            Dim paragraph As New Paragraph(New Phrase("Module Results"))
-            'Set alignment to center
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            'Set new paragraph
-            paragraph = New Paragraph(New Phrase(ModuleName))
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            paragraph = New Paragraph(New Phrase(moduleNum))
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            pdfDoc.Add(New Paragraph(" "))
-            pdfDoc.Add(table)
-            pdfDoc.Close()
+                Dim ModuleName As String = ""
+                command = New OleDbCommand(query, con)
+                Using rdr As OleDbDataReader = command.ExecuteReader()
+                    While rdr.Read()
+                        ModuleName = rdr(0).ToString()
+                    End While
+                End Using
 
-            con.Close()
-        End If
+                pdfDoc.Open()
+                pdfDoc.Add(New Paragraph(LoginScreen.User))
+                'Set new paragraph variable
+                Dim paragraph As New Paragraph(New Phrase("Module Results"))
+                'Set alignment to center
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                'Set new paragraph
+                paragraph = New Paragraph(New Phrase(ModuleName))
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                paragraph = New Paragraph(New Phrase(moduleNum))
+                paragraph.Alignment = 1
+                pdfDoc.Add(paragraph)
+                pdfDoc.Add(New Paragraph(" "))
+                pdfDoc.Add(table)
+                pdfDoc.Close()
 
-        If cmbReportType.SelectedItem = "Student" Then
-            'Setup Connection and Query
-            Dim connString As String = "Provider= Microsoft.ACE.OLEDB.12.0; " & "Data Source=Default.accdb;"
-            Dim con As New OleDbConnection(connString)
+                con.Close()
+            End If
+
+            'If report type = Student
+        Else
+            Dim table As New PdfPTable(2)
+            'Table width
+            table.TotalWidth = 400.0F
+            'Fix the width
+            table.LockedWidth = True
+
+            'relative col widths in proportions - 1/3 and 2/3
+            Dim widths() As Integer = {5, 5}
+            table.SetWidths(widths)
+            table.HorizontalAlignment = 1
+            'leave a gap before and after the table
+            table.SpacingBefore = 20.0F
+            table.SpacingAfter = 30.0F
+
+            'Sets new cell variable
+            Dim cell As New PdfPCell(New Phrase("Module/Unit"))
+            'Sets how many columns to span
+            cell.Colspan = 1
+            'Set the cell border widths
+            'cell.Border = 0 (This sets the cell to have no border)
+            cell.BorderWidthLeft = 0F
+            cell.BorderWidthRight = 1.0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
+
+            'Sets new cell
+            cell = New PdfPCell(New Phrase("Result/Pass"))
+            'Sets how many columns to span
+            cell.Colspan = 1
+            'Set the cell border widths
+            cell.BorderWidthLeft = 1.0F
+            cell.BorderWidthRight = 1.0F
+            cell.BorderWidthTop = 0F
+            cell.BorderWidthBottom = 1.0F
+            'Alignmenet 0=Left, 1=Centre, 2=Right
+            cell.HorizontalAlignment = 0
+            'Set cell padding
+            cell.Padding = 5
+            'Adds the cell to the table
+            table.AddCell(cell)
 
             'Connect to Database
             con.Open()
             'Set query
             Dim query As String
-            query = "SELECT Students.SFirstName, Students.SLastName, ModuleResults.ModuleResult FROM (([Module] INNER JOIN ModuleResults ON [Module].[Module] = ModuleResults.[Module]) INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE ([Module].[Module] = '" & moduleNumNoWB & "') ORDER BY Students.SLastName"
+            query = "SELECT ModulePassResults.[Module], ModulePassResults.ModulePass FROM (Students INNER JOIN ModulePassResults ON Students.SId = ModulePassResults.SId) WHERE (ModulePassResults.SId = " & studentID(0) & ")"
             Dim command As OleDbCommand = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
                     table.AddCell(rdr(0).ToString())
                     table.AddCell(rdr(1).ToString())
-                    table.AddCell(rdr(2).ToString())
                 End While
             End Using
 
-            query = "Select ModuleName From [Module] Where ([Module] = '" & moduleNumNoWB & "')"
-
-            Dim ModuleName As String = ""
+            'Set query
+            query = "SELECT ModuleResults.[Module], ModuleResults.ModuleResult FROM (ModuleResults INNER JOIN Students ON ModuleResults.SId = Students.SId) WHERE (ModuleResults.SId = " & studentID(0) & ")"
             command = New OleDbCommand(query, con)
             Using rdr As OleDbDataReader = command.ExecuteReader()
                 While rdr.Read()
-                    ModuleName = rdr(0).ToString()
+                    table.AddCell(rdr(0).ToString())
+                    table.AddCell(rdr(1).ToString())
+                End While
+            End Using
+
+            'Set query
+            query = "SELECT UnitResults.Unit, UnitResults.UnitResult FROM (Students INNER JOIN UnitResults ON Students.SId = UnitResults.SId) WHERE (UnitResults.SId = " & studentID(0) & ")"
+            command = New OleDbCommand(query, con)
+            Using rdr As OleDbDataReader = command.ExecuteReader()
+                While rdr.Read()
+                    table.AddCell(rdr(0).ToString())
+                    table.AddCell(rdr(1).ToString())
                 End While
             End Using
 
             pdfDoc.Open()
             pdfDoc.Add(New Paragraph(LoginScreen.User))
             'Set new paragraph variable
-            Dim paragraph As New Paragraph(New Phrase("Module Results"))
+            Dim paragraph As New Paragraph(New Phrase("Student Results"))
             'Set alignment to center
             paragraph.Alignment = 1
             pdfDoc.Add(paragraph)
-            'Set new paragraph
-            paragraph = New Paragraph(New Phrase(ModuleName))
-            paragraph.Alignment = 1
-            pdfDoc.Add(paragraph)
-            paragraph = New Paragraph(New Phrase(moduleNum))
+            paragraph = New Paragraph(New Phrase(cmbAdaptive.Text))
             paragraph.Alignment = 1
             pdfDoc.Add(paragraph)
             pdfDoc.Add(New Paragraph(" "))
@@ -390,7 +470,9 @@ Public Class ReportDesigner
             pdfDoc.Close()
 
             con.Close()
+
         End If
+
         If printorSave = "Print" Then
             MsgBox("Opening your default PDF application. Please print from there.")
             Process.Start("Temp\Simple.pdf")
